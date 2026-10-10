@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "ItalBridge Partners",
+    "description": "ItalBridge Partners — connecting businesses with Italy."
+  },
+  "nav": {
+    "home": "Home",
+    "language": "Language"
+  },
+  "home": {
+    "eyebrow": "ItalBridge Partners",
+    "title": "Your bridge to Italy",
+    "subtitle": "Website content is coming soon. This page is a placeholder while we finalise the details."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

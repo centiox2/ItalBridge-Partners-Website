@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #525252;
+  --line: #e5e5e5;
+  /* Placeholder brand colour (Italian green) — swap once brand guidelines are in. */
+  --brand: #008c45;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --font-sans: var(--font-geist-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --muted: #a3a3a3;
+    --line: #262626;
+    --brand: #22a861;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
