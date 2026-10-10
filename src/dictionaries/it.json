@@ -1,18 +1,178 @@
 {
   "meta": {
     "title": "ItalBridge Partners",
-    "description": "ItalBridge Partners — collegare le imprese con l'Italia."
+    "description": "ItalBridge Partners collega i produttori industriali italiani con acquirenti qualificati in Kenya e in Africa orientale, attraverso un unico partner commerciale responsabile."
   },
   "nav": {
     "home": "Home",
-    "language": "Lingua"
+    "services": "Servizi",
+    "industries": "Settori",
+    "manufacturers": "Produttori",
+    "buyers": "Acquirenti",
+    "language": "Lingua",
+    "logoAlt": "Logo di ItalBridge Partners",
+    "homeLabel": "Home di ItalBridge Partners"
   },
-  "home": {
-    "eyebrow": "ItalBridge Partners",
-    "title": "Il tuo ponte verso l'Italia",
-    "subtitle": "I contenuti del sito sono in arrivo. Questa pagina è provvisoria mentre definiamo i dettagli."
+  "hero": {
+    "title": "Il ponte commerciale tra l'industria italiana e l'Africa orientale",
+    "subtitle": "ItalBridge Partners collega i produttori industriali italiani con acquirenti qualificati in Kenya e in Africa orientale, attraverso un unico partner commerciale responsabile.",
+    "primaryCta": "Parla con il nostro team",
+    "secondaryCta": "Scopri le opportunità",
+    "imageAlt": "Ingegnere industriale con casco protettivo e tablet in uno stabilimento produttivo"
+  },
+  "process": {
+    "title": "Sei fasi, dal fabbisogno all'operatività",
+    "intro": "Scorri la sequenza. Ogni riquadro è una fase della trattativa, dal primo acquirente qualificato alla macchina in funzione presso il cliente.",
+    "stripLabel": "Fasi della trattativa",
+    "steps": [
+      {
+        "title": "Individuazione e qualificazione dell'acquirente",
+        "text": "Individuiamo produttori dell'Africa orientale con reali esigenze di macchinari e ne verifichiamo capacità di acquisto e tempistiche di progetto."
+      },
+      {
+        "title": "Analisi dei fabbisogni",
+        "text": "Una valutazione tecnica dettagliata delle specifiche dell'acquirente, dei volumi produttivi e dei vincoli operativi."
+      },
+      {
+        "title": "Selezione del produttore",
+        "text": "Abbiniamo il fabbisogno qualificato al produttore italiano più adatto della nostra rete verificata."
+      },
+      {
+        "title": "Negoziazione e strutturazione dell'accordo",
+        "text": "Prezzo, condizioni commerciali, modalità di pagamento e clausole contrattuali, gestiti per entrambe le parti."
+      },
+      {
+        "title": "Logistica e coordinamento doganale",
+        "text": "Trasporto, documentazione e sdoganamento, dallo stabilimento italiano alla sede dell'acquirente."
+      },
+      {
+        "title": "Assistenza post-vendita",
+        "text": "L'unico referente locale per installazione, ricambi, richieste tecniche e assistenza."
+      }
+    ]
+  },
+  "exports": {
+    "title": "I macchinari sono circa un terzo dell'export italiano verso il Kenya",
+    "note": "Le barre sono in scala, sulla base di dati approssimativi sulle esportazioni 2024.",
+    "totalLabel": "Esportazioni italiane verso il Kenya",
+    "totalValue": "$154M",
+    "machineryLabel": "Macchinari",
+    "machineryValue": "$55M",
+    "markets": "Sei mercati dell'Africa orientale serviti da Nairobi."
+  },
+  "sectors": {
+    "title": "Macchinari per i settori che trainano l'industria dell'Africa orientale",
+    "items": [
+      {
+        "title": "Materie plastiche e imballaggio",
+        "text": "Presse a iniezione, linee di confezionamento e impianti per la lavorazione dei polimeri."
+      },
+      {
+        "title": "Automazione industriale",
+        "text": "Sistemi di controllo, integrazione robotica e automazione di fabbrica."
+      },
+      {
+        "title": "Meccanica di precisione",
+        "text": "Componenti lavorati, attrezzature e parti di precisione."
+      },
+      {
+        "title": "Lavorazione alimenti e bevande",
+        "text": "Impianti di processo in acciaio inox, linee di riempimento e attrezzature per uso alimentare."
+      },
+      {
+        "title": "Materiali da costruzione",
+        "text": "Impianti per la produzione e la lavorazione di materiali edili."
+      },
+      {
+        "title": "Aftermarket automotive",
+        "text": "Attrezzature per officina, sistemi diagnostici e utensili specializzati."
+      }
+    ]
+  },
+  "network": {
+    "title": "Una rete selezionata di produttori industriali italiani",
+    "text": "Ogni produttore è qualificato per capacità tecnica, capacità produttiva, standard qualitativi e preparazione all'export: rappresentiamo solo chi è in grado di consegnare in modo affidabile.",
+    "cta": "Diventa partner di ItalBridge",
+    "items": [
+      {
+        "title": "Macchinari industriali",
+        "text": "Presse, attrezzature di stampaggio e macchinari di produzione."
+      },
+      {
+        "title": "Automazione e sistemi di controllo",
+        "text": "Sistemi di controllo, integrazione robotica e automazione di fabbrica."
+      },
+      {
+        "title": "Meccanica di precisione",
+        "text": "Componenti lavorati, attrezzature e parti ingegnerizzate."
+      },
+      {
+        "title": "Macchinari per l'industria alimentare",
+        "text": "Impianti di processo in acciaio inox, linee di riempimento e macchinari per uso alimentare."
+      },
+      {
+        "title": "Tecnologie per il packaging",
+        "text": "Macchinari e automazione per linee di confezionamento di beni di consumo e industriali."
+      },
+      {
+        "title": "Componenti industriali",
+        "text": "Componenti standard e su misura per applicazioni industriali."
+      }
+    ]
+  },
+  "why": {
+    "title": "Perché ItalBridge Partners",
+    "items": [
+      {
+        "title": "Presenza locale in Africa orientale",
+        "text": "Con sede a Nairobi, operiamo all'interno dei mercati che serviamo, non da un ufficio lontano all'estero."
+      },
+      {
+        "title": "Rapporti con i produttori italiani",
+        "text": "Relazioni dirette con una rete selezionata in diversi settori."
+      },
+      {
+        "title": "Coordinamento end-to-end",
+        "text": "Un unico partner responsabile, dalla selezione alla consegna."
+      },
+      {
+        "title": "Supporto tecnico e commerciale",
+        "text": "Conoscenza dei macchinari e padronanza del commercio internazionale."
+      },
+      {
+        "title": "Competenza interculturale",
+        "text": "Conosciamo la cultura industriale italiana e le pratiche commerciali dell'Africa orientale."
+      },
+      {
+        "title": "Coordinamento post-vendita",
+        "text": "Responsabili anche dopo la consegna, per ricambi, assistenza e richieste tecniche."
+      }
+    ]
+  },
+  "portals": {
+    "manufacturers": {
+      "title": "Per i produttori italiani: espandersi in Africa orientale senza aprire una sede locale",
+      "cta": "Diventa partner di ItalBridge"
+    },
+    "buyers": {
+      "title": "Per gli acquirenti dell'Africa orientale: accesso diretto a capacità industriali italiane affidabili",
+      "cta": "Richiedi macchinari"
+    }
+  },
+  "contact": {
+    "title": "Che tu produca in Italia o acquisti in Africa orientale, parliamone.",
+    "text": "Raccontaci le tue esigenze, i tuoi macchinari o il tuo mercato. Una sola conversazione, un unico partner responsabile.",
+    "cta": "Parla con il nostro team"
   },
   "footer": {
+    "tagline": "Il ponte commerciale tra la precisione industriale italiana e le opportunità commerciali dell'Africa orientale.",
+    "navigate": "Naviga",
+    "legal": "Note legali",
+    "privacy": "Privacy Policy",
+    "terms": "Termini d'uso",
+    "cookies": "Cookie Policy",
+    "contact": "Contatti",
+    "location": "Nairobi, Kenya",
     "rights": "Tutti i diritti riservati."
   }
 }

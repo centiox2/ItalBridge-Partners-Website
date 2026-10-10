@@ -1,6 +1,7 @@
-import Link from "next/link";
+import Image from "next/image";
 import type { Dictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
+import { sections } from "@/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header({
@@ -10,19 +11,41 @@ export default function Header({
   lang: Locale;
   dict: Dictionary;
 }) {
+  const links = [
+    { href: "#top", label: dict.nav.home },
+    { href: `#${sections.services}`, label: dict.nav.services },
+    { href: `#${sections.industries}`, label: dict.nav.industries },
+    { href: `#${sections.manufacturers}`, label: dict.nav.manufacturers },
+    { href: `#${sections.buyers}`, label: dict.nav.buyers },
+  ];
+
   return (
-    <header className="border-b border-line">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href={`/${lang}`} className="text-lg font-bold tracking-tight">
-          ItalBridge <span className="text-brand">Partners</span>
-        </Link>
-        <nav className="flex items-center gap-6 text-sm">
-          <Link href={`/${lang}`} className="hover:text-brand">
-            {dict.nav.home}
-          </Link>
-          <LanguageSwitcher current={lang} label={dict.nav.language} />
-        </nav>
-      </div>
+    <header className="mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-4 px-4 py-7 sm:px-12">
+      <a
+        href="#top"
+        aria-label={dict.nav.homeLabel}
+        className="inline-flex items-center gap-3.5"
+      >
+        <Image
+          src="/images/logo.png"
+          alt={dict.nav.logoAlt}
+          width={420}
+          height={353}
+          priority
+          className="h-[52px] w-auto"
+        />
+        <span className="font-serif text-[28px]">
+          ItalBridge <span className="text-gold">Partners</span>
+        </span>
+      </a>
+      <nav className="flex flex-wrap items-center gap-x-7 gap-y-2 text-[15px] font-medium">
+        {links.map((link) => (
+          <a key={link.href} href={link.href} className="hover:text-gold">
+            {link.label}
+          </a>
+        ))}
+        <LanguageSwitcher current={lang} label={dict.nav.language} />
+      </nav>
     </header>
   );
 }

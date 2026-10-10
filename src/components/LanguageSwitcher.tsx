@@ -16,7 +16,7 @@ export default function LanguageSwitcher({
   const rest = pathname.split("/").slice(2).join("/");
 
   return (
-    <div role="group" aria-label={label} className="flex gap-1">
+    <div role="group" aria-label={label} className="flex gap-1 text-[13px]">
       {locales.map((l) => (
         <Link
           key={l}
@@ -24,7 +24,7 @@ export default function LanguageSwitcher({
           hrefLang={l}
           aria-current={l === current ? "true" : undefined}
           className={`rounded px-2 py-1 uppercase ${
-            l === current ? "bg-brand text-white" : "hover:text-brand"
+            l === current ? "bg-gold text-ink" : "hover:text-gold"
           }`}
         >
           {l}

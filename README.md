@@ -16,8 +16,10 @@ npm run lint
 ```
 src/
   app/[lang]/        # every page lives under the locale segment (/en, /it)
-  components/        # Header, Footer, LanguageSwitcher
+  components/        # Header, Footer, LanguageSwitcher, shared ui classes
+  components/home/   # landing page sections (Hero, Process, Exports, ...)
   dictionaries/      # en.json / it.json — all site copy lives here
+  site.ts            # contact details and section anchor ids
   i18n.ts            # supported locales and default locale
   proxy.ts           # redirects "/" (and un-prefixed paths) to the visitor's language
 ```
@@ -35,5 +37,6 @@ Create `src/app/[lang]/<page>/page.tsx`, read `params.lang`, and load copy with
 
 ### Branding
 
-Colours are CSS variables in `src/app/globals.css` (`--brand`, `--muted`, `--line`),
-exposed to Tailwind as `text-brand`, `bg-brand`, etc. The current green is a placeholder.
+Design tokens live in `src/app/globals.css`: colours `ink`, `navy`, `slate`, `cream`,
+`sand`, `gold` (e.g. `bg-navy`, `text-gold`), and fonts `font-serif` (Gloock) and
+`font-sans` (Instrument Sans). Images are in `public/images/`.
