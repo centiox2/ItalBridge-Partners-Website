@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "For Manufacturers",
+    "description": "A credible route into the East African market for Italian industrial manufacturers: qualified buyers, local representation, and reduced commercial risk."
+  },
+  "hero": {
+    "title": "Expand Into East Africa Without Building a Local Office.",
+    "text": "ItalBridge Partners gives Italian industrial manufacturers a credible route into the East African market: qualified buyers, local representation, and reduced commercial risk through a single accountable partner.",
+    "cta": "Submit Inquiry",
+    "imageAlt": "CNC cutting tool machining metal"
+  },
+  "reasons": {
+    "title": "Five reasons Italian manufacturers work with ItalBridge.",
+    "items": [
+      {
+        "title": "Market Entry",
+        "text": "Access the East African market without establishing a local office, hiring local staff, or building local infrastructure."
+      },
+      {
+        "title": "Qualified Buyer Pipeline",
+        "text": "Receive qualified buyer opportunities, not cold enquiries, with verified purchasing capacity and defined requirements."
+      },
+      {
+        "title": "Local Representation",
+        "text": "Your products are represented locally by a partner who understands Italian industrial culture and East African commercial practice."
+      },
+      {
+        "title": "Reduced Commercial Risk",
+        "text": "We qualify buyers, structure payments, and manage the risks of cross-border transactions on your behalf."
+      },
+      {
+        "title": "Ongoing Support",
+        "text": "After-sales coordination, spare parts management, and technical liaison, all handled locally, in your name."
+      }
+    ]
+  },
+  "band": {
+    "title": "Ready to enter East Africa?",
+    "text": "Submit an inquiry and our team will respond within one business day.",
+    "button": "Submit Inquiry"
+  },
+  "steps": {
+    "title": "From first conversation to delivered equipment.",
+    "intro": "Four steps, with one accountable partner throughout.",
+    "label": "Steps",
+    "items": [
+      {
+        "title": "Initial Discussion",
+        "text": "We discuss your products, target sectors, and the East African opportunity."
+      },
+      {
+        "title": "Representation Agreement",
+        "text": "We establish a representation framework that protects your brand and pricing."
+      },
+      {
+        "title": "Buyer Matching",
+        "text": "We bring you qualified buyer opportunities with verified requirements."
+      },
+      {
+        "title": "Transaction & Delivery",
+        "text": "We manage the deal, logistics, customs, and after-sales, locally."
+      }
+    ]
+  },
+  "inquiry": {
+    "title": "Tell us about your manufacturing capability.",
+    "text": "Share details about your company, your products, and the sectors you serve. We will assess the fit with current East African demand and respond within one business day.",
+    "salesLabel": "Direct sales contact",
+    "phoneLabel": "Phone",
+    "subject": "Manufacturer inquiry"
+  }
+}

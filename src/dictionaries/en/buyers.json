@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "For Buyers",
+    "description": "Direct access to verified Italian industrial equipment for East African manufacturers, through a single local accountable partner."
+  },
+  "hero": {
+    "title": "Direct Access to Trusted Italian Industrial Capability.",
+    "text": "ItalBridge Partners gives East African manufacturers direct access to verified Italian industrial equipment through a single local accountable partner, from sourcing through after-sales support.",
+    "cta": "Submit Requirement",
+    "imageAlt": "Nairobi skyline"
+  },
+  "reasons": {
+    "title": "Five reasons East African buyers work with ItalBridge.",
+    "intro": "Scroll the strip for each reason.",
+    "label": "Reasons",
+    "items": [
+      {
+        "title": "Trusted Manufacturers",
+        "text": "Access to a curated network of verified Italian industrial manufacturers, not anonymous supplier listings."
+      },
+      {
+        "title": "Procurement Support",
+        "text": "We manage specifications, ordering, documentation, and production scheduling so your procurement process is coordinated end-to-end."
+      },
+      {
+        "title": "Logistics Coordination",
+        "text": "Freight, customs clearance, and delivery handled by a partner who understands East African import processes."
+      },
+      {
+        "title": "Local Point of Accountability",
+        "text": "A Nairobi-based partner accountable for the full transaction, not a remote supplier representative you can't reach."
+      },
+      {
+        "title": "Faster Issue Resolution",
+        "text": "When something goes wrong (a delay, a spec issue, a spare part) you have a local contact who owns the resolution."
+      }
+    ]
+  },
+  "band": {
+    "title": "Have an equipment requirement?",
+    "text": "Tell us what you need and we'll match it to the right Italian manufacturer.",
+    "button": "Submit Requirement"
+  },
+  "equipment": {
+    "title": "Italian industrial equipment, sourced through a local partner.",
+    "link": "View all industries we serve",
+    "items": [
+      {
+        "title": "Machinery & Presses",
+        "text": "Vertical injection presses, moulding machinery, and polymer processing equipment."
+      },
+      {
+        "title": "Automation & Control",
+        "text": "Control systems, robotic arms, and factory automation solutions."
+      },
+      {
+        "title": "Precision Components",
+        "text": "Machined parts, tooling, and engineered components to specification."
+      }
+    ]
+  },
+  "inquiry": {
+    "title": "Tell us about your equipment requirement.",
+    "text": "Share what you are looking to procure: machinery type, specifications, timelines. We will match your requirement to the appropriate Italian manufacturer and respond within one business day.",
+    "salesLabel": "Sales contact",
+    "phoneLabel": "Phone",
+    "subject": "Buyer requirement"
+  }
+}

@@ -16,3 +16,11 @@ export const h2Small =
   "m-0 font-serif text-[clamp(34px,4vw,54px)] leading-[1.05] font-normal";
 
 export const ruleRow = "border-t border-cream/30";
+
+export const h1Page =
+  "m-0 font-serif text-[clamp(42px,5.6vw,88px)] leading-[1.02] font-normal";
+export const h2Cream =
+  "m-0 font-serif text-[clamp(34px,4vw,56px)] leading-[1.05] font-normal text-navy";
+
+// Small uppercase label above a value ("PHONE", "WHAT WE DELIVER").
+export const eyebrow = "text-[13px] font-bold tracking-[.08em] uppercase";

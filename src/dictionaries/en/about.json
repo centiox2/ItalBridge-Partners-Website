@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "About",
+    "description": "ItalBridge Partners is a Nairobi-based B2B trade intermediary connecting Italian industrial manufacturers with qualified buyers across Kenya and East Africa."
+  },
+  "hero": {
+    "title": "A bridge built on relationships, not transactions.",
+    "text": "ItalBridge Partners is a Nairobi-based B2B trade intermediary connecting Italian industrial manufacturers with qualified buyers across Kenya and East Africa.",
+    "imageAlt": "Industrial engineer holding a tablet on a factory floor"
+  },
+  "story": {
+    "title": "Two industrial cultures, one accountable partner.",
+    "paragraphs": [
+      "Italy is one of the world's most established industrial manufacturing economies, particularly in machinery, automation, and precision engineering. East Africa is one of the fastest-developing manufacturing regions, with growing demand for industrial equipment to build domestic production capacity.",
+      "The gap between these two markets is rarely a gap in capability or demand. It is a gap in trust, communication, logistics, and accountability. Italian manufacturers rarely have a local East African presence. East African buyers rarely have direct, reliable access to verified Italian manufacturers.",
+      "ItalBridge Partners was founded in Nairobi to close that gap. We operate as a full-service commercial bridge, managing buyer sourcing, manufacturer representation, negotiations, procurement coordination, logistics, customs support, and after-sales coordination through a single accountable local partner."
+    ]
+  },
+  "banner": {
+    "text": "Structural, load-bearing, connecting two shores.",
+    "imageAlt": "Container ship alongside port cranes"
+  },
+  "guides": {
+    "title": "What guides us",
+    "intro": "Mission, approach, and long-term vision.",
+    "items": [
+      {
+        "title": "Our Mission",
+        "text": "To make Italian industrial capability accessible, trustworthy, and locally supported across East Africa."
+      },
+      {
+        "title": "Our Approach",
+        "text": "Relationship-driven, not transactional. We invest in long-term commercial partnerships between manufacturers and buyers."
+      },
+      {
+        "title": "Our Vision",
+        "text": "To become the standard commercial bridge for Italian industrial trade across the East African region."
+      }
+    ]
+  },
+  "corridor": {
+    "title": "An established corridor with room to grow.",
+    "paragraphs": [
+      "Italy exported approximately USD 154 million in goods to Kenya in 2024, with machinery representing roughly USD 55 million of that trade. The corridor is real, but it remains underserved for small and mid-sized industrial transactions that require local support.",
+      "ItalBridge focuses on the segment of this corridor that larger trade platforms overlook: qualified industrial equipment procurement that needs a relationship-driven, locally accountable partner."
+    ],
+    "totalLabel": "Italy exports to Kenya, 2024 (approx.)",
+    "totalValue": "$154M",
+    "machineryLabel": "Machinery component",
+    "machineryValue": "$55M",
+    "mapAlt": "Map of the trade corridor between Italy and East Africa",
+    "mapTitle": "Nairobi ⇄ Italy",
+    "mapCaption": "Operating across both ends of the corridor"
+  },
+  "cta": {
+    "title": "Want to understand the model in detail?",
+    "text": "Read our full service breakdown or speak with our team directly.",
+    "primary": "View Services",
+    "secondary": "Contact Us"
+  }
+}

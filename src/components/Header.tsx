@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Dictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
-import { sections } from "@/site";
+import { href } from "@/site";
 import LanguageSwitcher from "./LanguageSwitcher";
+import NavLinks from "./NavLinks";
 
 export default function Header({
   lang,
@@ -11,26 +13,26 @@ export default function Header({
   lang: Locale;
   dict: Dictionary;
 }) {
-  // Section links include the locale path so they also work from other pages.
-  const home = `/${lang}`;
+  const { nav } = dict;
   const links = [
-    { href: `${home}#top`, label: dict.nav.home },
-    { href: `${home}#${sections.services}`, label: dict.nav.services },
-    { href: `${home}#${sections.industries}`, label: dict.nav.industries },
-    { href: `${home}#${sections.manufacturers}`, label: dict.nav.manufacturers },
-    { href: `${home}#${sections.buyers}`, label: dict.nav.buyers },
+    { href: href(lang, "home"), label: nav.home },
+    { href: href(lang, "about"), label: nav.about },
+    { href: href(lang, "services"), label: nav.services },
+    { href: href(lang, "industries"), label: nav.industries },
+    { href: href(lang, "manufacturers"), label: nav.manufacturers },
+    { href: href(lang, "buyers"), label: nav.buyers },
   ];
 
   return (
-    <header className="enter mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-4 px-4 py-7 sm:px-12">
-      <a
-        href={`${home}#top`}
-        aria-label={dict.nav.homeLabel}
+    <header className="enter mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-x-7 gap-y-4 px-4 py-5.5 sm:px-12">
+      <Link
+        href={href(lang, "home")}
+        aria-label={nav.homeLabel}
         className="inline-flex items-center gap-3.5"
       >
         <Image
           src="/images/logo.png"
-          alt={dict.nav.logoAlt}
+          alt={nav.logoAlt}
           width={420}
           height={353}
           priority
@@ -39,15 +41,17 @@ export default function Header({
         <span className="font-serif text-[28px]">
           ItalBridge <span className="text-gold">Partners</span>
         </span>
-      </a>
-      <nav className="flex flex-wrap items-center gap-x-7 gap-y-2 text-[15px] font-medium">
-        {links.map((link) => (
-          <a key={link.href} href={link.href} className="hover:text-gold">
-            {link.label}
-          </a>
-        ))}
-        <LanguageSwitcher current={lang} label={dict.nav.language} />
-      </nav>
+      </Link>
+      <NavLinks label={nav.menu} links={links} />
+      <div className="flex items-center gap-4">
+        <Link
+          href={href(lang, "contact")}
+          className="lift inline-flex min-h-11 items-center bg-gold px-5.5 py-3 font-bold text-ink hover:brightness-110"
+        >
+          {nav.cta}
+        </Link>
+        <LanguageSwitcher current={lang} label={nav.language} />
+      </div>
     </header>
   );
 }

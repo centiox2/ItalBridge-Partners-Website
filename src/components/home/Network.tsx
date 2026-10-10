@@ -1,8 +1,16 @@
+import Link from "next/link";
 import type { Dictionary } from "@/dictionaries";
-import { sections } from "@/site";
+import type { Locale } from "@/i18n";
+import { href, sections } from "@/site";
 import { buttonGold, container, h2Small, ruleRow } from "../ui";
 
-export default function Network({ network }: { network: Dictionary["network"] }) {
+export default function Network({
+  lang,
+  network,
+}: {
+  lang: Locale;
+  network: Dictionary["network"];
+}) {
   return (
     <section
       id={sections.manufacturers}
@@ -11,9 +19,9 @@ export default function Network({ network }: { network: Dictionary["network"] })
       <div className="reveal flex-[1_1_min(420px,100%)]">
         <h2 className={`${h2Small} mb-5`}>{network.title}</h2>
         <p className="mb-7 text-lg text-sand">{network.text}</p>
-        <a href={`#${sections.contact}`} className={buttonGold}>
+        <Link href={href(lang, "manufacturers")} className={buttonGold}>
           {network.cta}
-        </a>
+        </Link>
       </div>
       <ul className="m-0 flex-[1.2_1_min(520px,100%)] list-none p-0">
         {network.items.map((item) => (

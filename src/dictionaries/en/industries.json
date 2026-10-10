@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "Industries",
+    "description": "Industrial sectors where Italian manufacturing capability meets East African procurement demand."
+  },
+  "hero": {
+    "title": "Sectors where Italian capability meets East African demand.",
+    "text": "ItalBridge focuses on industrial sectors with defined procurement activity in East Africa and matching manufacturing capability in Italy. Each sector has a clear path from requirement to delivered equipment.",
+    "imageAlt": "Bottling line conveyor in a factory"
+  },
+  "strip": {
+    "title": "Seven sectors, seven paths to delivered equipment",
+    "intro": "Scroll the strip to move through the sectors.",
+    "label": "Sectors",
+    "sourceLabel": "Italian source",
+    "items": [
+      {
+        "title": "Plastics Manufacturing",
+        "text": "Vertical injection moulding presses and polymer processing equipment for East African plastics manufacturers producing precision components.",
+        "source": "Italian injection press manufacturers"
+      },
+      {
+        "title": "Packaging",
+        "text": "Packaging line machinery and systems for manufacturers requiring filling, sealing, and packaging automation for consumer and industrial goods.",
+        "source": "Italian automation & control manufacturers"
+      },
+      {
+        "title": "Industrial Automation",
+        "text": "Control systems, robotic integration, and factory automation solutions for production lines seeking efficiency and throughput gains.",
+        "source": "Italian automation & control manufacturers"
+      },
+      {
+        "title": "Precision Components",
+        "text": "High-precision machined components, tooling, and engineered parts for industrial applications demanding tight tolerances and reliability.",
+        "source": "Italian precision engineering firms"
+      },
+      {
+        "title": "Food Processing",
+        "text": "Stainless steel processing systems, filling lines, and food-grade manufacturing equipment for the food and beverage sector.",
+        "source": "Multi-division sourcing"
+      },
+      {
+        "title": "Construction Equipment",
+        "text": "Equipment for producing and processing construction and building materials, supporting regional infrastructure development.",
+        "source": "Multi-division sourcing"
+      },
+      {
+        "title": "Automotive Workshop Equipment",
+        "text": "Workshop equipment, diagnostic systems, and specialised tooling for the automotive aftermarket and vehicle service sector.",
+        "source": "Multi-division sourcing"
+      }
+    ]
+  },
+  "suppliers": {
+    "title": "Who supplies each sector",
+    "text": "Each sector is matched to a defined group of Italian manufacturers."
+  },
+  "cta": {
+    "title": "Don't see your sector?",
+    "text": "If you manufacture or procure industrial equipment not listed here, we'd still like to talk.",
+    "button": "Discuss Your Sector"
+  }
+}

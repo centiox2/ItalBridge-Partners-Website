@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Chi siamo",
+    "description": "ItalBridge Partners è un intermediario commerciale B2B con sede a Nairobi che collega i produttori industriali italiani con acquirenti qualificati in Kenya e in Africa orientale."
+  },
+  "hero": {
+    "title": "Un ponte costruito sulle relazioni, non sulle singole transazioni.",
+    "text": "ItalBridge Partners è un intermediario commerciale B2B con sede a Nairobi che collega i produttori industriali italiani con acquirenti qualificati in Kenya e in Africa orientale.",
+    "imageAlt": "Ingegnere industriale con un tablet in uno stabilimento produttivo"
+  },
+  "story": {
+    "title": "Due culture industriali, un unico partner responsabile.",
+    "paragraphs": [
+      "L'Italia è una delle economie manifatturiere più consolidate al mondo, in particolare nei macchinari, nell'automazione e nella meccanica di precisione. L'Africa orientale è una delle regioni manifatturiere in più rapida crescita, con una domanda sempre maggiore di attrezzature industriali per sviluppare la capacità produttiva interna.",
+      "La distanza tra questi due mercati raramente dipende da capacità o domanda. Dipende da fiducia, comunicazione, logistica e responsabilità. I produttori italiani raramente hanno una presenza locale in Africa orientale. Gli acquirenti dell'Africa orientale raramente hanno un accesso diretto e affidabile a produttori italiani verificati.",
+      "ItalBridge Partners è nata a Nairobi per colmare questa distanza. Operiamo come ponte commerciale a servizio completo: gestiamo la ricerca degli acquirenti, la rappresentanza dei produttori, le trattative, il coordinamento degli acquisti, la logistica, il supporto doganale e l'assistenza post-vendita, attraverso un unico partner locale responsabile."
+    ]
+  },
+  "banner": {
+    "text": "Strutturale, portante, unisce due sponde.",
+    "imageAlt": "Nave portacontainer accostata alle gru portuali"
+  },
+  "guides": {
+    "title": "Cosa ci guida",
+    "intro": "Missione, approccio e visione di lungo periodo.",
+    "items": [
+      {
+        "title": "La nostra missione",
+        "text": "Rendere la capacità industriale italiana accessibile, affidabile e supportata localmente in tutta l'Africa orientale."
+      },
+      {
+        "title": "Il nostro approccio",
+        "text": "Fondato sulle relazioni, non sulle singole transazioni. Investiamo in partnership commerciali di lungo periodo tra produttori e acquirenti."
+      },
+      {
+        "title": "La nostra visione",
+        "text": "Diventare il ponte commerciale di riferimento per gli scambi industriali italiani in tutta la regione dell'Africa orientale."
+      }
+    ]
+  },
+  "corridor": {
+    "title": "Un corridoio commerciale consolidato, con ampi margini di crescita.",
+    "paragraphs": [
+      "Nel 2024 l'Italia ha esportato in Kenya beni per circa 154 milioni di dollari, di cui circa 55 milioni in macchinari. Il corridoio esiste, ma resta poco presidiato per le transazioni industriali di piccole e medie dimensioni che richiedono un supporto locale.",
+      "ItalBridge si concentra sul segmento di questo corridoio che le grandi piattaforme commerciali trascurano: gli acquisti qualificati di attrezzature industriali che richiedono un partner orientato alle relazioni e responsabile sul posto."
+    ],
+    "totalLabel": "Export italiano verso il Kenya, 2024 (stima)",
+    "totalValue": "$154M",
+    "machineryLabel": "Quota macchinari",
+    "machineryValue": "$55M",
+    "mapAlt": "Mappa del corridoio commerciale tra l'Italia e l'Africa orientale",
+    "mapTitle": "Nairobi ⇄ Italia",
+    "mapCaption": "Operativi a entrambi i capi del corridoio"
+  },
+  "cta": {
+    "title": "Vuoi conoscere il modello nel dettaglio?",
+    "text": "Consulta la descrizione completa dei nostri servizi o parla direttamente con il nostro team.",
+    "primary": "Scopri i servizi",
+    "secondary": "Contattaci"
+  }
+}

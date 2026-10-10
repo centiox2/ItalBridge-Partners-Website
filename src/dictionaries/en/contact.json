@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Contact",
+    "description": "Speak with ItalBridge Partners. We respond to every inquiry within one business day."
+  },
+  "hero": {
+    "title": "Speak with a team that understands both ends of the bridge.",
+    "text": "Whether you're an Italian manufacturer exploring East Africa or an East African buyer seeking trusted Italian equipment, we respond to every inquiry within one business day.",
+    "imageAlt": "Nairobi skyline"
+  },
+  "details": {
+    "title": "Reach the ItalBridge team.",
+    "general": "General enquiries",
+    "sales": "Sales & partnerships",
+    "phone": "Telephone",
+    "hq": "Headquarters",
+    "hqValue": "Nairobi, Kenya",
+    "response": "Response time",
+    "responseValue": "Within one business day"
+  },
+  "form": {
+    "title": "General inquiry",
+    "subject": "General inquiry"
+  },
+  "portals": {
+    "eyebrow": "Direct audience portal",
+    "manufacturers": {
+      "title": "For Manufacturers",
+      "text": "Italian industrial manufacturers"
+    },
+    "buyers": {
+      "title": "For Buyers",
+      "text": "East African industrial buyers"
+    }
+  },
+  "location": {
+    "title": "Based in Nairobi. Operating across the corridor.",
+    "text": "ItalBridge Partners is headquartered in Nairobi, Kenya, positioned at the centre of the East African commercial market we serve, with direct coordination to our Italian manufacturing partners across Italy.",
+    "hubLabel": "East Africa hub",
+    "hubValue": "Nairobi, Kenya",
+    "italyLabel": "Italy coordination",
+    "italyValue": "Northern Italy",
+    "mapAlt": "Map of the corridor from Italy to Nairobi"
+  }
+}

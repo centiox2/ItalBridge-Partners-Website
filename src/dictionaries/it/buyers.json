@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Per gli acquirenti",
+    "description": "Accesso diretto ad attrezzature industriali italiane verificate per i produttori dell'Africa orientale, attraverso un unico partner locale responsabile."
+  },
+  "hero": {
+    "title": "Accesso diretto a capacità industriali italiane affidabili.",
+    "text": "ItalBridge Partners offre ai produttori dell'Africa orientale accesso diretto ad attrezzature industriali italiane verificate, attraverso un unico partner locale responsabile, dalla selezione fino all'assistenza post-vendita.",
+    "cta": "Invia la tua richiesta",
+    "imageAlt": "Skyline di Nairobi"
+  },
+  "reasons": {
+    "title": "Cinque motivi per cui gli acquirenti dell'Africa orientale scelgono ItalBridge.",
+    "intro": "Scorri la sequenza per scoprire ogni motivo.",
+    "label": "Motivi",
+    "items": [
+      {
+        "title": "Produttori affidabili",
+        "text": "Accesso a una rete selezionata di produttori industriali italiani verificati, non a elenchi anonimi di fornitori."
+      },
+      {
+        "title": "Supporto agli acquisti",
+        "text": "Gestiamo specifiche, ordini, documentazione e pianificazione della produzione, così il tuo processo di acquisto è coordinato dall'inizio alla fine."
+      },
+      {
+        "title": "Coordinamento logistico",
+        "text": "Trasporto, sdoganamento e consegna gestiti da un partner che conosce le procedure di importazione dell'Africa orientale."
+      },
+      {
+        "title": "Un referente locale responsabile",
+        "text": "Un partner con sede a Nairobi, responsabile dell'intera transazione, non un rappresentante di un fornitore lontano e difficile da raggiungere."
+      },
+      {
+        "title": "Risoluzione più rapida dei problemi",
+        "text": "Quando qualcosa va storto (un ritardo, un problema di specifiche, un ricambio) hai un referente locale che si fa carico della soluzione."
+      }
+    ]
+  },
+  "band": {
+    "title": "Hai un'esigenza di macchinari?",
+    "text": "Raccontaci di cosa hai bisogno: individueremo il produttore italiano più adatto.",
+    "button": "Invia la tua richiesta"
+  },
+  "equipment": {
+    "title": "Attrezzature industriali italiane, tramite un partner locale.",
+    "link": "Scopri tutti i settori in cui operiamo",
+    "items": [
+      {
+        "title": "Macchinari e presse",
+        "text": "Presse a iniezione verticali, macchinari per lo stampaggio e attrezzature per la lavorazione dei polimeri."
+      },
+      {
+        "title": "Automazione e controllo",
+        "text": "Sistemi di controllo, bracci robotici e soluzioni per l'automazione di fabbrica."
+      },
+      {
+        "title": "Componenti di precisione",
+        "text": "Parti lavorate, attrezzature e componenti ingegnerizzati su specifica."
+      }
+    ]
+  },
+  "inquiry": {
+    "title": "Raccontaci la tua esigenza di macchinari.",
+    "text": "Indicaci cosa intendi acquistare: tipologia di macchinario, specifiche, tempistiche. Abbineremo la tua richiesta al produttore italiano più adatto e ti risponderemo entro un giorno lavorativo.",
+    "salesLabel": "Contatto commerciale",
+    "phoneLabel": "Telefono",
+    "subject": "Richiesta acquirente"
+  }
+}

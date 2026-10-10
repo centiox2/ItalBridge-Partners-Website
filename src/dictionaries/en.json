@@ -11,7 +11,10 @@
     "buyers": "Buyers",
     "language": "Language",
     "logoAlt": "ItalBridge Partners logo",
-    "homeLabel": "ItalBridge Partners home"
+    "homeLabel": "ItalBridge Partners home",
+    "about": "About",
+    "cta": "Speak With Our Team",
+    "menu": "Main"
   },
   "hero": {
     "title": "The commercial bridge between Italian industry and East Africa",
@@ -173,11 +176,35 @@
     "cookies": "Cookie Policy",
     "contact": "Contact",
     "location": "Nairobi, Kenya",
-    "rights": "All Rights Reserved."
+    "rights": "All Rights Reserved.",
+    "dataRequest": "Data Access & Deletion Request",
+    "social": "Social media"
   },
   "notFound": {
     "title": "Page not found",
     "text": "The page you are looking for does not exist or has moved.",
     "cta": "Back to home"
+  },
+  "form": {
+    "name": "Full name",
+    "email": "Email address",
+    "company": "Company",
+    "phone": "Phone",
+    "country": "Country / Region",
+    "message": "How can we help?",
+    "submit": "Submit Inquiry",
+    "consent": "By submitting, you agree to our",
+    "privacy": "Privacy Policy",
+    "required": "Required",
+    "sent": "Your email app should now open with your message ready to send. If it doesn't, email us at",
+    "error": "Please fill in the required fields."
+  },
+  "legal": {
+    "documents": "Legal documents",
+    "lastUpdated": "Last updated",
+    "onThisPage": "On this page",
+    "dataRequest": "Data Request",
+    "questions": "Questions?",
+    "contactUs": "Contact us at"
   }
 }

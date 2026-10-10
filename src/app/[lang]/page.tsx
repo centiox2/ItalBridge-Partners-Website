@@ -21,9 +21,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Process process={dict.process} />
       <Exports exports={dict.exports} />
       <Sectors sectors={dict.sectors} />
-      <Network network={dict.network} />
+      <Network lang={lang} network={dict.network} />
       <Why why={dict.why} />
-      <Portals portals={dict.portals} />
+      <Portals lang={lang} portals={dict.portals} />
       <Contact contact={dict.contact} />
     </>
   );

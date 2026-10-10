@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "Settori",
+    "description": "I settori industriali in cui la capacità produttiva italiana incontra la domanda di acquisto dell'Africa orientale."
+  },
+  "hero": {
+    "title": "Settori in cui la capacità italiana incontra la domanda dell'Africa orientale.",
+    "text": "ItalBridge si concentra sui settori industriali con un'attività di acquisto ben definita in Africa orientale e una corrispondente capacità produttiva in Italia. Per ogni settore esiste un percorso chiaro, dall'esigenza alla consegna dei macchinari.",
+    "imageAlt": "Nastro trasportatore di una linea di imbottigliamento in uno stabilimento"
+  },
+  "strip": {
+    "title": "Sette settori, sette percorsi fino alla consegna",
+    "intro": "Scorri la sequenza per passare da un settore all'altro.",
+    "label": "Settori",
+    "sourceLabel": "Fornitura italiana",
+    "items": [
+      {
+        "title": "Produzione di materie plastiche",
+        "text": "Presse verticali a iniezione e attrezzature per la lavorazione dei polimeri per i produttori di materie plastiche dell'Africa orientale che realizzano componenti di precisione.",
+        "source": "Produttori italiani di presse a iniezione"
+      },
+      {
+        "title": "Packaging",
+        "text": "Macchinari e sistemi per linee di confezionamento, per produttori che necessitano di automazione per riempimento, sigillatura e imballaggio di beni di consumo e industriali.",
+        "source": "Produttori italiani di automazione e controllo"
+      },
+      {
+        "title": "Automazione industriale",
+        "text": "Sistemi di controllo, integrazione robotica e soluzioni di automazione di fabbrica per linee produttive che puntano a maggiore efficienza e produttività.",
+        "source": "Produttori italiani di automazione e controllo"
+      },
+      {
+        "title": "Componenti di precisione",
+        "text": "Componenti lavorati ad alta precisione, attrezzature e parti ingegnerizzate per applicazioni industriali che richiedono tolleranze strette e massima affidabilità.",
+        "source": "Aziende italiane di meccanica di precisione"
+      },
+      {
+        "title": "Lavorazione alimentare",
+        "text": "Impianti di processo in acciaio inox, linee di riempimento e attrezzature produttive per uso alimentare destinate al settore alimenti e bevande.",
+        "source": "Fornitura da più comparti"
+      },
+      {
+        "title": "Macchinari per l'edilizia",
+        "text": "Attrezzature per la produzione e la lavorazione di materiali da costruzione, a supporto dello sviluppo infrastrutturale della regione.",
+        "source": "Fornitura da più comparti"
+      },
+      {
+        "title": "Attrezzature per officine automotive",
+        "text": "Attrezzature per officina, sistemi diagnostici e utensili specializzati per l'aftermarket automotive e l'assistenza ai veicoli.",
+        "source": "Fornitura da più comparti"
+      }
+    ]
+  },
+  "suppliers": {
+    "title": "Chi fornisce ciascun settore",
+    "text": "A ogni settore corrisponde un gruppo definito di produttori italiani."
+  },
+  "cta": {
+    "title": "Non trovi il tuo settore?",
+    "text": "Se produci o acquisti attrezzature industriali non elencate qui, parliamone comunque.",
+    "button": "Parlaci del tuo settore"
+  }
+}

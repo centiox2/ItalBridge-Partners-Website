@@ -11,7 +11,10 @@
     "buyers": "Acquirenti",
     "language": "Lingua",
     "logoAlt": "Logo di ItalBridge Partners",
-    "homeLabel": "Home di ItalBridge Partners"
+    "homeLabel": "Home di ItalBridge Partners",
+    "about": "Chi siamo",
+    "cta": "Parla con il nostro team",
+    "menu": "Principale"
   },
   "hero": {
     "title": "Il ponte commerciale tra l'industria italiana e l'Africa orientale",
@@ -173,11 +176,35 @@
     "cookies": "Cookie Policy",
     "contact": "Contatti",
     "location": "Nairobi, Kenya",
-    "rights": "Tutti i diritti riservati."
+    "rights": "Tutti i diritti riservati.",
+    "dataRequest": "Richiesta di accesso e cancellazione dei dati",
+    "social": "Social media"
   },
   "notFound": {
     "title": "Pagina non trovata",
     "text": "La pagina che cerchi non esiste o è stata spostata.",
     "cta": "Torna alla home"
+  },
+  "form": {
+    "name": "Nome e cognome",
+    "email": "Indirizzo email",
+    "company": "Azienda",
+    "phone": "Telefono",
+    "country": "Paese / Regione",
+    "message": "Come possiamo aiutarti?",
+    "submit": "Invia richiesta",
+    "consent": "Inviando la richiesta accetti la nostra",
+    "privacy": "Privacy Policy",
+    "required": "Obbligatorio",
+    "sent": "Il tuo programma di posta dovrebbe aprirsi con il messaggio pronto da inviare. In caso contrario, scrivici a",
+    "error": "Compila i campi obbligatori."
+  },
+  "legal": {
+    "documents": "Documenti legali",
+    "lastUpdated": "Ultimo aggiornamento",
+    "onThisPage": "In questa pagina",
+    "dataRequest": "Richiesta dati",
+    "questions": "Domande?",
+    "contactUs": "Scrivici a"
   }
 }

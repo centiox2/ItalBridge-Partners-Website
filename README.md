@@ -15,10 +15,16 @@ npm run lint
 
 ```
 src/
-  app/[lang]/        # every page lives under the locale segment (/en, /it)
+  app/[lang]/        # every page lives under the locale segment (/en, /it):
+                     #   home, about, services, industries, manufacturers, buyers,
+                     #   contact, privacy-policy, terms-of-use, cookie-policy, data-request
   components/        # Header, Footer, LanguageSwitcher, shared ui classes
   components/home/   # landing page sections (Hero, Process, Exports, ...)
-  dictionaries/      # en.json / it.json — all site copy lives here
+  components/page/   # building blocks for the other pages (PageHero, Filmstrip,
+                     #   CtaBand, InquiryForm, LegalPage, ...)
+  lib/metadata.ts    # per-page title, description, canonical and hreflang
+  dictionaries/      # en.json / it.json: shared and home page copy
+                     # en/<page>.json / it/<page>.json: copy for each other page
   site.ts            # contact details and section anchor ids
   i18n.ts            # supported locales and default locale
   proxy.ts           # redirects "/" (and un-prefixed paths) to the visitor's language
@@ -32,8 +38,18 @@ missing Italian key is a type error.
 
 ### Adding a page
 
-Create `src/app/[lang]/<page>/page.tsx`, read `params.lang`, and load copy with
-`getDictionary(lang)`. Add a link to it in `src/components/Header.tsx`.
+1. Add the route to `routes` in `src/site.ts`.
+2. Add `src/dictionaries/en/<page>.json` and `it/<page>.json` (same shape, with a
+   `meta` title and description) and register them in `src/dictionaries/index.ts`.
+3. Create `src/app/[lang]/<page>/page.tsx`: load copy with `getPage(lang, "<page>")`
+   and export `generateMetadata` via `pageMetadata(params, "<page>")`.
+4. Link it from `Header.tsx` and/or `Footer.tsx` with `href(lang, "<page>")`.
+
+### Forms
+
+The inquiry and data request forms do not post to a server yet: submitting opens
+the visitor's email app with the message filled in (`InquiryForm.tsx`). Swap that
+for a server action once a mail service is chosen.
 
 ### Branding
 

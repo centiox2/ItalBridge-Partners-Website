@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Services",
+    "description": "ItalBridge manages every stage of cross-border industrial procurement, from buyer qualification through after-sales support."
+  },
+  "hero": {
+    "title": "A single accountable partner across the full procurement lifecycle.",
+    "text": "From buyer qualification through after-sales support, ItalBridge manages every stage of cross-border industrial procurement, so neither the manufacturer nor the buyer carries the coordination burden alone.",
+    "imageAlt": "Container ships entering a port"
+  },
+  "list": {
+    "title": "Six connected services, one commercial bridge.",
+    "intro": "Each service is a distinct stage in the cross-border procurement process. In practice, they function as a connected sequence: the output of one stage becomes the input of the next. ItalBridge manages the full sequence so that accountability never transfers to a gap.",
+    "deliverLabel": "What we deliver",
+    "items": [
+      {
+        "title": "Buyer Identification",
+        "text": "We identify East African manufacturers and industrial buyers with genuine equipment requirements, then verify their purchasing capacity, project timelines, and technical needs.",
+        "deliverables": [
+          "Qualified buyer shortlists",
+          "Purchasing capacity verification",
+          "Project timeline mapping"
+        ]
+      },
+      {
+        "title": "Manufacturer Representation",
+        "text": "We represent Italian manufacturers in the East African market, managing enquiries, qualifying opportunities, and protecting brand integrity without the manufacturer needing a local office.",
+        "deliverables": [
+          "Local market representation",
+          "Opportunity qualification",
+          "Brand and pricing protection"
+        ]
+      },
+      {
+        "title": "Commercial Negotiation",
+        "text": "We structure and negotiate the commercial terms of each transaction (price, payment terms, delivery conditions, and contract clauses) on behalf of both parties.",
+        "deliverables": [
+          "Price negotiation",
+          "Payment term structuring",
+          "Contract condition management"
+        ]
+      },
+      {
+        "title": "Procurement Coordination",
+        "text": "We coordinate the procurement process end-to-end (specifications, order management, production scheduling, and documentation) so nothing falls between the cracks.",
+        "deliverables": [
+          "Specification alignment",
+          "Order and production tracking",
+          "Documentation management"
+        ]
+      },
+      {
+        "title": "Logistics Management",
+        "text": "We manage freight forwarding, shipping documentation, and customs clearance, moving equipment from the Italian factory floor to the East African buyer's facility.",
+        "deliverables": [
+          "Freight coordination",
+          "Customs clearance support",
+          "Delivery and installation scheduling"
+        ]
+      },
+      {
+        "title": "After-Sales Support",
+        "text": "We remain the single local point of accountability after delivery, for installation support, spare parts, technical queries, and ongoing service coordination.",
+        "deliverables": [
+          "Installation support",
+          "Spare parts coordination",
+          "Ongoing technical liaison"
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "title": "Need a specific service?",
+    "text": "Tell us which stage of the procurement process you need support with.",
+    "button": "Speak With Our Team"
+  }
+}
