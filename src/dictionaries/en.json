@@ -174,5 +174,10 @@
     "contact": "Contact",
     "location": "Nairobi, Kenya",
     "rights": "All Rights Reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has moved.",
+    "cta": "Back to home"
   }
 }

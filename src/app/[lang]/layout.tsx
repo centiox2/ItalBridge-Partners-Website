@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Gloock, Instrument_Sans } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
-import { hasLocale, locales } from "@/i18n";
+import { defaultLocale, hasLocale, locales } from "@/i18n";
+import { siteUrl } from "@/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../globals.css";
@@ -28,11 +29,16 @@ export async function generateMetadata({
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
   return {
+    metadataBase: new URL(siteUrl),
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
     description: dict.meta.description,
     icons: { icon: "/images/logo.png" },
     alternates: {
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
+      canonical: `/${lang}`,
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `/${l}`])),
+        "x-default": `/${defaultLocale}`,
+      },
     },
   };
 }
@@ -46,11 +52,16 @@ export default async function RootLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${gloock.variable} ${instrumentSans.variable}`}>
+    <html
+      lang={lang}
+      // Lets Next skip smooth scrolling on route changes (e.g. switching language).
+      data-scroll-behavior="smooth"
+      className={`${gloock.variable} ${instrumentSans.variable}`}
+    >
       <body id="top" className="font-sans antialiased">
         <Header lang={lang} dict={dict} />
         <main>{children}</main>
-        <Footer dict={dict} />
+        <Footer lang={lang} dict={dict} />
       </body>
     </html>
   );

@@ -6,11 +6,17 @@ function preferredLocale(request: NextRequest): Locale {
   const ranked = header
     .split(",")
     .map((part) => {
-      const [tag, q] = part.trim().split(";q=");
-      return { lang: tag.split("-")[0].toLowerCase(), q: q ? Number(q) : 1 };
+      // e.g. "it-IT", "it;q=0.9", "it; q=0.9"
+      const [tag, ...params] = part.split(";").map((p) => p.trim());
+      const qParam = params.find((p) => p.startsWith("q="));
+      const q = qParam ? Number(qParam.slice(2)) : 1;
+      return {
+        lang: tag.split("-")[0].toLowerCase(),
+        q: Number.isFinite(q) ? q : 0,
+      };
     })
     .sort((a, b) => b.q - a.q);
-  const match = ranked.find((r) => hasLocale(r.lang));
+  const match = ranked.find((r) => r.q > 0 && hasLocale(r.lang));
   return match ? (match.lang as Locale) : defaultLocale;
 }
 

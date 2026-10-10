@@ -11,18 +11,20 @@ export default function Header({
   lang: Locale;
   dict: Dictionary;
 }) {
+  // Section links include the locale path so they also work from other pages.
+  const home = `/${lang}`;
   const links = [
-    { href: "#top", label: dict.nav.home },
-    { href: `#${sections.services}`, label: dict.nav.services },
-    { href: `#${sections.industries}`, label: dict.nav.industries },
-    { href: `#${sections.manufacturers}`, label: dict.nav.manufacturers },
-    { href: `#${sections.buyers}`, label: dict.nav.buyers },
+    { href: `${home}#top`, label: dict.nav.home },
+    { href: `${home}#${sections.services}`, label: dict.nav.services },
+    { href: `${home}#${sections.industries}`, label: dict.nav.industries },
+    { href: `${home}#${sections.manufacturers}`, label: dict.nav.manufacturers },
+    { href: `${home}#${sections.buyers}`, label: dict.nav.buyers },
   ];
 
   return (
     <header className="enter mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-4 px-4 py-7 sm:px-12">
       <a
-        href="#top"
+        href={`${home}#top`}
         aria-label={dict.nav.homeLabel}
         className="inline-flex items-center gap-3.5"
       >

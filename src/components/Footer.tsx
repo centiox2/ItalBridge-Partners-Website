@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/dictionaries";
+import type { Locale } from "@/i18n";
 import { contact, sections } from "@/site";
 
 async function currentYear() {
@@ -6,9 +7,16 @@ async function currentYear() {
   return new Date().getFullYear();
 }
 
-export default async function Footer({ dict }: { dict: Dictionary }) {
+export default async function Footer({
+  lang,
+  dict,
+}: {
+  lang: Locale;
+  dict: Dictionary;
+}) {
   const year = await currentYear();
   const { nav, footer } = dict;
+  const home = `/${lang}`;
 
   return (
     <footer className="text-sm">
@@ -19,17 +27,17 @@ export default async function Footer({ dict }: { dict: Dictionary }) {
         </div>
         <div className="flex flex-[1_1_130px] flex-col gap-2">
           <b className="text-gold">{footer.navigate}</b>
-          <a href="#top" className="hover:text-gold">{nav.home}</a>
-          <a href={`#${sections.services}`} className="hover:text-gold">{nav.services}</a>
-          <a href={`#${sections.industries}`} className="hover:text-gold">{nav.industries}</a>
-          <a href={`#${sections.manufacturers}`} className="hover:text-gold">{nav.manufacturers}</a>
+          <a href={`${home}#top`} className="hover:text-gold">{nav.home}</a>
+          <a href={`${home}#${sections.services}`} className="hover:text-gold">{nav.services}</a>
+          <a href={`${home}#${sections.industries}`} className="hover:text-gold">{nav.industries}</a>
+          <a href={`${home}#${sections.manufacturers}`} className="hover:text-gold">{nav.manufacturers}</a>
         </div>
-        {/* Legal pages don't exist yet; links point to top until they do. */}
+        {/* Legal pages don't exist yet; links point to the home page until they do. */}
         <div className="flex flex-[1_1_140px] flex-col gap-2">
           <b className="text-gold">{footer.legal}</b>
-          <a href="#top" className="hover:text-gold">{footer.privacy}</a>
-          <a href="#top" className="hover:text-gold">{footer.terms}</a>
-          <a href="#top" className="hover:text-gold">{footer.cookies}</a>
+          <a href={home} className="hover:text-gold">{footer.privacy}</a>
+          <a href={home} className="hover:text-gold">{footer.terms}</a>
+          <a href={home} className="hover:text-gold">{footer.cookies}</a>
         </div>
         <div className="flex flex-[1.4_1_220px] flex-col gap-2">
           <b className="text-gold">{footer.contact}</b>

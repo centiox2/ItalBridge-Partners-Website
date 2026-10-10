@@ -1,3 +1,7 @@
+// Public URL of the site, used for canonical and hreflang links.
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://italbridgepartners.co.ke";
+
 export const contact = {
   emails: ["info@italbridgepartners.co.ke", "sales@italbridgepartners.co.ke"],
   phones: [

@@ -174,5 +174,10 @@
     "contact": "Contatti",
     "location": "Nairobi, Kenya",
     "rights": "Tutti i diritti riservati."
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "text": "La pagina che cerchi non esiste o è stata spostata.",
+    "cta": "Torna alla home"
   }
 }
