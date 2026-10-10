@@ -85,19 +85,37 @@ body {
     transform: translateY(-2px);
   }
 
-  /* Exports chart: ExportsChart arms the bars below the fold, then plays
-     them when scrolled into view while the figures count up. */
-  [data-chart="armed"] .bar {
-    clip-path: inset(0 100% 0 0);
+  /* Exports chart: ExportsChart arms the bars below the fold, then grows
+     them from the left when scrolled into view while the figures count up. */
+  .bar-fill {
+    transform-origin: left;
   }
 
-  [data-chart="play"] .bar {
-    clip-path: inset(0);
-    transition: clip-path 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  [data-chart="armed"] .bar-fill {
+    transform: scaleX(0);
   }
 
-  [data-chart="play"] .bar-late {
+  [data-chart="armed"] .bar-text {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+
+  [data-chart="play"] .bar-fill {
+    transition: transform 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  [data-chart="play"] .bar-text {
+    transition:
+      opacity 0.5s ease 1.1s,
+      transform 0.5s ease 1.1s;
+  }
+
+  [data-chart="play"] .bar-late .bar-fill {
     transition-delay: 0.5s;
+  }
+
+  [data-chart="play"] .bar-late .bar-text {
+    transition-delay: 1.5s;
   }
 
   @supports (animation-timeline: view()) {
