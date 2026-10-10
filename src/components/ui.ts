@@ -1,12 +1,12 @@
 // Shared class strings matching the design's buttons and type scale.
 const button =
-  "inline-flex min-h-11 items-center px-7 py-[15px] font-bold transition hover:brightness-110";
+  "lift inline-flex min-h-11 items-center px-7 py-[15px] font-bold hover:brightness-110";
 
 export const buttonGold = `${button} bg-gold text-ink`;
 export const buttonCream = `${button} bg-cream text-ink`;
 export const buttonInk = `${button} bg-ink text-cream`;
 export const buttonOutline =
-  "inline-flex min-h-11 items-center border-[1.5px] border-cream px-7 py-3.5 font-semibold hover:text-gold";
+  "lift inline-flex min-h-11 items-center border-[1.5px] border-cream px-7 py-3.5 font-semibold hover:text-gold";
 
 export const container = "mx-auto max-w-[1344px] px-4 sm:px-12";
 

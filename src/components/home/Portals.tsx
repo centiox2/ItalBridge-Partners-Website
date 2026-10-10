@@ -3,7 +3,7 @@ import { sections } from "@/site";
 import { buttonCream, buttonGold, container } from "../ui";
 
 const card =
-  "flex flex-[1_1_min(480px,100%)] flex-col items-start gap-4.5 p-8 sm:p-12";
+  "reveal flex flex-[1_1_min(480px,100%)] flex-col items-start gap-4.5 p-8 sm:p-12";
 const cardTitle = "m-0 font-serif text-[32px] leading-[1.15] font-normal";
 
 export default function Portals({ portals }: { portals: Dictionary["portals"] }) {

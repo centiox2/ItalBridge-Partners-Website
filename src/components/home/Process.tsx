@@ -29,8 +29,8 @@ export default function Process({
       <div
         className={`${container} flex flex-wrap items-end gap-x-16 gap-y-5 pb-12`}
       >
-        <h2 className={`${h2} flex-[1_1_min(520px,100%)]`}>{process.title}</h2>
-        <p className="m-0 flex-[1_1_320px] text-lg text-sand">{process.intro}</p>
+        <h2 className={`${h2} reveal flex-[1_1_min(520px,100%)]`}>{process.title}</h2>
+        <p className="reveal m-0 flex-[1_1_320px] text-lg text-sand">{process.intro}</p>
       </div>
       <ol
         aria-label={process.stripLabel}
@@ -42,16 +42,18 @@ export default function Process({
           return (
             <li
               key={step.title}
-              className={`w-[min(440px,85vw)] flex-none snap-start ${palette.frame}`}
+              className={`group frame w-[min(440px,85vw)] flex-none snap-start ${palette.frame}`}
             >
-              <Image
-                src={images[i]}
-                alt=""
-                width={880}
-                height={i % 2 === 0 ? 720 : 500}
-                sizes="440px"
-                className={`w-full object-cover ${i % 2 === 0 ? "h-[360px]" : "h-[250px]"}`}
-              />
+              <div className="overflow-hidden">
+                <Image
+                  src={images[i]}
+                  alt=""
+                  width={880}
+                  height={i % 2 === 0 ? 720 : 500}
+                  sizes="440px"
+                  className={`zoom w-full object-cover ${i % 2 === 0 ? "h-[360px]" : "h-[250px]"}`}
+                />
+              </div>
               <div className="px-6.5 pt-6 pb-7.5">
                 <div className={`font-serif text-[44px] leading-none ${palette.number}`}>
                   {i + 1}

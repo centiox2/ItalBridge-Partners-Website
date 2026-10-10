@@ -20,7 +20,7 @@ export default function Header({
   ];
 
   return (
-    <header className="mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-4 px-4 py-7 sm:px-12">
+    <header className="enter mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-4 px-4 py-7 sm:px-12">
       <a
         href="#top"
         aria-label={dict.nav.homeLabel}

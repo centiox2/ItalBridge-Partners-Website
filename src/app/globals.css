@@ -11,10 +11,6 @@
   --font-serif: var(--font-gloock), serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--color-ink);
   color: var(--color-cream);
@@ -29,4 +25,95 @@ body {
 .strip {
   scrollbar-color: var(--color-gold) var(--color-navy);
   scrollbar-width: thin;
+}
+
+/* ---------- Motion ----------
+   Everything below only runs when the visitor allows motion. Scroll-linked
+   effects use CSS scroll-driven animations; browsers without support simply
+   show the content in its final state. */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+@keyframes curtain {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@keyframes frame-in {
+  from {
+    opacity: 0.35;
+    transform: scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Page-load sequence; stagger with --d. */
+  .enter {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms) backwards;
+  }
+
+  .enter-image {
+    animation: curtain 1.3s cubic-bezier(0.7, 0, 0.2, 1) var(--d, 0ms) backwards;
+  }
+
+  .zoom {
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .group:hover .zoom {
+    transform: scale(1.06);
+  }
+
+  .lift {
+    transition:
+      transform 0.25s ease,
+      filter 0.25s ease;
+  }
+
+  .lift:hover {
+    transform: translateY(-2px);
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    /* Bars in the exports chart draw out from the left, to scale. */
+    .bar {
+      animation: wipe linear both;
+      animation-timeline: view();
+      animation-range: entry 40% cover 35%;
+    }
+
+    .bar-late {
+      animation-range: entry 70% cover 45%;
+    }
+
+    /* Filmstrip frames settle in as they slide into the strip. */
+    .frame {
+      animation: frame-in linear both;
+      animation-timeline: view(inline);
+      animation-range: entry 0% entry 80%;
+    }
+  }
 }
