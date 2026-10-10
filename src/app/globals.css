@@ -46,12 +46,6 @@ body {
   }
 }
 
-@keyframes wipe {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
 @keyframes frame-in {
   from {
     opacity: 0.35;
@@ -91,22 +85,26 @@ body {
     transform: translateY(-2px);
   }
 
+  /* Exports chart: ExportsChart arms the bars below the fold, then plays
+     them when scrolled into view while the figures count up. */
+  [data-chart="armed"] .bar {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  [data-chart="play"] .bar {
+    clip-path: inset(0);
+    transition: clip-path 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  [data-chart="play"] .bar-late {
+    transition-delay: 0.5s;
+  }
+
   @supports (animation-timeline: view()) {
     .reveal {
       animation: rise linear both;
       animation-timeline: view();
       animation-range: entry 0% entry 70%;
-    }
-
-    /* Bars in the exports chart draw out from the left, to scale. */
-    .bar {
-      animation: wipe linear both;
-      animation-timeline: view();
-      animation-range: entry 40% cover 35%;
-    }
-
-    .bar-late {
-      animation-range: entry 70% cover 45%;
     }
 
     /* Filmstrip frames settle in as they slide into the strip. */
