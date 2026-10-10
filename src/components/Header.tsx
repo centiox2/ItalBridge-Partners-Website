@@ -37,7 +37,7 @@ export default function Header({
           width={62}
           height={52}
           loading="eager"
-          className="h-[52px] w-auto"
+          className="h-[52px] w-[62px]"
         />
         <span className="font-serif text-[28px]">
           ItalBridge <span className="text-gold">Partners</span>

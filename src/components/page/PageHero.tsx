@@ -31,6 +31,7 @@ export default function PageHero({
         src={image}
         alt={imageAlt}
         preload
+        fetchPriority="high"
         placeholder="blur"
         sizes="(min-width: 1024px) 500px, 100vw"
         style={{ objectPosition }}

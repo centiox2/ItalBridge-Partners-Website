@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Bars grow over 1.6s (CSS); each figure fades in and counts up as its bar
+// Bars grow over 0.9s (CSS); each figure fades in and counts up as its bar
 // fill reaches it. Keep in sync with the delays in globals.css.
-const COUNT_MS = 1000;
-const TOTAL_DELAY = 1100;
-const LATE_DELAY = 1500;
+const COUNT_MS = 700;
+const TOTAL_DELAY = 500;
+const LATE_DELAY = 800;
 
 const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
 
@@ -63,7 +63,7 @@ export default function ExportsChart({
     let playing = false;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.intersectionRatio >= 0.4 && !playing) {
+        if (entry.intersectionRatio >= 0.25 && !playing) {
           playing = true;
           play();
         } else if (!entry.isIntersecting && playing) {
@@ -71,7 +71,7 @@ export default function ExportsChart({
           arm();
         }
       },
-      { threshold: [0, 0.4] },
+      { threshold: [0, 0.25] },
     );
     observer.observe(el);
     return () => {

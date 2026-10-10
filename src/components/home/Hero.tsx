@@ -27,6 +27,7 @@ export default function Hero({ hero }: { hero: Dictionary["hero"] }) {
         src={images.engineer}
         alt={hero.imageAlt}
         preload
+        fetchPriority="high"
         placeholder="blur"
         sizes="(min-width: 1024px) 520px, 100vw"
         className="enter-image h-[min(640px,120vw)] w-full max-w-[520px] flex-[1_1_380px] object-cover object-[28%_center]"
