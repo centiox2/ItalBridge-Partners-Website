@@ -55,4 +55,13 @@ for a server action once a mail service is chosen.
 
 Design tokens live in `src/app/globals.css`: colours `ink`, `navy`, `slate`, `cream`,
 `sand`, `gold` (e.g. `bg-navy`, `text-gold`), and fonts `font-serif` (Gloock) and
-`font-sans` (Instrument Sans). Images are in `public/images/`.
+`font-sans` (Instrument Sans).
+
+### Images
+
+Photos live in `src/assets/images/` and are imported through `src/images.ts`, so
+`next/image` gets their dimensions and a blur placeholder at build time and serves
+them with hashed, long-cached URLs. Next.js resizes each photo to the width the
+page needs (set `sizes` on every `<Image>` that is not a fixed size) and serves
+AVIF or WebP. To add a photo, drop it in `src/assets/images/` and add it to
+`src/images.ts`. `public/logo.png` is only the browser-tab icon.

@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Dictionary } from "@/dictionaries";
 import { sections } from "@/site";
 import { buttonGold, buttonOutline, container } from "../ui";
+import { images } from "@/images";
 
 export default function Hero({ hero }: { hero: Dictionary["hero"] }) {
   return (
@@ -23,11 +24,10 @@ export default function Hero({ hero }: { hero: Dictionary["hero"] }) {
         </div>
       </div>
       <Image
-        src="/images/engineer.jpg"
+        src={images.engineer}
         alt={hero.imageAlt}
-        width={1400}
-        height={931}
-        priority
+        preload
+        placeholder="blur"
         sizes="(min-width: 1024px) 520px, 100vw"
         className="enter-image h-[min(640px,120vw)] [--d:200ms] w-full max-w-[520px] flex-[1_1_380px] object-cover object-[28%_center]"
       />

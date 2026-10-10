@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { contact } from "@/site";
 import { eyebrow } from "../ui";
+import { images } from "@/images";
 
 // Direct sales email and phone beside an inquiry form.
 export default function ContactAside({
@@ -27,10 +28,10 @@ export default function ContactAside({
         </a>
       </div>
       <Image
-        src="/images/engineer.jpg"
+        src={images.engineer}
         alt=""
-        width={600}
-        height={480}
+        placeholder="blur"
+        sizes="(min-width: 1024px) 400px, 100vw"
         className="h-60 w-full object-cover object-[28%_center]"
       />
     </aside>

@@ -9,18 +9,19 @@ import Filmstrip from "@/components/page/Filmstrip";
 import PageHero from "@/components/page/PageHero";
 import SectionIntro from "@/components/page/SectionIntro";
 import { buttonInk, container, h2Cream } from "@/components/ui";
+import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/industries">) =>
   pageMetadata(params, "industries");
 
-const images = [
-  "/images/milling.jpg",
-  "/images/bottling-line.jpg",
-  "/images/robotic-arm.jpg",
-  "/images/cnc-machining.jpg",
-  "/images/conveyor-line.jpg",
-  "/images/port-terminal.jpg",
-  "/images/workshop.jpg",
+const photos = [
+  images.milling,
+  images.bottlingLine,
+  images.roboticArm,
+  images.cncMachining,
+  images.conveyorLine,
+  images.portTerminal,
+  images.workshop,
 ];
 
 export default async function Industries({ params }: PageProps<"/[lang]/industries">) {
@@ -33,7 +34,7 @@ export default async function Industries({ params }: PageProps<"/[lang]/industri
       <PageHero
         title={hero.title}
         text={hero.text}
-        image="/images/bottling-line.jpg"
+        image={images.bottlingLine}
         imageAlt={hero.imageAlt}
       />
 
@@ -44,7 +45,7 @@ export default async function Industries({ params }: PageProps<"/[lang]/industri
           frames={strip.items.map((item, i) => ({
             title: item.title,
             text: item.text,
-            image: images[i],
+            image: photos[i],
             number: String(i + 1).padStart(2, "0"),
             footnote: `${strip.sourceLabel}: ${item.source}`,
           }))}

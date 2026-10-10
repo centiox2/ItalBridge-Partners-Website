@@ -9,17 +9,18 @@ import CtaBand from "@/components/page/CtaBand";
 import PageHero from "@/components/page/PageHero";
 import SectionIntro from "@/components/page/SectionIntro";
 import { buttonInk, eyebrow } from "@/components/ui";
+import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/services">) =>
   pageMetadata(params, "services");
 
-const images = [
-  "/images/nairobi.jpg",
-  "/images/workshop.jpg",
-  "/images/conveyor-line.jpg",
-  "/images/cnc-machining.jpg",
-  "/images/port-terminal.jpg",
-  "/images/robotic-arm.jpg",
+const photos = [
+  images.nairobi,
+  images.workshop,
+  images.conveyorLine,
+  images.cncMachining,
+  images.portTerminal,
+  images.roboticArm,
 ];
 
 export default async function Services({ params }: PageProps<"/[lang]/services">) {
@@ -32,7 +33,7 @@ export default async function Services({ params }: PageProps<"/[lang]/services">
       <PageHero
         title={hero.title}
         text={hero.text}
-        image="/images/container-port.jpg"
+        image={images.containerPort}
         imageAlt={hero.imageAlt}
         objectPosition="40% center"
       />
@@ -46,7 +47,7 @@ export default async function Services({ params }: PageProps<"/[lang]/services">
                 className={`mx-auto flex max-w-[1344px] flex-wrap ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
               >
                 <div className="group relative min-h-[380px] flex-[1_1_min(440px,100%)] overflow-hidden">
-                  <Image src={images[i]} alt="" fill sizes="(min-width: 1024px) 600px, 100vw" className="zoom object-cover" />
+                  <Image src={photos[i]} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 600px, 100vw" className="zoom object-cover" />
                 </div>
                 <div className="reveal flex flex-[1.2_1_min(520px,100%)] flex-col justify-center gap-3.5 px-4 py-14 sm:px-14">
                   <div className="font-serif text-[64px] leading-none text-gold">

@@ -11,15 +11,16 @@ import PageHero from "@/components/page/PageHero";
 import SectionIntro from "@/components/page/SectionIntro";
 import { inquiryFields } from "@/components/page/fields";
 import { buttonGold, buttonInk, container, h2Cream } from "@/components/ui";
+import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/manufacturers">) =>
   pageMetadata(params, "manufacturers");
 
 const stepImages = [
-  "/images/engineer.jpg",
-  "/images/workshop.jpg",
-  "/images/nairobi.jpg",
-  "/images/container-port.jpg",
+  images.engineer,
+  images.workshop,
+  images.nairobi,
+  images.containerPort,
 ];
 
 export default async function Manufacturers({ params }: PageProps<"/[lang]/manufacturers">) {
@@ -32,7 +33,7 @@ export default async function Manufacturers({ params }: PageProps<"/[lang]/manuf
 
   return (
     <>
-      <PageHero title={hero.title} text={hero.text} image="/images/milling.jpg" imageAlt={hero.imageAlt}>
+      <PageHero title={hero.title} text={hero.text} image={images.milling} imageAlt={hero.imageAlt}>
         <a href="#inquiry" className={buttonGold}>
           {hero.cta}
         </a>

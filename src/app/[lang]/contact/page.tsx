@@ -9,6 +9,7 @@ import InquiryForm from "@/components/page/InquiryForm";
 import PageHero from "@/components/page/PageHero";
 import { inquiryFields } from "@/components/page/fields";
 import { container, eyebrow, h2 } from "@/components/ui";
+import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/contact">) =>
   pageMetadata(params, "contact");
@@ -47,7 +48,7 @@ export default async function Contact({ params }: PageProps<"/[lang]/contact">) 
       <PageHero
         title={hero.title}
         text={hero.text}
-        image="/images/nairobi.jpg"
+        image={images.nairobi}
         imageAlt={hero.imageAlt}
         objectPosition="55% center"
       />
@@ -110,7 +111,7 @@ export default async function Contact({ params }: PageProps<"/[lang]/contact">) 
           </div>
         </div>
         <Image
-          src="/images/corridor-map.svg"
+          src={images.corridorMap}
           alt={location.mapAlt}
           width={1600}
           height={900}

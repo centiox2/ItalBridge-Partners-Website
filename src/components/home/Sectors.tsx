@@ -2,14 +2,15 @@ import Image from "next/image";
 import type { Dictionary } from "@/dictionaries";
 import { sections } from "@/site";
 import { container, h2, ruleRow } from "../ui";
+import { images } from "@/images";
 
-const images = [
-  "/images/bottling-line.jpg",
-  "/images/robotic-arm.jpg",
-  "/images/milling.jpg",
-  "/images/conveyor-line.jpg",
-  "/images/workshop.jpg",
-  "/images/cnc-machining.jpg",
+const photos = [
+  images.bottlingLine,
+  images.roboticArm,
+  images.milling,
+  images.conveyorLine,
+  images.workshop,
+  images.cncMachining,
 ];
 
 export default function Sectors({ sectors }: { sectors: Dictionary["sectors"] }) {
@@ -24,10 +25,11 @@ export default function Sectors({ sectors }: { sectors: Dictionary["sectors"] })
           >
             <div className="flex-none overflow-hidden">
               <Image
-                src={images[i]}
+                src={photos[i]}
                 alt=""
-                width={224}
-                height={168}
+                width={112}
+                height={84}
+                placeholder="blur"
                 className="zoom h-21 w-28 object-cover"
               />
             </div>

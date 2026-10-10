@@ -13,18 +13,19 @@ import PageHero from "@/components/page/PageHero";
 import SectionIntro from "@/components/page/SectionIntro";
 import { inquiryFields } from "@/components/page/fields";
 import { buttonGold, buttonInk, container, h2, h2Cream } from "@/components/ui";
+import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/buyers">) =>
   pageMetadata(params, "buyers");
 
 const reasonImages = [
-  "/images/nairobi.jpg",
-  "/images/cnc-machining.jpg",
-  "/images/container-port.jpg",
-  "/images/nairobi-skyline.jpg",
-  "/images/engineer.jpg",
+  images.nairobi,
+  images.cncMachining,
+  images.containerPort,
+  images.nairobiSkyline,
+  images.engineer,
 ];
-const equipmentImages = ["/images/milling.jpg", "/images/robotic-arm.jpg", "/images/cnc-machining.jpg"];
+const equipmentImages = [images.milling, images.roboticArm, images.cncMachining];
 
 export default async function Buyers({ params }: PageProps<"/[lang]/buyers">) {
   const { lang } = await params;
@@ -36,7 +37,7 @@ export default async function Buyers({ params }: PageProps<"/[lang]/buyers">) {
 
   return (
     <>
-      <PageHero title={hero.title} text={hero.text} image="/images/nairobi-skyline.jpg" imageAlt={hero.imageAlt}>
+      <PageHero title={hero.title} text={hero.text} image={images.nairobiSkyline} imageAlt={hero.imageAlt}>
         <a href="#inquiry" className={buttonGold}>
           {hero.cta}
         </a>
@@ -69,7 +70,7 @@ export default async function Buyers({ params }: PageProps<"/[lang]/buyers">) {
         <ul className="m-0 flex list-none flex-wrap gap-1.5 px-1.5 py-0">
           {equipment.items.map((item, i) => (
             <li key={item.title} className="group relative flex min-h-[520px] flex-[1_1_min(380px,100%)] items-end overflow-hidden">
-              <Image src={equipmentImages[i]} alt="" fill sizes="(min-width: 1024px) 33vw, 100vw" className="zoom object-cover" />
+              <Image src={equipmentImages[i]} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 33vw, 100vw" className="zoom object-cover" />
               <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(7,21,39,.95),rgba(7,21,39,.1)_65%)]" />
               <div className="reveal relative p-8">
                 <div className="font-serif text-[44px] leading-none text-gold">{String(i + 1).padStart(2, "0")}</div>

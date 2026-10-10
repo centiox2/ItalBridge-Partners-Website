@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n";
 import { href } from "@/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 import NavLinks from "./NavLinks";
+import { images } from "@/images";
 
 export default function Header({
   lang,
@@ -31,11 +32,11 @@ export default function Header({
         className="inline-flex items-center gap-3.5"
       >
         <Image
-          src="/images/logo.png"
+          src={images.logo}
           alt={nav.logoAlt}
-          width={420}
-          height={353}
-          priority
+          width={62}
+          height={52}
+          loading="eager"
           className="h-[52px] w-auto"
         />
         <span className="font-serif text-[28px]">

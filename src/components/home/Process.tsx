@@ -2,14 +2,15 @@ import Image from "next/image";
 import type { Dictionary } from "@/dictionaries";
 import { sections } from "@/site";
 import { container, h2 } from "../ui";
+import { images } from "@/images";
 
-const images = [
-  "/images/nairobi.jpg",
-  "/images/engineer.jpg",
-  "/images/cnc-machining.jpg",
-  "/images/conveyor-line.jpg",
-  "/images/container-port.jpg",
-  "/images/robotic-arm.jpg",
+const photos = [
+  images.nairobi,
+  images.engineer,
+  images.cncMachining,
+  images.conveyorLine,
+  images.containerPort,
+  images.roboticArm,
 ];
 
 // Frames cycle navy, slate, cream; image heights alternate tall and short.
@@ -46,11 +47,10 @@ export default function Process({
             >
               <div className="overflow-hidden">
                 <Image
-                  src={images[i]}
+                  src={photos[i]}
                   alt=""
-                  width={880}
-                  height={i % 2 === 0 ? 720 : 500}
-                  sizes="440px"
+                  placeholder="blur"
+                  sizes="(min-width: 520px) 440px, 85vw"
                   className={`zoom w-full object-cover ${i % 2 === 0 ? "h-[360px]" : "h-[250px]"}`}
                 />
               </div>

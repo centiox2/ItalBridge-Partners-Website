@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import type { ReactNode } from "react";
 import { container, h1Page } from "../ui";
 
@@ -13,7 +13,7 @@ export default function PageHero({
 }: {
   title: string;
   text: string;
-  image: string;
+  image: StaticImageData;
   imageAlt: string;
   objectPosition?: string;
   children?: ReactNode;
@@ -30,9 +30,8 @@ export default function PageHero({
       <Image
         src={image}
         alt={imageAlt}
-        width={1000}
-        height={1120}
-        priority
+        preload
+        placeholder="blur"
         sizes="(min-width: 1024px) 500px, 100vw"
         style={{ objectPosition }}
         className="enter-image h-[min(560px,110vw)] w-full max-w-[500px] flex-[1_1_380px] object-cover [--d:200ms]"

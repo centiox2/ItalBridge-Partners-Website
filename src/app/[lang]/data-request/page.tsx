@@ -7,11 +7,12 @@ import Filmstrip from "@/components/page/Filmstrip";
 import InquiryForm from "@/components/page/InquiryForm";
 import SectionIntro from "@/components/page/SectionIntro";
 import { container, eyebrow, h1Page, h2Cream } from "@/components/ui";
+import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/data-request">) =>
   pageMetadata(params, "dataRequest");
 
-const images = ["/images/engineer.jpg", "/images/cnc-machining.jpg", "/images/workshop.jpg"];
+const photos = [images.engineer, images.cncMachining, images.workshop];
 
 export default async function DataRequest({ params }: PageProps<"/[lang]/data-request">) {
   const { lang } = await params;
@@ -31,7 +32,7 @@ export default async function DataRequest({ params }: PageProps<"/[lang]/data-re
         <SectionIntro title={rights.title} text={rights.text} />
         <Filmstrip
           label={rights.label}
-          frames={rights.items.map((item, i) => ({ ...item, image: images[i] }))}
+          frames={rights.items.map((item, i) => ({ ...item, image: photos[i] }))}
         />
       </section>
 

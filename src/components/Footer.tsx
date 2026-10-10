@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Dictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
 import { contact, href, socials } from "@/site";
+import { images } from "@/images";
 
 async function currentYear() {
   "use cache";
@@ -28,7 +29,7 @@ export default async function Footer({
       <div className="mx-auto flex max-w-[1344px] flex-wrap gap-9 px-4 pt-14 pb-5 sm:px-12">
         <div className="flex-[2_1_280px]">
           <div className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="" width={420} height={353} className="h-11 w-auto" />
+            <Image src={images.logo} alt="" width={52} height={44} className="h-11 w-auto" />
             <span className="font-serif text-2xl">ItalBridge Partners</span>
           </div>
           <p className="mt-3 mb-4 max-w-[340px] text-sand">{footer.tagline}</p>

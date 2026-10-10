@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 export type Frame = {
   title: string;
   text: string;
-  image: string;
+  image: StaticImageData;
   number?: string;
   footnote?: string;
 };
@@ -45,9 +45,8 @@ export default function Filmstrip({
               <Image
                 src={frame.image}
                 alt=""
-                width={840}
-                height={i % 2 === 0 ? 680 : 480}
-                sizes="420px"
+                placeholder="blur"
+                sizes="(min-width: 520px) 420px, 85vw"
                 className={`zoom w-full object-cover ${heights[i % 2]}`}
               />
             </div>

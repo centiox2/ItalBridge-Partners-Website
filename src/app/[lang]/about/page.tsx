@@ -11,11 +11,12 @@ import Filmstrip from "@/components/page/Filmstrip";
 import PageHero from "@/components/page/PageHero";
 import SectionIntro from "@/components/page/SectionIntro";
 import { buttonInk, container, h2Cream } from "@/components/ui";
+import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/about">) =>
   pageMetadata(params, "about");
 
-const guideImages = ["/images/cnc-machining.jpg", "/images/nairobi.jpg", "/images/conveyor-line.jpg"];
+const guideImages = [images.cncMachining, images.nairobi, images.conveyorLine];
 
 export default async function About({ params }: PageProps<"/[lang]/about">) {
   const { lang } = await params;
@@ -27,7 +28,7 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
       <PageHero
         title={hero.title}
         text={hero.text}
-        image="/images/engineer.jpg"
+        image={images.engineer}
         imageAlt={hero.imageAlt}
         objectPosition="28% center"
       />
@@ -45,9 +46,10 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
 
       <section className="relative flex min-h-[560px] items-end overflow-hidden">
         <Image
-          src="/images/port-terminal.jpg"
+          src={images.portTerminal}
           alt={banner.imageAlt}
           fill
+          placeholder="blur"
           sizes="100vw"
           className="object-cover"
         />
@@ -86,7 +88,7 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
           </div>
           <div className="reveal flex-[1_1_min(380px,100%)]">
             <Image
-              src="/images/corridor-map.svg"
+              src={images.corridorMap}
               alt={corridor.mapAlt}
               width={1600}
               height={900}

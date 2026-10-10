@@ -7,6 +7,7 @@ import { siteUrl } from "@/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../globals.css";
+import { images } from "@/images";
 
 const gloock = Gloock({
   weight: "400",
@@ -32,7 +33,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
     description: dict.meta.description,
-    icons: { icon: "/images/logo.png" },
+    icons: { icon: images.logo.src },
     alternates: {
       canonical: `/${lang}`,
       languages: {
