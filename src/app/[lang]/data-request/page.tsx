@@ -24,8 +24,8 @@ export default async function DataRequest({ params }: PageProps<"/[lang]/data-re
     <>
       <section className={`${container} pt-10 pb-18`}>
         <div className={`${eyebrow} enter mb-3 text-gold`}>{page.eyebrow}</div>
-        <h1 className={`${h1Page} enter mb-5 [--d:100ms]`}>{page.title}</h1>
-        <p className="enter m-0 max-w-[760px] text-[21px] text-sand [--d:250ms]">{page.intro}</p>
+        <h1 className={`${h1Page} enter mb-5`}>{page.title}</h1>
+        <p className="enter m-0 max-w-[760px] text-[21px] text-sand [--d:80ms]">{page.intro}</p>
       </section>
 
       <section className="bg-navy pt-24 pb-20">

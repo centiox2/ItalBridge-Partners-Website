@@ -23,9 +23,9 @@ export default function PageHero({
       className={`${container} flex flex-wrap items-center gap-x-18 gap-y-10 pt-10 pb-22`}
     >
       <div className="flex flex-[1.3_1_min(540px,100%)] flex-col gap-6.5">
-        <h1 className={`${h1Page} enter [--d:100ms]`}>{title}</h1>
-        <p className="enter m-0 max-w-[600px] text-[21px] text-sand [--d:250ms]">{text}</p>
-        {children && <div className="enter flex flex-wrap gap-3 [--d:400ms]">{children}</div>}
+        <h1 className={`${h1Page} enter`}>{title}</h1>
+        <p className="enter m-0 max-w-[600px] text-[21px] text-sand [--d:80ms]">{text}</p>
+        {children && <div className="enter flex flex-wrap gap-3 [--d:160ms]">{children}</div>}
       </div>
       <Image
         src={image}
@@ -34,7 +34,7 @@ export default function PageHero({
         placeholder="blur"
         sizes="(min-width: 1024px) 500px, 100vw"
         style={{ objectPosition }}
-        className="enter-image h-[min(560px,110vw)] w-full max-w-[500px] flex-[1_1_380px] object-cover [--d:200ms]"
+        className="enter-image h-[min(560px,110vw)] w-full max-w-[500px] flex-[1_1_380px] object-cover"
       />
     </section>
   );

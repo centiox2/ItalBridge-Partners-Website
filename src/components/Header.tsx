@@ -25,7 +25,7 @@ export default function Header({
   ];
 
   return (
-    <header className="enter mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-x-7 gap-y-4 px-4 py-5.5 sm:px-12">
+    <header className="mx-auto flex max-w-[1344px] flex-wrap items-center justify-between gap-x-7 gap-y-4 px-4 py-5.5 sm:px-12">
       <Link
         href={href(lang, "home")}
         aria-label={nav.homeLabel}

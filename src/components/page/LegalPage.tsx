@@ -37,8 +37,8 @@ export default function LegalPage({
   return (
     <>
       <section className={`${container} pt-10 pb-18`}>
-        <h1 className={`${h1Page} enter mb-5 [--d:100ms]`}>{title}</h1>
-        <p className="enter m-0 max-w-[760px] text-[21px] text-sand [--d:250ms]">{intro}</p>
+        <h1 className={`${h1Page} enter mb-5`}>{title}</h1>
+        <p className="enter m-0 max-w-[760px] text-[21px] text-sand [--d:80ms]">{intro}</p>
       </section>
       <section className="bg-cream text-ink">
         <div className={`${container} flex flex-wrap items-start`}>

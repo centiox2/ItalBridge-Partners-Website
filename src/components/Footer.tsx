@@ -43,21 +43,22 @@ export default async function Footer({
             ))}
           </ul>
         </div>
+        {/* Footer links skip prefetching: it would compete with page images on slow connections. */}
         <div className={`${column} flex-[1_1_140px]`}>
           <b className={heading}>{footer.navigate}</b>
-          <Link href={href(lang, "home")} className={link}>{nav.home}</Link>
-          <Link href={href(lang, "about")} className={link}>{nav.about}</Link>
-          <Link href={href(lang, "services")} className={link}>{nav.services}</Link>
-          <Link href={href(lang, "industries")} className={link}>{nav.industries}</Link>
-          <Link href={href(lang, "manufacturers")} className={link}>{nav.manufacturers}</Link>
-          <Link href={href(lang, "buyers")} className={link}>{nav.buyers}</Link>
+          <Link prefetch={false} href={href(lang, "home")} className={link}>{nav.home}</Link>
+          <Link prefetch={false} href={href(lang, "about")} className={link}>{nav.about}</Link>
+          <Link prefetch={false} href={href(lang, "services")} className={link}>{nav.services}</Link>
+          <Link prefetch={false} href={href(lang, "industries")} className={link}>{nav.industries}</Link>
+          <Link prefetch={false} href={href(lang, "manufacturers")} className={link}>{nav.manufacturers}</Link>
+          <Link prefetch={false} href={href(lang, "buyers")} className={link}>{nav.buyers}</Link>
         </div>
         <div className={`${column} flex-[1_1_170px]`}>
           <b className={heading}>{footer.legal}</b>
-          <Link href={href(lang, "privacy")} className={link}>{footer.privacy}</Link>
-          <Link href={href(lang, "terms")} className={link}>{footer.terms}</Link>
-          <Link href={href(lang, "cookies")} className={link}>{footer.cookies}</Link>
-          <Link href={href(lang, "dataRequest")} className={link}>{footer.dataRequest}</Link>
+          <Link prefetch={false} href={href(lang, "privacy")} className={link}>{footer.privacy}</Link>
+          <Link prefetch={false} href={href(lang, "terms")} className={link}>{footer.terms}</Link>
+          <Link prefetch={false} href={href(lang, "cookies")} className={link}>{footer.cookies}</Link>
+          <Link prefetch={false} href={href(lang, "dataRequest")} className={link}>{footer.dataRequest}</Link>
         </div>
         <div className={`${column} flex-[1.4_1_220px]`}>
           <b className={heading}>{footer.contact}</b>
