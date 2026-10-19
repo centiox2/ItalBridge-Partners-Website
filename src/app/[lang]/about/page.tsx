@@ -1,116 +1,95 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPage } from "@/dictionaries";
+import { getDictionary, getPage } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { href } from "@/site";
-import ExportsChart from "@/components/home/ExportsChart";
 import CtaBand from "@/components/page/CtaBand";
-import Filmstrip from "@/components/page/Filmstrip";
-import PageHero from "@/components/page/PageHero";
-import SectionIntro from "@/components/page/SectionIntro";
-import { buttonInk, container, h2Cream } from "@/components/ui";
+import PageHeader from "@/components/page/PageHeader";
+import { container, h2, photo } from "@/components/ui";
 import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/about">) =>
   pageMetadata(params, "about");
 
-const guideImages = [images.cncMachining, images.nairobi, images.conveyorLine];
-
 export default async function About({ params }: PageProps<"/[lang]/about">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { hero, story, banner, guides, corridor, cta } = await getPage(lang, "about");
+  const [{ nav }, { hero, why, different, vetting, cta }] = await Promise.all([
+    getDictionary(lang),
+    getPage(lang, "about"),
+  ]);
 
   return (
     <>
-      <PageHero
-        title={hero.title}
-        text={hero.text}
-        image={images.engineer}
-        imageAlt={hero.imageAlt}
-        objectPosition="28% center"
-      />
+      <PageHeader lang={lang} nav={nav} crumb={nav.about} title={hero.title} text={hero.text} />
 
-      <section className="bg-cream text-ink">
-        <div className={`${container} flex flex-wrap gap-x-20 gap-y-10 py-24`}>
-          <h2 className={`${h2Cream} reveal flex-[1_1_min(420px,100%)]`}>{story.title}</h2>
-          <div className="flex flex-[1.3_1_min(520px,100%)] flex-col gap-5 text-[19px]">
-            {story.paragraphs.map((p) => (
-              <p key={p} className="reveal m-0">{p}</p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative flex min-h-[560px] items-end overflow-hidden">
+      <figure className={container}>
         <Image
-          src={images.portTerminal}
-          alt={banner.imageAlt}
-          fill
+          src={images.nairobi}
+          alt={hero.imageAlt}
           placeholder="blur"
-          sizes="100vw"
-          className="object-cover"
+          preload
+          fetchPriority="high"
+          sizes="(min-width: 1400px) 1336px, 100vw"
+          className={`${photo} aspect-[21/8] min-h-[220px]`}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(7,21,39,.92),rgba(7,21,39,.15)_70%)]" />
-        <div className={`${container} relative w-full py-16`}>
-          <p className="reveal m-0 max-w-[1000px] font-serif text-[clamp(38px,5.4vw,84px)] leading-[1.02]">
-            {banner.text}
-          </p>
+        <figcaption className="mt-3 text-sm text-faint">{hero.caption}</figcaption>
+      </figure>
+
+      <section className={`${container} flex flex-wrap gap-16 py-32`}>
+        <h2 className={`${h2} flex-[1_1_320px]`}>{why.title}</h2>
+        <div className="flex flex-[2_1_min(640px,100%)] flex-col gap-7 text-[19px] leading-[1.65] text-body">
+          {why.paragraphs.map((p) => (
+            <p key={p} className="reveal m-0">
+              {p}
+            </p>
+          ))}
+          <p className="reveal m-0 font-medium text-ink">{why.conclusion}</p>
         </div>
       </section>
 
-      <section className="bg-navy pt-24 pb-20">
-        <SectionIntro title={guides.title} text={guides.intro} />
-        <Filmstrip
-          label={guides.title}
-          frames={guides.items.map((item, i) => ({ ...item, image: guideImages[i] }))}
-        />
-      </section>
-
-      <section className="bg-cream text-ink">
-        <div className={`${container} flex flex-wrap items-start gap-x-18 gap-y-10 py-24`}>
-          <div className="flex-[1.2_1_min(520px,100%)]">
-            <h2 className={`${h2Cream} reveal mb-5`}>{corridor.title}</h2>
-            {corridor.paragraphs.map((p, i) => (
-              <p key={p} className={`reveal m-0 text-lg ${i === corridor.paragraphs.length - 1 ? "mb-8" : "mb-4"}`}>
-                {p}
-              </p>
+      <section className="bg-paper">
+        <div className={`${container} py-32`}>
+          <h2 className={`${h2} mb-14 max-w-[700px]`}>{different.title}</h2>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-x-14 gap-y-11">
+            {different.items.map((item, i) => (
+              <div key={item.title} className={`reveal pt-5 ${i < 3 ? "border-t-2 border-ink" : "border-t border-rule"}`}>
+                <h3 className="m-0 mb-2 text-xl font-semibold">{item.title}</h3>
+                <p className="m-0 leading-relaxed text-body">{item.text}</p>
+              </div>
             ))}
-            <ExportsChart
-              totalLabel={corridor.totalLabel}
-              totalValue={corridor.totalValue}
-              machineryLabel={corridor.machineryLabel}
-              machineryValue={corridor.machineryValue}
-              machineryShare={55 / 154}
-            />
-          </div>
-          <div className="reveal flex-[1_1_min(380px,100%)]">
-            <Image
-              src={images.corridorMap}
-              alt={corridor.mapAlt}
-              width={1600}
-              height={900}
-              className="h-[340px] w-full object-cover"
-            />
-            <p className="mt-4 mb-0 font-serif text-[34px] leading-[1.1] text-navy">{corridor.mapTitle}</p>
-            <p className="mt-1 mb-0 text-slate">{corridor.mapCaption}</p>
           </div>
         </div>
       </section>
 
-      <CtaBand title={cta.title} text={cta.text}>
-        <Link href={href(lang, "services")} className={buttonInk}>
-          {cta.primary}
-        </Link>
-        <Link
-          href={href(lang, "contact")}
-          className="lift inline-flex min-h-11 items-center border-[1.5px] border-ink px-7 py-3.5 font-bold"
-        >
-          {cta.secondary}
-        </Link>
-      </CtaBand>
+      <section className={`${container} flex flex-wrap items-center gap-12 py-32`}>
+        <Image
+          src={images.engineer}
+          alt={vetting.imageAlt}
+          placeholder="blur"
+          sizes="(min-width: 900px) 50vw, 100vw"
+          className={`${photo} reveal aspect-[4/3] min-w-0 flex-[1_1_min(420px,100%)]`}
+        />
+        <div className="flex-[1_1_min(420px,100%)]">
+          <h2 className={`${h2} mb-4.5`}>{vetting.title}</h2>
+          <p className="m-0 mb-6 max-w-[50ch] text-[17px] leading-[1.65] text-body">{vetting.text}</p>
+          <ul className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3.5 p-0">
+            {vetting.criteria.map((c) => (
+              <li key={c} className="rounded-lg bg-paper px-5 py-4.5 font-medium">
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <CtaBand
+        title={cta.title}
+        text={cta.text}
+        primary={{ href: href(lang, "contact"), label: cta.primary }}
+        secondary={{ href: href(lang, "services"), label: cta.secondary }}
+      />
     </>
   );
 }

@@ -2,9 +2,12 @@ import Link from "next/link";
 import type { Dictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
 import { contact, href, type Route } from "@/site";
-import { container, eyebrow, h1Page } from "../ui";
+import PageHeader from "./PageHeader";
+import { container } from "../ui";
 
 type Doc = Extract<Route, "privacy" | "terms" | "cookies" | "dataRequest">;
+
+const label = "mb-2 text-sm font-semibold text-sub";
 
 // Shared layout for the Privacy, Terms and Cookie pages: sticky sidebar
 // with the other legal documents and a table of contents.
@@ -25,71 +28,62 @@ export default function LegalPage({
   lastUpdated: string;
   sections: { title: string; text: string }[];
 }) {
-  const { legal, footer } = dict;
+  const { nav, legal, footer } = dict;
   const docs: { route: Doc; label: string }[] = [
     { route: "privacy", label: footer.privacy },
     { route: "terms", label: footer.terms },
     { route: "cookies", label: footer.cookies },
-    { route: "dataRequest", label: legal.dataRequest },
+    { route: "dataRequest", label: footer.dataRequest },
   ];
   const email = contact.emails[0];
 
   return (
     <>
-      <section className={`${container} pt-10 pb-18`}>
-        <h1 className={`${h1Page} enter mb-5`}>{title}</h1>
-        <p className="enter m-0 max-w-[760px] text-[21px] text-sand [--d:80ms]">{intro}</p>
-      </section>
-      <section className="bg-cream text-ink">
-        <div className={`${container} flex flex-wrap items-start`}>
-          <aside className="mt-[-1px] box-border w-full bg-navy px-7 py-8 text-[15px] text-cream md:sticky md:top-0 md:mr-14 md:w-auto md:flex-[0_1_340px]">
-            <div className={`${eyebrow} mb-1.5 text-gold`}>{legal.documents}</div>
-            <nav aria-label={legal.documents}>
-              {docs.map((d) => (
-                <Link
-                  key={d.route}
-                  href={href(lang, d.route)}
-                  aria-current={d.route === current ? "page" : undefined}
-                  className={`block py-1.5 ${d.route === current ? "font-bold text-gold" : "hover:text-gold"}`}
-                >
-                  {d.label}
-                </Link>
-              ))}
-            </nav>
-            <div className={`${eyebrow} mt-6 mb-1.5 text-gold`}>{legal.lastUpdated}</div>
-            <div>{lastUpdated}</div>
-            <div className={`${eyebrow} mt-6 mb-1.5 text-gold`}>{legal.onThisPage}</div>
-            <nav aria-label={legal.onThisPage}>
-              {sections.map((s, i) => (
-                <a key={s.title} href={`#s${i + 1}`} className="block py-1.5 text-sand hover:text-gold">
-                  {i + 1}. {s.title}
-                </a>
-              ))}
-            </nav>
-          </aside>
-          <article className="flex-[1_1_min(560px,100%)] pt-14 pb-22">
-            {sections.map((s, i) => (
-              <section key={s.title} id={`s${i + 1}`} className="scroll-mt-4 border-t border-navy py-7.5">
-                <h2 className="m-0 mb-2.5 font-serif text-[28px] leading-[1.15] font-normal text-navy">
-                  {i + 1}. {s.title}
-                </h2>
-                <p className="m-0 max-w-[760px] text-lg">{s.text}</p>
-              </section>
+      <PageHeader lang={lang} nav={nav} crumb={title} title={title} text={intro} />
+      <div className={`${container} flex flex-wrap items-start gap-x-16 gap-y-10 pb-28`}>
+        <aside className="w-full rounded-xl bg-paper p-7 text-[15px] md:sticky md:top-6 md:w-auto md:flex-[0_1_320px]">
+          <div className={label}>{legal.documents}</div>
+          <nav aria-label={legal.documents} className="mb-6">
+            {docs.map((d) => (
+              <Link
+                key={d.route}
+                href={href(lang, d.route)}
+                aria-current={d.route === current ? "page" : undefined}
+                className={`block py-1.5 ${d.route === current ? "font-semibold" : "text-body hover:text-ink hover:underline"}`}
+              >
+                {d.label}
+              </Link>
             ))}
-          </article>
-        </div>
-      </section>
-      <section className="bg-gold text-ink">
-        <div className={`${container} flex flex-wrap items-center justify-between gap-x-12 gap-y-4 py-16`}>
-          <h2 className="m-0 font-serif text-[clamp(30px,3.4vw,46px)] font-normal">{legal.questions}</h2>
-          <p className="m-0 text-[19px]">
-            {legal.contactUs}{" "}
-            <a href={`mailto:${email}`} className="font-bold underline">
+          </nav>
+          <div className={label}>{legal.lastUpdated}</div>
+          <div className="mb-6 text-body">{lastUpdated}</div>
+          <div className={label}>{legal.onThisPage}</div>
+          <nav aria-label={legal.onThisPage}>
+            {sections.map((s, i) => (
+              <a key={s.title} href={`#s${i + 1}`} className="block py-1.5 text-body hover:text-ink hover:underline">
+                {i + 1}. {s.title}
+              </a>
+            ))}
+          </nav>
+        </aside>
+        <article className="flex-[1_1_min(560px,100%)] border-t border-ink">
+          {sections.map((s, i) => (
+            <section key={s.title} id={`s${i + 1}`} className="scroll-mt-6 border-b border-line py-7">
+              <h2 className="m-0 mb-2.5 text-2xl font-semibold tracking-[-0.02em]">
+                {i + 1}. {s.title}
+              </h2>
+              <p className="m-0 max-w-[70ch] text-[17px] leading-[1.65] text-body">{s.text}</p>
+            </section>
+          ))}
+          <p className="mt-10 mb-0 text-lg">
+            <strong className="font-semibold">{legal.questions}</strong> {legal.contactUs}{" "}
+            <a href={`mailto:${email}`} className="font-medium underline hover:text-hover">
               {email}
             </a>
+            .
           </p>
-        </div>
-      </section>
+        </article>
+      </div>
     </>
   );
 }

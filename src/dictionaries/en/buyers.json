@@ -1,69 +1,81 @@
 {
   "meta": {
-    "title": "For Buyers",
-    "description": "Direct access to verified Italian industrial equipment for East African manufacturers, through a single local accountable partner."
+    "title": "For buyers",
+    "description": "Source Italian industrial equipment with a partner on the ground in Nairobi: vetted manufacturers, specification review, delivery to site and after-sales support."
   },
   "hero": {
-    "title": "Direct Access to Trusted Italian Industrial Capability.",
-    "text": "ItalBridge Partners gives East African manufacturers direct access to verified Italian industrial equipment through a single local accountable partner, from sourcing through after-sales support.",
-    "cta": "Submit Requirement",
-    "imageAlt": "Nairobi skyline"
+    "title": "Italian industrial equipment, with a partner on the ground.",
+    "text": "Tell us what you need. We match you with a vetted Italian manufacturer, negotiate terms, deliver to your site and stay your local contact after commissioning.",
+    "primary": "Share a requirement",
+    "secondary": "Browse industries",
+    "imageAlt": "Bottling and packaging line in operation"
   },
   "reasons": {
-    "title": "Five reasons East African buyers work with ItalBridge.",
-    "intro": "Scroll the strip for each reason.",
-    "label": "Reasons",
+    "title": "Why buy through ItalBridge.",
     "items": [
       {
-        "title": "Trusted Manufacturers",
-        "text": "Access to a curated network of verified Italian industrial manufacturers, not anonymous supplier listings."
+        "title": "Vetted makers only",
+        "text": "Checked for capability, capacity, quality and export readiness."
       },
       {
-        "title": "Procurement Support",
-        "text": "We manage specifications, ordering, documentation, and production scheduling so your procurement process is coordinated end-to-end."
+        "title": "Your specification, reviewed",
+        "text": "A technical review before anything is quoted."
       },
       {
-        "title": "Logistics Coordination",
-        "text": "Freight, customs clearance, and delivery handled by a partner who understands East African import processes."
+        "title": "Delivered to your site",
+        "text": "Freight, documentation and customs clearance handled."
       },
       {
-        "title": "Local Point of Accountability",
-        "text": "A Nairobi-based partner accountable for the full transaction, not a remote supplier representative you can't reach."
-      },
-      {
-        "title": "Faster Issue Resolution",
-        "text": "When something goes wrong (a delay, a spec issue, a spare part) you have a local contact who owns the resolution."
+        "title": "Support that stays",
+        "text": "One local contact for installation, spares and service."
       }
     ]
   },
-  "band": {
-    "title": "Have an equipment requirement?",
-    "text": "Tell us what you need and we'll match it to the right Italian manufacturer.",
-    "button": "Submit Requirement"
-  },
-  "equipment": {
-    "title": "Italian industrial equipment, sourced through a local partner.",
-    "link": "View all industries we serve",
+  "checklist": {
+    "title": "Before you send a requirement.",
+    "text": "Tick off what you already know. The more you have, the faster we can match — but none of it is required to start.",
+    "of": "of",
+    "verdicts": [
+      "Start with whatever you know — we fill the gaps.",
+      "Good start. We can work with this.",
+      "Great — we can move quickly on this."
+    ],
     "items": [
       {
-        "title": "Machinery & Presses",
-        "text": "Vertical injection presses, moulding machinery, and polymer processing equipment."
+        "title": "Equipment type",
+        "hint": "e.g. filling line, CNC centre, block plant"
       },
       {
-        "title": "Automation & Control",
-        "text": "Control systems, robotic arms, and factory automation solutions."
+        "title": "Required output",
+        "hint": "Units per hour, tonnes per day"
       },
       {
-        "title": "Precision Components",
-        "text": "Machined parts, tooling, and engineered components to specification."
+        "title": "Product or material",
+        "hint": "What the equipment will process"
+      },
+      {
+        "title": "Site constraints",
+        "hint": "Space, power supply, utilities"
+      },
+      {
+        "title": "Target timeline",
+        "hint": "When it needs to be running"
+      },
+      {
+        "title": "Budget range",
+        "hint": "A rough figure helps us match"
       }
     ]
   },
-  "inquiry": {
-    "title": "Tell us about your equipment requirement.",
-    "text": "Share what you are looking to procure: machinery type, specifications, timelines. We will match your requirement to the appropriate Italian manufacturer and respond within one business day.",
-    "salesLabel": "Sales contact",
-    "phoneLabel": "Phone",
-    "subject": "Buyer requirement"
+  "form": {
+    "title": "Share a requirement.",
+    "text": "We review every requirement and come back with next steps.",
+    "countryHint": "Where the equipment will be installed.",
+    "message": "What do you need?",
+    "messageHint": "Equipment type, output, volumes, timeline.",
+    "messageError": "A sentence or two helps us start.",
+    "submit": "Send requirement",
+    "sent": "Thank you — your email app is opening.",
+    "subject": "Equipment requirement"
   }
 }

@@ -1,69 +1,81 @@
 {
   "meta": {
     "title": "Per gli acquirenti",
-    "description": "Accesso diretto ad attrezzature industriali italiane verificate per i produttori dell'Africa orientale, attraverso un unico partner locale responsabile."
+    "description": "Macchinari industriali italiani con un partner sul posto a Nairobi: produttori verificati, revisione della specifica, consegna al sito e assistenza post-vendita."
   },
   "hero": {
-    "title": "Accesso diretto a capacità industriali italiane affidabili.",
-    "text": "ItalBridge Partners offre ai produttori dell'Africa orientale accesso diretto ad attrezzature industriali italiane verificate, attraverso un unico partner locale responsabile, dalla selezione fino all'assistenza post-vendita.",
-    "cta": "Invia la tua richiesta",
-    "imageAlt": "Skyline di Nairobi"
+    "title": "Macchinari industriali italiani, con un partner sul posto.",
+    "text": "Diteci di cosa avete bisogno. Vi abbiniamo a un produttore italiano verificato, negoziamo le condizioni, consegniamo al vostro sito e restiamo il vostro referente locale dopo la messa in servizio.",
+    "primary": "Inviate una richiesta",
+    "secondary": "Esplora i settori",
+    "imageAlt": "Linea di imbottigliamento e confezionamento in funzione"
   },
   "reasons": {
-    "title": "Cinque motivi per cui gli acquirenti dell'Africa orientale scelgono ItalBridge.",
-    "intro": "Scorri la sequenza per scoprire ogni motivo.",
-    "label": "Motivi",
+    "title": "Perché acquistare tramite ItalBridge.",
     "items": [
       {
-        "title": "Produttori affidabili",
-        "text": "Accesso a una rete selezionata di produttori industriali italiani verificati, non a elenchi anonimi di fornitori."
+        "title": "Solo produttori verificati",
+        "text": "Controllati per capacità tecnica e produttiva, qualità e preparazione all'export."
       },
       {
-        "title": "Supporto agli acquisti",
-        "text": "Gestiamo specifiche, ordini, documentazione e pianificazione della produzione, così il tuo processo di acquisto è coordinato dall'inizio alla fine."
+        "title": "La vostra specifica, revisionata",
+        "text": "Una revisione tecnica prima di qualsiasi offerta."
       },
       {
-        "title": "Coordinamento logistico",
-        "text": "Trasporto, sdoganamento e consegna gestiti da un partner che conosce le procedure di importazione dell'Africa orientale."
+        "title": "Consegna al vostro sito",
+        "text": "Trasporto, documenti e sdoganamento gestiti."
       },
       {
-        "title": "Un referente locale responsabile",
-        "text": "Un partner con sede a Nairobi, responsabile dell'intera transazione, non un rappresentante di un fornitore lontano e difficile da raggiungere."
-      },
-      {
-        "title": "Risoluzione più rapida dei problemi",
-        "text": "Quando qualcosa va storto (un ritardo, un problema di specifiche, un ricambio) hai un referente locale che si fa carico della soluzione."
+        "title": "Un supporto che resta",
+        "text": "Un unico referente locale per installazione, ricambi e assistenza."
       }
     ]
   },
-  "band": {
-    "title": "Hai un'esigenza di macchinari?",
-    "text": "Raccontaci di cosa hai bisogno: individueremo il produttore italiano più adatto.",
-    "button": "Invia la tua richiesta"
-  },
-  "equipment": {
-    "title": "Attrezzature industriali italiane, tramite un partner locale.",
-    "link": "Scopri tutti i settori in cui operiamo",
+  "checklist": {
+    "title": "Prima di inviare una richiesta.",
+    "text": "Spuntate ciò che sapete già. Più informazioni avete, più rapido è l'abbinamento, ma nessuna è obbligatoria per iniziare.",
+    "of": "di",
+    "verdicts": [
+      "Partite da ciò che sapete: al resto pensiamo noi.",
+      "Buon inizio. Possiamo lavorarci.",
+      "Ottimo: possiamo muoverci rapidamente."
+    ],
     "items": [
       {
-        "title": "Macchinari e presse",
-        "text": "Presse a iniezione verticali, macchinari per lo stampaggio e attrezzature per la lavorazione dei polimeri."
+        "title": "Tipo di macchinario",
+        "hint": "es. linea di riempimento, centro CNC, impianto per blocchi"
       },
       {
-        "title": "Automazione e controllo",
-        "text": "Sistemi di controllo, bracci robotici e soluzioni per l'automazione di fabbrica."
+        "title": "Produzione richiesta",
+        "hint": "Pezzi all'ora, tonnellate al giorno"
       },
       {
-        "title": "Componenti di precisione",
-        "text": "Parti lavorate, attrezzature e componenti ingegnerizzati su specifica."
+        "title": "Prodotto o materiale",
+        "hint": "Cosa lavorerà la macchina"
+      },
+      {
+        "title": "Vincoli del sito",
+        "hint": "Spazio, alimentazione elettrica, utenze"
+      },
+      {
+        "title": "Tempistica",
+        "hint": "Quando deve essere operativa"
+      },
+      {
+        "title": "Fascia di budget",
+        "hint": "Una cifra indicativa ci aiuta nell'abbinamento"
       }
     ]
   },
-  "inquiry": {
-    "title": "Raccontaci la tua esigenza di macchinari.",
-    "text": "Indicaci cosa intendi acquistare: tipologia di macchinario, specifiche, tempistiche. Abbineremo la tua richiesta al produttore italiano più adatto e ti risponderemo entro un giorno lavorativo.",
-    "salesLabel": "Contatto commerciale",
-    "phoneLabel": "Telefono",
-    "subject": "Richiesta acquirente"
+  "form": {
+    "title": "Inviate una richiesta.",
+    "text": "Esaminiamo ogni richiesta e vi ricontattiamo con i passi successivi.",
+    "countryHint": "Dove verrà installato il macchinario.",
+    "message": "Di cosa avete bisogno?",
+    "messageHint": "Tipo di macchinario, produzione, volumi, tempi.",
+    "messageError": "Una o due frasi ci aiutano a iniziare.",
+    "submit": "Invia la richiesta",
+    "sent": "Grazie: si sta aprendo la vostra app di posta.",
+    "subject": "Richiesta di macchinari"
   }
 }

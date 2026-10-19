@@ -1,77 +1,126 @@
 {
   "meta": {
     "title": "Servizi",
-    "description": "ItalBridge gestisce ogni fase degli acquisti industriali internazionali, dalla qualificazione dell'acquirente all'assistenza post-vendita."
+    "description": "Sei fasi dalla richiesta all'operatività: qualifica degli acquirenti, analisi dei requisiti, scelta del produttore, struttura dell'accordo, logistica e dogana, assistenza post-vendita."
   },
   "hero": {
-    "title": "Un unico partner responsabile per l'intero ciclo di acquisto.",
-    "text": "Dalla qualificazione dell'acquirente all'assistenza post-vendita, ItalBridge gestisce ogni fase degli acquisti industriali internazionali, così né il produttore né l'acquirente devono farsi carico da soli del coordinamento.",
-    "imageAlt": "Navi portacontainer in ingresso in un porto"
+    "title": "Sei fasi dalla richiesta all'operatività.",
+    "text": "Ogni affare segue lo stesso percorso. Ogni fase ha un responsabile da parte nostra, così né l'acquirente né il produttore devono inseguire il passo successivo."
   },
-  "list": {
-    "title": "Sei servizi collegati, un unico ponte commerciale.",
-    "intro": "Ogni servizio corrisponde a una fase distinta del processo di acquisto internazionale. Nella pratica funzionano come una sequenza collegata: il risultato di una fase diventa il punto di partenza della successiva. ItalBridge gestisce l'intera sequenza, così la responsabilità non si perde mai nei passaggi.",
-    "deliverLabel": "Cosa offriamo",
+  "tabsLabel": "Fasi",
+  "weDo": "Cosa facciamo",
+  "youGet": "Cosa ricevete",
+  "stages": [
+    {
+      "name": "Individuazione e qualifica degli acquirenti",
+      "alt": "Skyline di Nairobi",
+      "body": "Troviamo aziende manifatturiere dell'Africa orientale con reali esigenze di macchinari e ne verifichiamo capacità, budget e tempi prima che qualcuno investa tempo in un'offerta.",
+      "we": [
+        "Individuiamo acquirenti con esigenze concrete",
+        "Verifichiamo capacità e tempi",
+        "Confermiamo decisori e budget"
+      ],
+      "you": [
+        "Un contatto qualificato, non un nominativo a freddo",
+        "Un quadro chiaro dell'opportunità"
+      ]
+    },
+    {
+      "name": "Analisi dei requisiti",
+      "alt": "Ingegnere che consulta un tablet in reparto",
+      "body": "Una revisione tecnica di specifiche, volumi produttivi e vincoli operativi, tradotta in un capitolato su cui il produttore può fare un'offerta.",
+      "we": [
+        "Esaminiamo specifiche e volumi",
+        "Annotiamo i vincoli del sito e operativi",
+        "Redigiamo un capitolato tecnico chiaro"
+      ],
+      "you": [
+        "Una specifica condivisa da entrambe le parti",
+        "Meno sorprese in fase di offerta"
+      ]
+    },
+    {
+      "name": "Scelta del produttore",
+      "alt": "Mandrino di una macchina CNC al lavoro",
+      "body": "Abbiniamo l'acquirente al produttore italiano più adatto della nostra rete verificata.",
+      "we": [
+        "Selezioniamo una rosa dalla rete verificata",
+        "Verifichiamo l'idoneità per capacità tecnica e produttiva",
+        "Presentiamo le due parti"
+      ],
+      "you": [
+        "Un produttore verificato per l'export",
+        "Un rapporto diretto, senza catene di agenti"
+      ]
+    },
+    {
+      "name": "Negoziazione e struttura dell'accordo",
+      "alt": "Linee di trasporto in un capannone produttivo",
+      "body": "Prezzo, condizioni, pagamento e clausole contrattuali vengono gestiti per entrambe le parti, perché l'accordo regga.",
+      "we": [
+        "Negoziamo prezzo e condizioni",
+        "Strutturiamo il pagamento",
+        "Coordiniamo le clausole contrattuali"
+      ],
+      "you": [
+        "Un accordo che funziona per entrambe le parti",
+        "Un unico referente per tutto il percorso"
+      ]
+    },
+    {
+      "name": "Coordinamento di logistica e dogana",
+      "alt": "Nave portacontainer in fase di attracco",
+      "body": "Trasporto, documenti e sdoganamento dalla fabbrica italiana al sito dell'acquirente.",
+      "we": [
+        "Coordiniamo il trasporto",
+        "Prepariamo i documenti di spedizione",
+        "Gestiamo lo sdoganamento"
+      ],
+      "you": [
+        "Macchinari consegnati al sito",
+        "Pratiche gestite dall'inizio alla fine"
+      ]
+    },
+    {
+      "name": "Assistenza post-vendita",
+      "alt": "Braccio robotico industriale in funzione",
+      "body": "Un unico referente locale per installazione, ricambi, domande tecniche e assistenza.",
+      "we": [
+        "Coordiniamo l'installazione",
+        "Reperiamo i ricambi",
+        "Inoltriamo le domande tecniche al produttore"
+      ],
+      "you": [
+        "Un referente locale dopo la consegna",
+        "Un supporto che continua oltre la fattura"
+      ]
+    }
+  ],
+  "faq": {
+    "title": "Domande su come lavoriamo",
     "items": [
       {
-        "title": "Individuazione degli acquirenti",
-        "text": "Individuiamo produttori e acquirenti industriali dell'Africa orientale con reali esigenze di macchinari, quindi ne verifichiamo capacità di acquisto, tempistiche di progetto e requisiti tecnici.",
-        "deliverables": [
-          "Selezione di acquirenti qualificati",
-          "Verifica della capacità di acquisto",
-          "Mappatura delle tempistiche di progetto"
-        ]
+        "q": "Potete gestire solo una parte del processo?",
+        "a": "Il nostro modello è end-to-end, perché è lì che la responsabilità conta di più. Diteci a che punto siete di una trattativa e vi diremo onestamente come possiamo aiutarvi."
       },
       {
-        "title": "Rappresentanza dei produttori",
-        "text": "Rappresentiamo i produttori italiani sul mercato dell'Africa orientale: gestiamo le richieste, qualifichiamo le opportunità e tuteliamo l'integrità del marchio, senza che il produttore debba aprire una sede locale.",
-        "deliverables": [
-          "Rappresentanza sul mercato locale",
-          "Qualificazione delle opportunità",
-          "Tutela del marchio e dei prezzi"
-        ]
+        "q": "Come verificate i produttori?",
+        "a": "Su capacità tecnica, capacità produttiva, qualità e preparazione all'export, prima che un acquirente veda un'offerta."
       },
       {
-        "title": "Negoziazione commerciale",
-        "text": "Strutturiamo e negoziamo per conto di entrambe le parti le condizioni commerciali di ogni transazione (prezzo, termini di pagamento, condizioni di consegna e clausole contrattuali).",
-        "deliverables": [
-          "Negoziazione del prezzo",
-          "Strutturazione dei termini di pagamento",
-          "Gestione delle condizioni contrattuali"
-        ]
+        "q": "Chi si occupa di trasporto e dogana?",
+        "a": "Coordiniamo trasporto, documenti e sdoganamento dalla fabbrica italiana al sito dell'acquirente."
       },
       {
-        "title": "Coordinamento degli acquisti",
-        "text": "Coordiniamo l'intero processo di acquisto (specifiche, gestione degli ordini, pianificazione della produzione e documentazione), così nulla resta in sospeso.",
-        "deliverables": [
-          "Allineamento delle specifiche",
-          "Monitoraggio di ordini e produzione",
-          "Gestione della documentazione"
-        ]
-      },
-      {
-        "title": "Gestione della logistica",
-        "text": "Gestiamo spedizioni, documenti di trasporto e sdoganamento, portando i macchinari dallo stabilimento italiano fino alla sede dell'acquirente in Africa orientale.",
-        "deliverables": [
-          "Coordinamento delle spedizioni",
-          "Supporto allo sdoganamento",
-          "Pianificazione di consegna e installazione"
-        ]
-      },
-      {
-        "title": "Assistenza post-vendita",
-        "text": "Dopo la consegna restiamo l'unico referente locale responsabile per il supporto all'installazione, i ricambi, le richieste tecniche e il coordinamento dell'assistenza nel tempo.",
-        "deliverables": [
-          "Supporto all'installazione",
-          "Coordinamento dei ricambi",
-          "Collegamento tecnico continuativo"
-        ]
+        "q": "Quali paesi coprite?",
+        "a": "Serviamo sei mercati dell'Africa orientale dal nostro ufficio di Nairobi. Contattateci per confermare la copertura della vostra destinazione."
       }
     ]
   },
   "cta": {
-    "title": "Ti serve un servizio specifico?",
-    "text": "Indicaci in quale fase del processo di acquisto ti serve supporto.",
-    "button": "Parla con il nostro team"
+    "title": "Pronti a partire dalla prima fase?",
+    "text": "Condividete la vostra richiesta o la vostra gamma di prodotti. Tracceremo il percorso del vostro affare.",
+    "primary": "Prenota una consulenza",
+    "secondary": "Esplora i settori"
   }
 }

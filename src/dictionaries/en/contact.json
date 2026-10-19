@@ -1,45 +1,30 @@
 {
   "meta": {
     "title": "Contact",
-    "description": "Speak with ItalBridge Partners. We respond to every inquiry within one business day."
+    "description": "Book a consultation with ItalBridge Partners in Nairobi. Email info@ or sales@italbridgepartners.co.ke or call 0729 324 033."
   },
   "hero": {
-    "title": "Speak with a team that understands both ends of the bridge.",
-    "text": "Whether you're an Italian manufacturer exploring East Africa or an East African buyer seeking trusted Italian equipment, we respond to every inquiry within one business day.",
-    "imageAlt": "Nairobi skyline"
+    "title": "Book a consultation.",
+    "text": "Share your requirements, machinery or market goals in one conversation with one accountable partner."
   },
   "details": {
-    "title": "Reach the ItalBridge team.",
     "general": "General enquiries",
-    "sales": "Sales & partnerships",
-    "phone": "Telephone",
-    "hq": "Headquarters",
-    "hqValue": "Nairobi, Kenya",
-    "response": "Response time",
-    "responseValue": "Within one business day"
+    "sales": "Sales and requirements",
+    "phone": "Phone",
+    "imageAlt": "Nairobi city skyline",
+    "caption": "Nairobi, Kenya"
   },
   "form": {
-    "title": "General inquiry",
-    "subject": "General inquiry"
-  },
-  "portals": {
-    "eyebrow": "Direct audience portal",
-    "manufacturers": {
-      "title": "For Manufacturers",
-      "text": "Italian industrial manufacturers"
-    },
-    "buyers": {
-      "title": "For Buyers",
-      "text": "East African industrial buyers"
-    }
-  },
-  "location": {
-    "title": "Based in Nairobi. Operating across the corridor.",
-    "text": "ItalBridge Partners is headquartered in Nairobi, Kenya, positioned at the centre of the East African commercial market we serve, with direct coordination to our Italian manufacturing partners across Italy.",
-    "hubLabel": "East Africa hub",
-    "hubValue": "Nairobi, Kenya",
-    "italyLabel": "Italy coordination",
-    "italyValue": "Northern Italy",
-    "mapAlt": "Map of the corridor from Italy to Nairobi"
+    "audience": "I am",
+    "manufacturer": "An Italian manufacturer",
+    "buyer": "An East African buyer",
+    "manufacturerHint": "Your product range, capacity and export experience.",
+    "buyerHint": "Equipment type, output, volumes and timeline.",
+    "other": "Other",
+    "message": "How can we help?",
+    "messageError": "A sentence or two helps us prepare.",
+    "submit": "Request consultation",
+    "sent": "Request ready — your email app is opening.",
+    "subject": "Consultation request"
   }
 }

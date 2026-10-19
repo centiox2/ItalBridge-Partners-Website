@@ -17,11 +17,13 @@ npm run lint
 src/
   app/[lang]/        # every page lives under the locale segment (/en, /it):
                      #   home, about, services, industries, manufacturers, buyers,
-                     #   contact, privacy-policy, terms-of-use, cookie-policy, data-request
-  components/        # Header, Footer, LanguageSwitcher, shared ui classes
-  components/home/   # landing page sections (Hero, Process, Exports, ...)
-  components/page/   # building blocks for the other pages (PageHero, Filmstrip,
-                     #   CtaBand, InquiryForm, LegalPage, ...)
+                     #   market-insight, contact, privacy-policy, terms-of-use,
+                     #   cookie-policy, data-request
+  components/        # Header (with the top bar), Footer, LanguageSwitcher, shared ui classes
+  components/home/   # AudienceHero: the manufacturer / buyer toggle on the home page
+  components/page/   # building blocks for the pages (PageHeader, SplitHero, CtaBand,
+                     #   EnquiryForm, FormSection, StageTabs, IndustryPicker,
+                     #   RequirementChecklist, LegalPage, ...)
   lib/metadata.ts    # per-page title, description, canonical and hreflang
   dictionaries/      # en.json / it.json: shared and home page copy
                      # en/<page>.json / it/<page>.json: copy for each other page
@@ -47,15 +49,22 @@ missing Italian key is a type error.
 
 ### Forms
 
-The inquiry and data request forms do not post to a server yet: submitting opens
-the visitor's email app with the message filled in (`InquiryForm.tsx`). Swap that
-for a server action once a mail service is chosen.
+The forms validate inline but do not post to a server yet: submitting opens the
+visitor's email app with the message filled in (`EnquiryForm.tsx`). Manufacturer
+enquiries go to info@, buyer requirements to sales@. Swap that for a server action
+once a mail service is chosen.
 
 ### Branding
 
-Design tokens live in `src/app/globals.css`: colours `ink`, `navy`, `slate`, `cream`,
-`sand`, `gold` (e.g. `bg-navy`, `text-gold`), and fonts `font-serif` (Gloock) and
-`font-sans` (Instrument Sans).
+The site follows the "Corporate Atlas" design. Design tokens live in
+`src/app/globals.css`: `ink` (headings, buttons, dark bands), text greys `body`,
+`sub`, `faint`, light surfaces `paper`, `chip`, `line`, and `mist`, `steel`,
+`cream`, `panel` for dark sections (e.g. `bg-paper`, `text-body`). The font is
+Geist (`font-sans`). Button colours and sizes are combined from `src/components/ui.ts`,
+e.g. `` `${buttonInk} ${sizeMd}` ``.
+
+The market figures (home, Manufacturers, Market insight) are copy in the
+dictionaries; the chart bar widths are in `src/app/[lang]/market-insight/page.tsx`.
 
 ### Images
 

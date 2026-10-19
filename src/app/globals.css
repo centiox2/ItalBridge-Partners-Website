@@ -1,30 +1,72 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: #071527;
-  --color-navy: #0c254d;
-  --color-slate: #1c2a45;
-  --color-cream: #efe8d8;
-  --color-sand: #d8cebb;
-  --color-gold: #a88b57;
-  --font-sans: var(--font-instrument-sans), sans-serif;
-  --font-serif: var(--font-gloock), serif;
+  /* Ink: headings, primary buttons, dark bands. */
+  --color-ink: #151b26;
+  --color-ink-deep: #10151e;
+  --color-hover: #3a4458;
+  /* Text greys on light backgrounds, darkest first. */
+  --color-body: #3a4150;
+  --color-sub: #4a5160;
+  --color-faint: #5a6170;
+  /* On dark backgrounds. */
+  --color-mist: #c9cdd4;
+  --color-ice: #c9d2e0;
+  --color-steel: #9aa7bd;
+  --color-panel: #1e2838;
+  --color-panel-raised: #263043;
+  --color-rule-dark: #222b3b;
+  --color-cream: #ebe8da;
+  /* Light surfaces and lines. */
+  --color-paper: #f6f6f3;
+  --color-chip: #f1f1ec;
+  --color-chip-hover: #ecece6;
+  --color-line: #e6e6e1;
+  --color-rule: #cfd2d8;
+  --color-field: #d3d5d9;
+  --color-error: #b80f18;
+  --font-sans: var(--font-geist), system-ui, sans-serif;
 }
 
 body {
-  background: var(--color-ink);
-  color: var(--color-cream);
-  line-height: 1.6;
+  background: #ffffff;
+  color: var(--color-ink);
+  line-height: 1.5;
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-gold);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
 }
 
-.strip {
-  scrollbar-color: var(--color-gold) var(--color-navy);
-  scrollbar-width: thin;
+/* Native <details> marker is replaced by a rotating "+". */
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Hover tooltip on chart bars (Market insight). */
+.tip {
+  position: absolute;
+  left: 12px;
+  top: -38px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.bar:hover .tip,
+.bar:focus .tip {
+  opacity: 1;
+  transform: none;
 }
 
 /* ---------- Motion ----------
@@ -44,22 +86,27 @@ body {
    delayed Largest Contentful Paint by about 0.5s on a mid-range phone. */
 @keyframes rise-in {
   from {
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
 }
 
-/* Hero photo is visible from the first paint (so it counts as loaded at
-   once) and only settles from a slight zoom. */
-@keyframes settle {
+@keyframes fade {
   from {
-    transform: scale(1.06);
+    opacity: 0;
+    transform: translateY(8px);
   }
 }
 
-@keyframes frame-in {
+@keyframes grow {
   from {
-    opacity: 0.9;
-    transform: scale(0.97);
+    transform: scaleX(0);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+    transform: scale(0.75);
   }
 }
 
@@ -68,65 +115,64 @@ body {
     scroll-behavior: smooth;
   }
 
-  /* Page-load sequence; stagger with --d. */
+  /* Page-load sequence; stagger with --i. */
   .enter {
-    animation: rise-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0ms) backwards;
+    animation: rise-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--i, 0) * 70ms) backwards;
   }
 
-  .enter-image {
-    animation: settle 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  /* Panels swapped by a tab or picker. */
+  .fade {
+    animation: fade 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  .zoom {
-    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  .grow-bar {
+    transform-origin: left center;
+    animation: grow 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
   }
 
-  .group:hover .zoom {
-    transform: scale(1.06);
+  .pulse {
+    animation: pulse 2.4s ease-in-out infinite;
   }
 
-  .lift {
+  .btn {
     transition:
-      transform 0.25s ease,
-      filter 0.25s ease;
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.3s;
   }
 
-  .lift:hover {
+  .btn:hover {
     transform: translateY(-2px);
   }
 
-  /* Exports chart: ExportsChart arms the bars below the fold, then grows
-     them from the left when scrolled into view while the figures count up. */
-  .bar-fill {
-    transform-origin: left;
+  .btn:active {
+    transform: translateY(1px) scale(0.98);
   }
 
-  [data-chart="armed"] .bar-fill {
-    transform: scaleX(0);
-  }
-
-  [data-chart="armed"] .bar-text {
-    opacity: 0;
-    transform: translateX(-12px);
-  }
-
-  /* Timings are mirrored in ExportsChart.tsx. */
-  [data-chart="play"] .bar-fill {
-    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
-  }
-
-  [data-chart="play"] .bar-text {
+  /* Index rows (home page industries) slide right on hover. */
+  .idx {
     transition:
-      opacity 0.35s ease 0.5s,
-      transform 0.35s ease 0.5s;
+      background-color 0.3s,
+      padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  [data-chart="play"] .bar-late .bar-fill {
-    transition-delay: 0.3s;
+  .idx:hover {
+    padding-left: 20px;
   }
 
-  [data-chart="play"] .bar-late .bar-text {
-    transition-delay: 0.8s;
+  .zoom {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group:hover .zoom {
+    transform: scale(1.04);
+  }
+
+  .plus {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .meter {
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   @supports (animation-timeline: view()) {
@@ -137,12 +183,9 @@ body {
          height, so content never trails behind the reader. */
       animation-range: entry 0% entry 120px;
     }
-
-    /* Filmstrip frames settle in as they slide into the strip. */
-    .frame {
-      animation: frame-in linear both;
-      animation-timeline: view(inline);
-      animation-range: entry 0% entry 40%;
-    }
   }
+}
+
+details[open] .plus {
+  transform: rotate(45deg);
 }

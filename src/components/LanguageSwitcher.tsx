@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 import { locales, type Locale } from "@/i18n";
 
+// "EN / IT" in the top bar; the current language is bold white.
 export default function LanguageSwitcher({
   current,
   label,
@@ -16,20 +18,20 @@ export default function LanguageSwitcher({
   const rest = pathname.split("/").slice(2).join("/");
 
   return (
-    <div role="group" aria-label={label} className="flex gap-1 text-[13px]">
-      {locales.map((l) => (
-        <Link
-          key={l}
-          href={`/${l}${rest ? `/${rest}` : ""}`}
-          hrefLang={l}
-          aria-current={l === current ? "true" : undefined}
-          className={`rounded px-2 py-1 uppercase ${
-            l === current ? "bg-gold text-ink" : "hover:text-gold"
-          }`}
-        >
-          {l}
-        </Link>
+    <span role="group" aria-label={label} className="inline-flex gap-1">
+      {locales.map((l, i) => (
+        <Fragment key={l}>
+          {i > 0 && <span aria-hidden>/</span>}
+          <Link
+            href={`/${l}${rest ? `/${rest}` : ""}`}
+            hrefLang={l}
+            aria-current={l === current ? "true" : undefined}
+            className={`uppercase ${l === current ? "font-semibold text-white" : "hover:text-white"}`}
+          >
+            {l}
+          </Link>
+        </Fragment>
       ))}
-    </div>
+    </span>
   );
 }

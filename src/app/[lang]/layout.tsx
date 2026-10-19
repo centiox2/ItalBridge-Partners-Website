@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Gloock, Instrument_Sans } from "next/font/google";
+import { Geist } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
 import { defaultLocale, hasLocale, locales } from "@/i18n";
 import { siteUrl } from "@/site";
@@ -9,14 +9,10 @@ import Footer from "@/components/Footer";
 import "../globals.css";
 import { images } from "@/images";
 
-const gloock = Gloock({
-  weight: "400",
+const geist = Geist({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-gloock",
-});
-const instrumentSans = Instrument_Sans({
-  subsets: ["latin"],
-  variable: "--font-instrument-sans",
+  variable: "--font-geist",
 });
 
 export function generateStaticParams() {
@@ -57,7 +53,7 @@ export default async function RootLayout({
       lang={lang}
       // Lets Next skip smooth scrolling on route changes (e.g. switching language).
       data-scroll-behavior="smooth"
-      className={`${gloock.variable} ${instrumentSans.variable}`}
+      className={geist.variable}
     >
       <body id="top" className="font-sans antialiased">
         <Header lang={lang} dict={dict} />

@@ -3,7 +3,6 @@
     "title": "Data Access & Deletion Request",
     "description": "Request access to, correction of, or deletion of the personal data ItalBridge Partners holds about you."
   },
-  "eyebrow": "Data protection",
   "title": "Data Access & Deletion Request",
   "intro": "Under the Kenya Data Protection Act, 2019 and the GDPR, you have the right to access, rectify, or delete your personal data. Submit a request below and we will respond within 30 days.",
   "rights": {
@@ -36,6 +35,7 @@
     "details": "Details",
     "submit": "Submit Request",
     "note": "We may need to verify your identity before processing this request.",
-    "subject": "Data request"
+    "subject": "Data request",
+    "sent": "Request ready — your email app is opening."
   }
 }

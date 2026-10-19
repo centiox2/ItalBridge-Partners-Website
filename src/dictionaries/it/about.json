@@ -1,61 +1,66 @@
 {
   "meta": {
     "title": "Chi siamo",
-    "description": "ItalBridge Partners è un intermediario commerciale B2B con sede a Nairobi che collega i produttori industriali italiani con acquirenti qualificati in Kenya e in Africa orientale."
+    "description": "ItalBridge Partners è l'unico partner responsabile tra i produttori industriali italiani e gli acquirenti in Kenya e in Africa orientale, con sede a Nairobi."
   },
   "hero": {
-    "title": "Un ponte costruito sulle relazioni, non sulle singole transazioni.",
-    "text": "ItalBridge Partners è un intermediario commerciale B2B con sede a Nairobi che collega i produttori industriali italiani con acquirenti qualificati in Kenya e in Africa orientale.",
-    "imageAlt": "Ingegnere industriale con un tablet in uno stabilimento produttivo"
+    "title": "Un unico partner responsabile tra l'industria italiana e l'Africa orientale.",
+    "text": "ItalBridge Partners mette in contatto i produttori industriali italiani con acquirenti qualificati in Kenya e in Africa orientale, e segue ogni affare dalla prima richiesta al post-vendita.",
+    "imageAlt": "Skyline di Nairobi",
+    "caption": "La nostra base: Nairobi, al servizio di sei mercati dell'Africa orientale."
   },
-  "story": {
-    "title": "Due culture industriali, un unico partner responsabile.",
+  "why": {
+    "title": "Perché esistiamo.",
     "paragraphs": [
-      "L'Italia è una delle economie manifatturiere più consolidate al mondo, in particolare nei macchinari, nell'automazione e nella meccanica di precisione. L'Africa orientale è una delle regioni manifatturiere in più rapida crescita, con una domanda sempre maggiore di attrezzature industriali per sviluppare la capacità produttiva interna.",
-      "La distanza tra questi due mercati raramente dipende da capacità o domanda. Dipende da fiducia, comunicazione, logistica e responsabilità. I produttori italiani raramente hanno una presenza locale in Africa orientale. Gli acquirenti dell'Africa orientale raramente hanno un accesso diretto e affidabile a produttori italiani verificati.",
-      "ItalBridge Partners è nata a Nairobi per colmare questa distanza. Operiamo come ponte commerciale a servizio completo: gestiamo la ricerca degli acquirenti, la rappresentanza dei produttori, le trattative, il coordinamento degli acquisti, la logistica, il supporto doganale e l'assistenza post-vendita, attraverso un unico partner locale responsabile."
-    ]
+      "I produttori italiani costruiscono alcuni dei migliori macchinari industriali al mondo, ma vendere in Africa orientale significa di solito aprire un ufficio, trovare partner locali e gestire una lunga catena di intermediari.",
+      "Gli acquirenti dell'Africa orientale vogliono quei macchinari, ma hanno bisogno di qualcuno sul posto che capisca la specifica, il contratto, la spedizione e l'assistenza che segue."
+    ],
+    "conclusion": "Ci collochiamo nel mezzo come unico partner responsabile, così entrambe le parti trattano con un solo team dall'inizio alla fine."
   },
-  "banner": {
-    "text": "Strutturale, portante, unisce due sponde.",
-    "imageAlt": "Nave portacontainer accostata alle gru portuali"
-  },
-  "guides": {
-    "title": "Cosa ci guida",
-    "intro": "Missione, approccio e visione di lungo periodo.",
+  "different": {
+    "title": "Cosa ci distingue.",
     "items": [
       {
-        "title": "La nostra missione",
-        "text": "Rendere la capacità industriale italiana accessibile, affidabile e supportata localmente in tutta l'Africa orientale."
+        "title": "Una presenza locale a Nairobi",
+        "text": "Sul posto, nel fuso orario dell'acquirente, in grado di visitare i siti e incontrare i team di persona."
       },
       {
-        "title": "Il nostro approccio",
-        "text": "Fondato sulle relazioni, non sulle singole transazioni. Investiamo in partnership commerciali di lungo periodo tra produttori e acquirenti."
+        "title": "Rapporti diretti con l'Italia",
+        "text": "Lavoriamo direttamente con i produttori, non tramite catene di agenti."
       },
       {
-        "title": "La nostra visione",
-        "text": "Diventare il ponte commerciale di riferimento per gli scambi industriali italiani in tutta la regione dell'Africa orientale."
+        "title": "Coordinamento end-to-end",
+        "text": "Dalla ricerca alla messa in servizio, un solo team è responsabile di ogni fase."
+      },
+      {
+        "title": "Supporto tecnico e commerciale",
+        "text": "Leggiamo le specifiche e negoziamo i contratti, per entrambe le parti."
+      },
+      {
+        "title": "Competenza interculturale",
+        "text": "Conosciamo le culture d'impresa, le aspettative e le prassi italiane e dell'Africa orientale."
+      },
+      {
+        "title": "Coordinamento post-vendita",
+        "text": "Restiamo coinvolti dopo la consegna: installazione, ricambi e assistenza."
       }
     ]
   },
-  "corridor": {
-    "title": "Un corridoio commerciale consolidato, con ampi margini di crescita.",
-    "paragraphs": [
-      "Nel 2024 l'Italia ha esportato in Kenya beni per circa 154 milioni di dollari, di cui circa 55 milioni in macchinari. Il corridoio esiste, ma resta poco presidiato per le transazioni industriali di piccole e medie dimensioni che richiedono un supporto locale.",
-      "ItalBridge si concentra sul segmento di questo corridoio che le grandi piattaforme commerciali trascurano: gli acquisti qualificati di attrezzature industriali che richiedono un partner orientato alle relazioni e responsabile sul posto."
-    ],
-    "totalLabel": "Export italiano verso il Kenya, 2024 (stima)",
-    "totalValue": "$154M",
-    "machineryLabel": "Quota macchinari",
-    "machineryValue": "$55M",
-    "mapAlt": "Mappa del corridoio commerciale tra l'Italia e l'Africa orientale",
-    "mapTitle": "Nairobi ⇄ Italia",
-    "mapCaption": "Operativi a entrambi i capi del corridoio"
+  "vetting": {
+    "title": "Come scegliamo i produttori.",
+    "text": "Ogni produttore della nostra rete viene verificato prima che un acquirente veda un'offerta, secondo quattro criteri:",
+    "imageAlt": "Ingegnere che consulta un tablet in reparto",
+    "criteria": [
+      "Capacità tecnica",
+      "Capacità produttiva",
+      "Standard di qualità",
+      "Preparazione all'export"
+    ]
   },
   "cta": {
-    "title": "Vuoi conoscere il modello nel dettaglio?",
-    "text": "Consulta la descrizione completa dei nostri servizi o parla direttamente con il nostro team.",
-    "primary": "Scopri i servizi",
-    "secondary": "Contattaci"
+    "title": "Parlate con il team.",
+    "text": "Diteci cosa producete o di cosa avete bisogno. Basta una conversazione per iniziare.",
+    "primary": "Prenota una consulenza",
+    "secondary": "I nostri servizi"
   }
 }

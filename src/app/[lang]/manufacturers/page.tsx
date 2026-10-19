@@ -1,96 +1,125 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, getPage } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { contact, href } from "@/site";
-import ContactAside from "@/components/page/ContactAside";
-import CtaBand from "@/components/page/CtaBand";
-import Filmstrip from "@/components/page/Filmstrip";
-import InquiryForm from "@/components/page/InquiryForm";
-import PageHero from "@/components/page/PageHero";
-import SectionIntro from "@/components/page/SectionIntro";
-import { inquiryFields } from "@/components/page/fields";
-import { buttonGold, buttonInk, container, h2Cream } from "@/components/ui";
+import EnquiryForm from "@/components/page/EnquiryForm";
+import FormSection from "@/components/page/FormSection";
+import SplitHero from "@/components/page/SplitHero";
+import { container, h2, stat, textLink } from "@/components/ui";
 import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/manufacturers">) =>
   pageMetadata(params, "manufacturers");
 
-const stepImages = [
-  images.engineer,
-  images.workshop,
-  images.nairobi,
-  images.containerPort,
-];
-
 export default async function Manufacturers({ params }: PageProps<"/[lang]/manufacturers">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const [{ form }, { hero, reasons, band, steps, inquiry }] = await Promise.all([
+  const [{ nav, form }, { hero, benefits, numbers, steps, form: copy }] = await Promise.all([
     getDictionary(lang),
     getPage(lang, "manufacturers"),
   ]);
+  const [info] = contact.emails;
 
   return (
     <>
-      <PageHero title={hero.title} text={hero.text} image={images.milling} imageAlt={hero.imageAlt}>
-        <a href="#inquiry" className={buttonGold}>
-          {hero.cta}
-        </a>
-      </PageHero>
+      <SplitHero
+        lang={lang}
+        nav={nav}
+        crumb={
+          <>
+            {nav.manufacturers}
+            {hero.crumbNote && (
+              <>
+                {" · "}
+                <span lang="it">{hero.crumbNote}</span>
+              </>
+            )}
+          </>
+        }
+        title={hero.title}
+        text={hero.text}
+        primary={{ href: "#partner", label: hero.primary }}
+        secondary={{ href: href(lang, "marketInsight"), label: hero.secondary }}
+        image={images.cncMachining}
+        imageAlt={hero.imageAlt}
+      />
 
-      <section className="bg-cream text-ink">
-        <div className={`${container} py-24`}>
-          <h2 className={`${h2Cream} reveal mb-9 max-w-[860px]`}>{reasons.title}</h2>
-          <div className="border-b border-navy">
-            {reasons.items.map((item) => (
-              <div key={item.title} className="reveal flex flex-wrap gap-x-12 gap-y-2 border-t border-navy py-6.5">
-                <h3 className="m-0 flex-[1_1_340px] font-serif text-[clamp(26px,2.6vw,36px)] leading-[1.1] font-normal text-navy">
-                  {item.title}
-                </h3>
-                <p className="m-0 flex-[1.3_1_min(420px,100%)] text-lg">{item.text}</p>
+      <section className="bg-paper">
+        <div className={`${container} flex flex-wrap gap-14 py-28`}>
+          <h2 className={`${h2} flex-[1_1_320px]`}>{benefits.title}</h2>
+          <div className="grid flex-[2_1_min(640px,100%)] grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-x-12 gap-y-9">
+            {benefits.items.map((item, i) => (
+              <div key={item.title} className={`reveal pt-4.5 ${i < 2 ? "border-t-2 border-ink" : "border-t border-rule"}`}>
+                <h3 className="m-0 mb-2 text-[19px] font-semibold">{item.title}</h3>
+                <p className="m-0 leading-relaxed text-body">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <CtaBand title={band.title} text={band.text}>
-        <a href="#inquiry" className={buttonInk}>
-          {band.button}
-        </a>
-      </CtaBand>
-
-      <section className="bg-navy pt-24 pb-20">
-        <SectionIntro title={steps.title} text={steps.intro} />
-        <Filmstrip
-          label={steps.label}
-          fluid
-          frames={steps.items.map((item, i) => ({ ...item, image: stepImages[i], number: String(i + 1) }))}
-        />
-      </section>
-
-      <section id="inquiry" className="scroll-mt-4 bg-cream text-ink">
-        <div className={`${container} flex flex-wrap gap-x-18 gap-y-12 py-24`}>
-          <div className="flex-[1.6_1_min(560px,100%)]">
-            <h2 className={`${h2Cream} mb-3.5`}>{inquiry.title}</h2>
-            <p className="mb-8 max-w-[620px] text-lg">{inquiry.text}</p>
-            <InquiryForm
-              id="manufacturer"
-              fields={inquiryFields(form, true)}
-              to={contact.emails[1]}
-              subject={inquiry.subject}
-              submitLabel={form.submit}
-              consent={form.consent}
-              privacyLabel={form.privacy}
-              privacyHref={href(lang, "privacy")}
-              requiredLabel={form.required}
-              sentText={form.sent}
-            />
-          </div>
-          <ContactAside emailLabel={inquiry.salesLabel} phoneLabel={inquiry.phoneLabel} />
+      <section className={`${container} flex flex-wrap items-center gap-14 py-28`}>
+        <div className="flex-[1_1_min(380px,100%)]">
+          <h2 className={`${h2} mb-4`}>{numbers.title}</h2>
+          <p className="m-0 mb-5 max-w-[46ch] leading-relaxed text-body">{numbers.text}</p>
+          <Link href={href(lang, "marketInsight")} className={textLink}>
+            {numbers.link}
+          </Link>
+        </div>
+        <div className="grid flex-[1.2_1_min(460px,100%)] grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
+          {numbers.items.map((item, i) => (
+            <div key={item.text} className={`reveal rounded-[10px] p-7 ${i === 0 ? "bg-ink text-cream" : "bg-paper"}`}>
+              <div className={stat}>{item.value}</div>
+              <p className={`mt-1.5 mb-0 text-[15px] ${i === 0 ? "text-mist" : "text-body"}`}>{item.text}</p>
+            </div>
+          ))}
         </div>
       </section>
+
+      <section className="bg-paper">
+        <div className={`${container} py-28`}>
+          <h2 className={`${h2} mb-12 max-w-[700px]`}>{steps.title}</h2>
+          <ol className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 p-0">
+            {steps.items.map((item, i) => {
+              const last = i === steps.items.length - 1;
+              return (
+                <li key={item.title} className={`reveal rounded-[10px] p-7 ${last ? "bg-ink text-white" : "bg-white"}`}>
+                  <span className={`text-sm font-semibold ${last ? "text-steel" : "text-sub"}`}>
+                    {steps.label} {i + 1}
+                  </span>
+                  <h3 className="mt-2.5 mb-1.5 text-[19px] font-semibold">{item.title}</h3>
+                  <p className={`m-0 leading-[1.55] ${last ? "text-mist" : "text-body"}`}>{item.text}</p>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </section>
+
+      <FormSection id="partner" title={copy.title} text={copy.text} preferEmail={form.preferEmail} email={info}>
+        <EnquiryForm
+          id="partner"
+          fields={[
+            { name: "company", label: form.company, autoComplete: "organization", check: "required", error: form.errors.company },
+            { name: "name", label: form.name, autoComplete: "name", check: "required", error: form.errors.name },
+            { name: "email", label: form.email, type: "email", autoComplete: "email", check: "email", error: form.errors.email },
+            { name: "category", label: copy.category, type: "select", options: copy.categories },
+            { name: "message", label: copy.message, type: "textarea", hint: copy.messageHint, check: "message", error: copy.messageError },
+          ]}
+          to={info}
+          subject={copy.subject}
+          subjectField="company"
+          submitLabel={copy.submit}
+          sentTitle={copy.sent}
+          fallback={form.fallback}
+          againLabel={form.again}
+          consent={form.consent}
+          privacyLabel={form.privacy}
+          privacyHref={href(lang, "privacy")}
+        />
+      </FormSection>
     </>
   );
 }

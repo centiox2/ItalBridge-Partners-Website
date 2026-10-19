@@ -1,183 +1,129 @@
 {
   "meta": {
     "title": "ItalBridge Partners",
-    "description": "ItalBridge Partners connects Italian industrial manufacturers with qualified buyers across Kenya and East Africa through a single accountable commercial partner."
+    "description": "ItalBridge Partners helps Italian industrial manufacturers sell into Kenya and East Africa, and helps East African buyers source Italian equipment, with one accountable partner in Nairobi."
   },
   "nav": {
-    "home": "Home",
+    "office": "Nairobi office · East Africa Time (UTC+3)",
+    "about": "About",
     "services": "Services",
     "industries": "Industries",
-    "manufacturers": "Manufacturers",
-    "buyers": "Buyers",
+    "manufacturers": "For manufacturers",
+    "buyers": "For buyers",
+    "marketInsight": "Market insight",
+    "contact": "Contact",
+    "home": "Home",
     "language": "Language",
     "logoAlt": "ItalBridge Partners logo",
     "homeLabel": "ItalBridge Partners home",
-    "about": "About",
-    "cta": "Speak With Our Team",
-    "menu": "Main"
+    "cta": "Book a consultation",
+    "menu": "Main",
+    "breadcrumb": "Breadcrumb"
   },
-  "hero": {
-    "title": "The commercial bridge between Italian industry and East Africa",
-    "subtitle": "ItalBridge Partners connects Italian industrial manufacturers with qualified buyers across Kenya and East Africa through a single accountable commercial partner.",
-    "primaryCta": "Speak With Our Team",
-    "secondaryCta": "Explore Opportunities",
-    "imageAlt": "Industrial engineer in a hard hat holding a tablet on a factory floor"
-  },
-  "process": {
-    "title": "Six stages from requirement to operation",
-    "intro": "Scroll the strip. Each frame is one stage of a deal, from the first qualified buyer to the machine running on site.",
-    "stripLabel": "Deal stages",
-    "steps": [
-      {
-        "title": "Buyer Identification & Qualification",
-        "text": "We identify East African manufacturers with genuine equipment requirements and verify their purchasing capacity and project timelines."
-      },
-      {
-        "title": "Needs Assessment",
-        "text": "A detailed technical assessment of the buyer's specifications, production volumes and operational constraints."
-      },
-      {
-        "title": "Manufacturer Matching",
-        "text": "We match the qualified requirement to the right Italian manufacturer from our verified network."
-      },
-      {
-        "title": "Negotiation & Deal Structuring",
-        "text": "Price, commercial terms, payment structures and contract conditions, managed for both parties."
-      },
-      {
-        "title": "Logistics & Customs Coordination",
-        "text": "Freight, documentation and customs clearance from the Italian factory to the buyer's facility."
-      },
-      {
-        "title": "After-Sales Support",
-        "text": "The single local point of accountability for installation, spare parts, technical queries and service."
-      }
-    ]
-  },
-  "exports": {
-    "title": "Machinery is about a third of what Italy sends to Kenya",
-    "note": "Bar widths are to scale, using approximate 2024 export figures.",
-    "totalLabel": "Italy's exports to Kenya",
-    "totalValue": "$154M",
-    "machineryLabel": "Machinery",
-    "machineryValue": "$55M",
-    "markets": "Six East African markets served from Nairobi."
-  },
-  "sectors": {
-    "title": "Equipment for the sectors that drive East African industry",
-    "items": [
-      {
-        "title": "Plastics & Packaging",
-        "text": "Injection moulding presses, packaging lines and polymer processing equipment."
-      },
-      {
-        "title": "Industrial Automation",
-        "text": "Control systems, robotic integration and factory automation."
-      },
-      {
-        "title": "Precision Engineering",
-        "text": "Machined components, tooling and precision parts."
-      },
-      {
-        "title": "Food & Beverage Processing",
-        "text": "Stainless steel processing systems, filling lines and food-grade equipment."
-      },
-      {
-        "title": "Construction Materials",
-        "text": "Equipment for producing and processing building materials."
-      },
-      {
-        "title": "Automotive Aftermarket",
-        "text": "Workshop equipment, diagnostic systems and specialised tooling."
-      }
-    ]
-  },
-  "network": {
-    "title": "A curated network of Italian industrial manufacturers",
-    "text": "Every manufacturer is qualified on technical capability, production capacity, quality standards and export readiness, so only those who can deliver reliably are represented.",
-    "cta": "Partner With ItalBridge",
-    "items": [
-      {
-        "title": "Industrial Machinery",
-        "text": "Presses, moulding equipment and production machinery."
-      },
-      {
-        "title": "Automation & Control Systems",
-        "text": "Control systems, robotic integration and factory automation."
-      },
-      {
-        "title": "Precision Engineering",
-        "text": "Machined components, tooling and engineered parts."
-      },
-      {
-        "title": "Food Processing Equipment",
-        "text": "Stainless steel processing systems, filling lines and food-grade machinery."
-      },
-      {
-        "title": "Packaging Technologies",
-        "text": "Packaging line machinery and automation for consumer and industrial goods."
-      },
-      {
-        "title": "Industrial Components",
-        "text": "Standard and bespoke components for industrial applications."
-      }
-    ]
-  },
-  "why": {
-    "title": "Why ItalBridge Partners",
-    "items": [
-      {
-        "title": "Local East African presence",
-        "text": "Based in Nairobi, we operate within the markets we serve, not from a remote office abroad."
-      },
-      {
-        "title": "Italian manufacturer relationships",
-        "text": "Direct relationships with a curated network across multiple sectors."
-      },
-      {
-        "title": "End-to-end coordination",
-        "text": "One accountable partner from sourcing through delivery."
-      },
-      {
-        "title": "Technical and commercial support",
-        "text": "Equipment knowledge and fluency in cross-border trade."
-      },
-      {
-        "title": "Cross-cultural expertise",
-        "text": "Fluent in Italian industrial culture and East African commercial practice."
-      },
-      {
-        "title": "After-sales coordination",
-        "text": "Accountable after delivery, for spares, service and technical queries."
-      }
-    ]
-  },
-  "portals": {
-    "manufacturers": {
-      "title": "For Italian manufacturers: expand into East Africa without building a local office",
-      "cta": "Partner With ItalBridge"
+  "home": {
+    "audience": {
+      "label": "I am",
+      "manufacturer": "I'm an Italian manufacturer",
+      "buyer": "I'm an East African buyer"
     },
-    "buyers": {
-      "title": "For East African buyers: direct access to trusted Italian industrial capability",
-      "cta": "Source Equipment"
+    "manufacturer": {
+      "title": "Sell into Kenya and East Africa without opening a local office.",
+      "text": "We find and qualify buyers, structure the deal, run logistics and customs, and stay on as your after-sales contact in Nairobi.",
+      "primary": "How we work with manufacturers",
+      "secondary": "Book a consultation"
+    },
+    "buyer": {
+      "title": "Source Italian industrial equipment with a partner on the ground.",
+      "text": "Tell us your specification. We match you with a vetted Italian maker, negotiate terms, deliver to your site and support you after commissioning.",
+      "primary": "How we work with buyers",
+      "secondary": "Share a requirement"
+    },
+    "card": {
+      "logoAlt": "ItalBridge Partners monogram",
+      "label": "Kenya machinery and capital equipment imports, Q3",
+      "value": "KSh 139.1B",
+      "change": "from KSh 96.3B a year earlier",
+      "text": "Demand for industrial equipment in Kenya is rising fast. The question is who carries the deal from specification to service.",
+      "link": "Read the market insight →"
+    },
+    "photos": {
+      "nairobi": "Nairobi city skyline",
+      "port": "Container ship berthing at a port"
+    },
+    "numbers": {
+      "title": "The market, in four numbers.",
+      "link": "See the full market insight →",
+      "items": [
+        { "value": "€117M", "text": "Packaging machinery Kenya imported in 2024, up 11%." },
+        { "value": "14.5%", "text": "Italy's share — third behind India and China." },
+        { "value": "~$55M", "text": "Italian machinery exports to Kenya, about a third of ~$154M." },
+        { "value": "+94.8%", "text": "Kenya's industrial machinery spend, Q3 2025 y/y." }
+      ],
+      "sources": "Sources: ICE/TDM data reported by ANSA (May 2025); KNBS Q3 2025; 2024 export data."
+    },
+    "audiences": {
+      "manufacturers": {
+        "title": "For Italian manufacturers",
+        "text": "A commercial presence in East Africa without the fixed cost of a subsidiary.",
+        "points": [
+          "Qualified buyers with real capacity and timelines",
+          "Negotiation, payment terms and contracts handled",
+          "Local installation and spare-parts coordination"
+        ],
+        "cta": "Partner with ItalBridge"
+      },
+      "buyers": {
+        "title": "For East African buyers",
+        "text": "Italian engineering, with one accountable contact from quote to commissioning.",
+        "points": [
+          "Technical review of your specification",
+          "Matched with makers vetted for export readiness",
+          "Freight and customs to your site, then after-sales"
+        ],
+        "cta": "Source equipment"
+      }
+    },
+    "stages": {
+      "title": "Six stages, one accountable partner.",
+      "link": "See each stage in detail →",
+      "items": [
+        { "title": "Buyer identification", "text": "Real needs, capacity and timelines." },
+        { "title": "Needs assessment", "text": "Specs, volumes and constraints." },
+        { "title": "Manufacturer matching", "text": "From a verified Italian network." },
+        { "title": "Deal structuring", "text": "Price, terms, payment, contract." },
+        { "title": "Logistics and customs", "text": "Factory to site, cleared." },
+        { "title": "After-sales", "text": "Install, spares, service." }
+      ]
+    },
+    "industries": {
+      "title": "Industries we serve.",
+      "text": "Italian packaging machinery alone is a €9B+ industry that exports around 80% of its output.",
+      "items": [
+        { "title": "Plastics and packaging", "text": "Extrusion, moulding, wrapping, converting" },
+        { "title": "Food and beverage processing", "text": "Processing, filling, bottling" },
+        { "title": "Industrial automation", "text": "Controls, robotics, integration" },
+        { "title": "Precision engineering", "text": "CNC machining, tooling" },
+        { "title": "Construction materials", "text": "Block, tile, aggregate plant" },
+        { "title": "Automotive aftermarket", "text": "Workshop equipment, components" }
+      ]
+    },
+    "cta": {
+      "title": "Book a 30-minute consultation.",
+      "text": "Share your requirements, machinery or market goals — one conversation with one accountable partner.",
+      "button": "Book a consultation"
     }
   },
-  "contact": {
-    "title": "Whether you manufacture in Italy or procure in East Africa, we should talk.",
-    "text": "Tell us about your requirements, your machinery or your market. One conversation, one accountable partner.",
-    "cta": "Speak With Our Team"
-  },
+  "stage": "Stage",
   "footer": {
-    "tagline": "The commercial bridge between Italian industrial precision and East African commercial opportunity.",
-    "navigate": "Navigate",
+    "tagline": "The commercial bridge between Italian industry and East Africa. Nairobi, Kenya.",
+    "company": "Company",
+    "work": "Work with us",
+    "contact": "Contact",
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "cookies": "Cookie Policy",
-    "contact": "Contact",
-    "location": "Nairobi, Kenya",
-    "rights": "All Rights Reserved.",
-    "dataRequest": "Data Access & Deletion Request",
+    "dataRequest": "Data Access and Deletion",
     "social": "Social media"
   },
   "notFound": {
@@ -186,25 +132,38 @@
     "cta": "Back to home"
   },
   "form": {
-    "name": "Full name",
-    "email": "Email address",
     "company": "Company",
+    "name": "Your name",
+    "fullName": "Full name",
+    "email": "Work email",
     "phone": "Phone",
-    "country": "Country / Region",
-    "message": "How can we help?",
-    "submit": "Submit Inquiry",
-    "consent": "By submitting, you agree to our",
+    "optional": "(optional)",
+    "industry": "Industry",
+    "country": "Country",
+    "errors": {
+      "company": "Please add your company name.",
+      "name": "Please add your name.",
+      "email": "Enter a valid email."
+    },
+    "industries": [
+      "Plastics and packaging",
+      "Food and beverage processing",
+      "Industrial automation",
+      "Precision engineering",
+      "Construction materials",
+      "Automotive aftermarket"
+    ],
+    "consent": "By sending, you agree to our",
     "privacy": "Privacy Policy",
-    "required": "Required",
-    "sent": "Your email app should now open with your message ready to send. If it doesn't, email us at",
-    "error": "Please fill in the required fields."
+    "fallback": "If nothing opened, write to",
+    "again": "Send another",
+    "preferEmail": "Prefer email?"
   },
   "legal": {
     "documents": "Legal documents",
     "lastUpdated": "Last updated",
     "onThisPage": "On this page",
-    "dataRequest": "Data Request",
-    "questions": "Questions?",
-    "contactUs": "Contact us at"
+    "questions": "Questions about this policy?",
+    "contactUs": "Write to us at"
   }
 }

@@ -1,45 +1,30 @@
 {
   "meta": {
     "title": "Contatti",
-    "description": "Parla con ItalBridge Partners. Rispondiamo a ogni richiesta entro un giorno lavorativo."
+    "description": "Prenotate una consulenza con ItalBridge Partners a Nairobi. Scrivete a info@ o sales@italbridgepartners.co.ke o chiamate lo 0729 324 033."
   },
   "hero": {
-    "title": "Parla con un team che conosce entrambe le sponde del ponte.",
-    "text": "Che tu sia un produttore italiano interessato all'Africa orientale o un acquirente dell'Africa orientale alla ricerca di attrezzature italiane affidabili, rispondiamo a ogni richiesta entro un giorno lavorativo.",
-    "imageAlt": "Skyline di Nairobi"
+    "title": "Prenotate una consulenza.",
+    "text": "Condividete esigenze, macchinari o obiettivi di mercato in una sola conversazione con un unico partner responsabile."
   },
   "details": {
-    "title": "Contatta il team di ItalBridge.",
     "general": "Informazioni generali",
-    "sales": "Commerciale e partnership",
+    "sales": "Vendite e richieste",
     "phone": "Telefono",
-    "hq": "Sede",
-    "hqValue": "Nairobi, Kenya",
-    "response": "Tempi di risposta",
-    "responseValue": "Entro un giorno lavorativo"
+    "imageAlt": "Skyline di Nairobi",
+    "caption": "Nairobi, Kenya"
   },
   "form": {
-    "title": "Richiesta generale",
-    "subject": "Richiesta generale"
-  },
-  "portals": {
-    "eyebrow": "Accesso diretto per profilo",
-    "manufacturers": {
-      "title": "Per i produttori",
-      "text": "Produttori industriali italiani"
-    },
-    "buyers": {
-      "title": "Per gli acquirenti",
-      "text": "Acquirenti industriali dell'Africa orientale"
-    }
-  },
-  "location": {
-    "title": "Con sede a Nairobi. Operativi lungo tutto il corridoio.",
-    "text": "ItalBridge Partners ha sede a Nairobi, in Kenya, al centro del mercato commerciale dell'Africa orientale in cui operiamo, e coordina direttamente i propri produttori partner in tutta Italia.",
-    "hubLabel": "Hub per l'Africa orientale",
-    "hubValue": "Nairobi, Kenya",
-    "italyLabel": "Coordinamento in Italia",
-    "italyValue": "Nord Italia",
-    "mapAlt": "Mappa del corridoio dall'Italia a Nairobi"
+    "audience": "Sono",
+    "manufacturer": "Un produttore italiano",
+    "buyer": "Un acquirente dell'Africa orientale",
+    "manufacturerHint": "La vostra gamma di prodotti, capacità ed esperienza di export.",
+    "buyerHint": "Tipo di macchinario, produzione, volumi e tempi.",
+    "other": "Altro",
+    "message": "Come possiamo aiutarvi?",
+    "messageError": "Una o due frasi ci aiutano a prepararci.",
+    "submit": "Richiedi la consulenza",
+    "sent": "Richiesta pronta: si sta aprendo la vostra app di posta.",
+    "subject": "Richiesta di consulenza"
   }
 }

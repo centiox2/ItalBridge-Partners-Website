@@ -1,77 +1,66 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPage } from "@/dictionaries";
+import { getDictionary, getPage } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { href } from "@/site";
 import CtaBand from "@/components/page/CtaBand";
-import Filmstrip from "@/components/page/Filmstrip";
-import PageHero from "@/components/page/PageHero";
-import SectionIntro from "@/components/page/SectionIntro";
-import { buttonInk, container, h2Cream } from "@/components/ui";
+import IndustryPicker from "@/components/page/IndustryPicker";
+import PageHeader from "@/components/page/PageHeader";
+import { container, h2 } from "@/components/ui";
 import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/industries">) =>
   pageMetadata(params, "industries");
 
+// One photo per industry, in the order of the copy.
 const photos = [
-  images.milling,
   images.bottlingLine,
+  images.conveyorLine,
   images.roboticArm,
   images.cncMachining,
-  images.conveyorLine,
-  images.portTerminal,
   images.workshop,
+  images.milling,
 ];
 
 export default async function Industries({ params }: PageProps<"/[lang]/industries">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { hero, strip, suppliers, cta } = await getPage(lang, "industries");
+  const [{ nav }, page] = await Promise.all([getDictionary(lang), getPage(lang, "industries")]);
+  const { hero, network, cta } = page;
+  const contactHref = href(lang, "contact");
 
   return (
     <>
-      <PageHero
-        title={hero.title}
-        text={hero.text}
-        image={images.bottlingLine}
-        imageAlt={hero.imageAlt}
-      />
+      <PageHeader lang={lang} nav={nav} crumb={nav.industries} title={hero.title} text={hero.text} className="pb-16" />
 
-      <section className="bg-navy pt-24 pb-20">
-        <SectionIntro title={strip.title} text={strip.intro} />
-        <Filmstrip
-          label={strip.label}
-          frames={strip.items.map((item, i) => ({
-            title: item.title,
-            text: item.text,
-            image: photos[i],
-            number: String(i + 1).padStart(2, "0"),
-            footnote: `${strip.sourceLabel}: ${item.source}`,
-          }))}
+      <section className={`${container} pb-28`}>
+        <IndustryPicker
+          label={page.pickerLabel}
+          equipment={page.equipment}
+          categories={page.categories}
+          discuss={{ href: contactHref, label: page.discuss }}
+          deliver={{ href: href(lang, "services"), label: page.deliver }}
+          industries={page.items.map((item, i) => ({ ...item, image: photos[i] }))}
         />
       </section>
 
-      <section className="bg-cream text-ink">
-        <div className={`${container} py-24`}>
-          <h2 className={`${h2Cream} reveal mb-3`}>{suppliers.title}</h2>
-          <p className="reveal mb-9 max-w-[640px] text-lg">{suppliers.text}</p>
-          <dl className="m-0 border-b border-navy">
-            {strip.items.map((item) => (
-              <div key={item.title} className="reveal flex flex-wrap gap-x-8 gap-y-1.5 border-t border-navy py-4.5">
-                <dt className="flex-[1_1_320px] font-serif text-2xl text-navy">{item.title}</dt>
-                <dd className="m-0 flex-[1_1_320px] text-slate">{item.source}</dd>
-              </div>
+      <section className="bg-ink text-cream">
+        <div className={`${container} flex flex-wrap items-center gap-14 py-28`}>
+          <div className="flex-[1_1_min(380px,100%)]">
+            <h2 className={`${h2} mb-4`}>{network.title}</h2>
+            <p className="m-0 max-w-[48ch] leading-[1.65] text-mist">{network.text}</p>
+          </div>
+          <ul className="m-0 grid flex-[1.3_1_min(480px,100%)] list-none grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3 p-0">
+            {network.categories.map((c) => (
+              <li key={c} className="reveal rounded-lg bg-panel p-5 font-medium">
+                {c}
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
       </section>
 
-      <CtaBand title={cta.title} text={cta.text}>
-        <Link href={href(lang, "contact")} className={buttonInk}>
-          {cta.button}
-        </Link>
-      </CtaBand>
+      <CtaBand tone="light" title={cta.title} text={cta.text} primary={{ href: contactHref, label: cta.button }} />
     </>
   );
 }

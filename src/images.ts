@@ -3,13 +3,10 @@ import bottlingLine from "@/assets/images/bottling-line.jpg";
 import cncMachining from "@/assets/images/cnc-machining.jpg";
 import containerPort from "@/assets/images/container-port.jpg";
 import conveyorLine from "@/assets/images/conveyor-line.jpg";
-import corridorMap from "@/assets/images/corridor-map.svg";
 import engineer from "@/assets/images/engineer.jpg";
 import logo from "@/assets/images/logo.png";
 import milling from "@/assets/images/milling.jpg";
-import nairobiSkyline from "@/assets/images/nairobi-skyline.jpg";
 import nairobi from "@/assets/images/nairobi.jpg";
-import portTerminal from "@/assets/images/port-terminal.jpg";
 import roboticArm from "@/assets/images/robotic-arm.jpg";
 import workshop from "@/assets/images/workshop.jpg";
 
@@ -18,13 +15,10 @@ export const images = {
   cncMachining,
   containerPort,
   conveyorLine,
-  corridorMap,
   engineer,
   logo,
   milling,
   nairobi,
-  nairobiSkyline,
-  portTerminal,
   roboticArm,
   workshop,
 };

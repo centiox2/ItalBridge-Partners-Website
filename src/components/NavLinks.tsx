@@ -14,10 +14,7 @@ export default function NavLinks({
   const pathname = usePathname();
 
   return (
-    <nav
-      aria-label={label}
-      className="flex flex-wrap items-center gap-x-6.5 gap-y-2 text-[15px] font-medium"
-    >
+    <nav aria-label={label} className="flex flex-wrap gap-x-7 gap-y-1 text-[15px] font-medium">
       {links.map((link) => {
         const current = pathname === link.href;
         return (
@@ -25,11 +22,9 @@ export default function NavLinks({
             key={link.href}
             href={link.href}
             aria-current={current ? "page" : undefined}
-            className={
-              current
-                ? "text-gold underline decoration-2 underline-offset-8"
-                : "hover:text-gold"
-            }
+            className={`border-b-2 py-1.5 transition-colors duration-200 ${
+              current ? "border-ink" : "border-transparent hover:border-steel"
+            }`}
           >
             {link.label}
           </Link>

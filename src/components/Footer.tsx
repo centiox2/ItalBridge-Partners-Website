@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/dictionaries";
 import type { Locale } from "@/i18n";
-import { contact, href, socials } from "@/site";
+import { contact, href, socials, type Route } from "@/site";
+import { container } from "./ui";
 import { images } from "@/images";
 
 async function currentYear() {
@@ -10,9 +11,9 @@ async function currentYear() {
   return new Date().getFullYear();
 }
 
-const heading = "text-gold";
-const column = "flex flex-col gap-2";
-const link = "hover:text-gold";
+const heading = "font-medium text-white";
+const column = "flex flex-col items-start gap-2.5";
+const link = "hover:text-white";
 
 export default async function Footer({
   lang,
@@ -23,60 +24,70 @@ export default async function Footer({
 }) {
   const year = await currentYear();
   const { nav, footer } = dict;
+  // Footer links skip prefetching: it would compete with page images on slow connections.
+  const pageLink = (route: Route, label: string) => (
+    <Link key={route} prefetch={false} href={href(lang, route)} className={link}>
+      {label}
+    </Link>
+  );
 
   return (
-    <footer className="border-t border-cream/20 text-sm">
-      <div className="mx-auto flex max-w-[1344px] flex-wrap gap-9 px-4 pt-14 pb-5 sm:px-12">
-        <div className="flex-[2_1_280px]">
-          <div className="flex items-center gap-3">
-            <Image src={images.logo} alt="" width={52} height={44} className="h-11 w-[52px]" />
-            <span className="font-serif text-2xl">ItalBridge Partners</span>
-          </div>
-          <p className="mt-3 mb-4 max-w-[340px] text-sand">{footer.tagline}</p>
-          <ul aria-label={footer.social} className="m-0 flex list-none flex-wrap gap-x-4.5 gap-y-1.5 p-0">
-            {socials.map((s) => (
-              <li key={s.href}>
-                <a href={s.href} target="_blank" rel="noopener noreferrer" className={link}>
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+    <footer className="bg-ink-deep text-[15px] text-mist">
+      <div className={`${container} grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-10 pt-18 pb-8`}>
+        <div>
+          <Image src={images.logo} alt={nav.logoAlt} width={64} height={54} className="mb-3.5 block h-auto w-16" />
+          <div className="font-semibold text-white">ItalBridge Partners</div>
+          <p className="mt-1.5 mb-0 leading-relaxed">{footer.tagline}</p>
         </div>
-        {/* Footer links skip prefetching: it would compete with page images on slow connections. */}
-        <div className={`${column} flex-[1_1_140px]`}>
-          <b className={heading}>{footer.navigate}</b>
-          <Link prefetch={false} href={href(lang, "home")} className={link}>{nav.home}</Link>
-          <Link prefetch={false} href={href(lang, "about")} className={link}>{nav.about}</Link>
-          <Link prefetch={false} href={href(lang, "services")} className={link}>{nav.services}</Link>
-          <Link prefetch={false} href={href(lang, "industries")} className={link}>{nav.industries}</Link>
-          <Link prefetch={false} href={href(lang, "manufacturers")} className={link}>{nav.manufacturers}</Link>
-          <Link prefetch={false} href={href(lang, "buyers")} className={link}>{nav.buyers}</Link>
+        <div className={column}>
+          <strong className={heading}>{footer.company}</strong>
+          {pageLink("about", nav.about)}
+          {pageLink("services", nav.services)}
+          {pageLink("industries", nav.industries)}
+          {pageLink("marketInsight", nav.marketInsight)}
         </div>
-        <div className={`${column} flex-[1_1_170px]`}>
-          <b className={heading}>{footer.legal}</b>
-          <Link prefetch={false} href={href(lang, "privacy")} className={link}>{footer.privacy}</Link>
-          <Link prefetch={false} href={href(lang, "terms")} className={link}>{footer.terms}</Link>
-          <Link prefetch={false} href={href(lang, "cookies")} className={link}>{footer.cookies}</Link>
-          <Link prefetch={false} href={href(lang, "dataRequest")} className={link}>{footer.dataRequest}</Link>
+        <div className={column}>
+          <strong className={heading}>{footer.work}</strong>
+          {pageLink("manufacturers", nav.manufacturers)}
+          {pageLink("buyers", nav.buyers)}
+          {pageLink("contact", nav.contact)}
         </div>
-        <div className={`${column} flex-[1.4_1_220px]`}>
-          <b className={heading}>{footer.contact}</b>
+        <div className={column}>
+          <strong className={heading}>{footer.contact}</strong>
           {contact.emails.map((email) => (
-            <a key={email} href={`mailto:${email}`} className={link}>
+            <a key={email} href={`mailto:${email}`} className={`${link} break-all`}>
               {email}
             </a>
           ))}
-          {contact.phones.map((phone) => (
-            <a key={phone.tel} href={`tel:${phone.tel}`} className={link}>
-              {phone.display}
-            </a>
-          ))}
-          <span>{footer.location}</span>
+          <span>
+            {contact.phones.map((phone, i) => (
+              <span key={phone.tel}>
+                {i > 0 && " · "}
+                <a href={`tel:${phone.tel}`} className={link}>
+                  {phone.display}
+                </a>
+              </span>
+            ))}
+          </span>
         </div>
       </div>
-      <div className="mx-auto max-w-[1344px] px-4 pt-3 pb-7 text-[13px] text-sand sm:px-12">
-        © {year} ItalBridge Partners. {footer.rights}
+      <div className={`${container} flex flex-wrap justify-between gap-x-8 gap-y-4 border-t border-rule-dark pt-6 pb-10 text-sm`}>
+        <span>© {year} ItalBridge Partners</span>
+        <ul aria-label={footer.social} className="m-0 flex list-none flex-wrap gap-5 p-0">
+          {socials.map((s) => (
+            <li key={s.href}>
+              <a href={s.href} target="_blank" rel="noopener noreferrer" className={`${link} underline`}>
+                {s.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <nav aria-label={footer.legal} className="flex flex-wrap gap-5 underline">
+          {pageLink("privacy", footer.privacy)}
+          {pageLink("terms", footer.terms)}
+          {pageLink("cookies", footer.cookies)}
+          {pageLink("dataRequest", footer.dataRequest)}
+        </nav>
       </div>
     </footer>
   );

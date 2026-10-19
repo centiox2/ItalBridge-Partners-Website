@@ -20,6 +20,10 @@ const pages = {
     it: () => import("./it/manufacturers.json"),
   },
   buyers: { en: () => import("./en/buyers.json"), it: () => import("./it/buyers.json") },
+  marketInsight: {
+    en: () => import("./en/marketInsight.json"),
+    it: () => import("./it/marketInsight.json"),
+  },
   contact: { en: () => import("./en/contact.json"), it: () => import("./it/contact.json") },
   privacy: { en: () => import("./en/privacy.json"), it: () => import("./it/privacy.json") },
   terms: { en: () => import("./en/terms.json"), it: () => import("./it/terms.json") },

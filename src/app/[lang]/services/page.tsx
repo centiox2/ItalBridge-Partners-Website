@@ -1,78 +1,72 @@
-import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPage } from "@/dictionaries";
+import { getDictionary, getPage } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { href } from "@/site";
 import CtaBand from "@/components/page/CtaBand";
-import PageHero from "@/components/page/PageHero";
-import SectionIntro from "@/components/page/SectionIntro";
-import { buttonInk, eyebrow } from "@/components/ui";
+import PageHeader from "@/components/page/PageHeader";
+import StageTabs from "@/components/page/StageTabs";
+import { container, h2 } from "@/components/ui";
 import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/services">) =>
   pageMetadata(params, "services");
 
+// One photo per stage, in stage order.
 const photos = [
   images.nairobi,
-  images.workshop,
-  images.conveyorLine,
+  images.engineer,
   images.cncMachining,
-  images.portTerminal,
+  images.conveyorLine,
+  images.containerPort,
   images.roboticArm,
 ];
 
 export default async function Services({ params }: PageProps<"/[lang]/services">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { hero, list, cta } = await getPage(lang, "services");
+  const [{ nav, stage }, page] = await Promise.all([getDictionary(lang), getPage(lang, "services")]);
+  const { hero, faq, cta } = page;
 
   return (
     <>
-      <PageHero
-        title={hero.title}
-        text={hero.text}
-        image={images.containerPort}
-        imageAlt={hero.imageAlt}
-        objectPosition="40% center"
-      />
+      <PageHeader lang={lang} nav={nav} crumb={nav.services} title={hero.title} text={hero.text} className="pb-24" />
 
-      <section className="bg-navy pt-24">
-        <SectionIntro title={list.title} text={list.intro} />
-        <ol className="m-0 list-none p-0">
-          {list.items.map((item, i) => (
-            <li key={item.title} className={i % 2 === 0 ? "bg-ink" : "bg-navy"}>
-              <div
-                className={`mx-auto flex max-w-[1344px] flex-wrap ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-              >
-                <div className="group relative min-h-[380px] flex-[1_1_min(440px,100%)] overflow-hidden">
-                  <Image src={photos[i]} alt="" fill placeholder="blur" sizes="(min-width: 1024px) 600px, 100vw" className="zoom object-cover" />
-                </div>
-                <div className="reveal flex flex-[1.2_1_min(520px,100%)] flex-col justify-center gap-3.5 px-4 py-14 sm:px-14">
-                  <div className="font-serif text-[64px] leading-none text-gold">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <h3 className="m-0 font-serif text-[34px] leading-[1.1] font-normal">{item.title}</h3>
-                  <p className="m-0 max-w-[560px] text-lg text-sand">{item.text}</p>
-                  <div className={`${eyebrow} mt-1.5 text-gold`}>{list.deliverLabel}</div>
-                  <ul className="m-0 max-w-[460px] list-none p-0">
-                    {item.deliverables.map((d) => (
-                      <li key={d} className="border-t border-cream/25 py-2.5">{d}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
+      <section className="bg-paper">
+        <div className={`${container} flex flex-wrap gap-12 pt-24 pb-32`}>
+          <StageTabs
+            label={page.tabsLabel}
+            stageLabel={stage}
+            weDo={page.weDo}
+            youGet={page.youGet}
+            stages={page.stages.map((s, i) => ({ ...s, image: photos[i] }))}
+          />
+        </div>
       </section>
 
-      <CtaBand title={cta.title} text={cta.text}>
-        <Link href={href(lang, "contact")} className={buttonInk}>
-          {cta.button}
-        </Link>
-      </CtaBand>
+      <section className={`${container} flex flex-wrap gap-14 py-32`}>
+        <h2 className={`${h2} flex-[1_1_300px]`}>{faq.title}</h2>
+        <div className="flex-[2_1_min(640px,100%)] border-t border-ink">
+          {faq.items.map((item) => (
+            <details key={item.q} className="border-b border-line py-5.5">
+              <summary className="flex justify-between gap-6 text-[19px] font-medium">
+                {item.q}
+                <span aria-hidden className="plus text-2xl leading-none">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3.5 mb-0 max-w-[60ch] leading-[1.65] text-body">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <CtaBand
+        title={cta.title}
+        text={cta.text}
+        primary={{ href: href(lang, "contact"), label: cta.primary }}
+        secondary={{ href: href(lang, "industries"), label: cta.secondary }}
+      />
     </>
   );
 }

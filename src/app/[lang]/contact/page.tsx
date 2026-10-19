@@ -1,123 +1,93 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, getPage } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { contact, href } from "@/site";
-import InquiryForm from "@/components/page/InquiryForm";
-import PageHero from "@/components/page/PageHero";
-import { inquiryFields } from "@/components/page/fields";
-import { container, eyebrow, h2 } from "@/components/ui";
+import EnquiryForm from "@/components/page/EnquiryForm";
+import { Breadcrumb } from "@/components/page/PageHeader";
+import { container } from "@/components/ui";
 import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/contact">) =>
   pageMetadata(params, "contact");
 
-const h2Form = "m-0 mb-6 font-serif text-[clamp(30px,3.4vw,46px)] leading-[1.05] font-normal text-navy";
-const value = "font-serif text-2xl break-all text-navy";
-
 export default async function Contact({ params }: PageProps<"/[lang]/contact">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const [{ form }, { hero, details, form: formCopy, portals, location }] = await Promise.all([
+  const [{ nav, form }, { hero, details, form: copy }] = await Promise.all([
     getDictionary(lang),
     getPage(lang, "contact"),
   ]);
   const [info, sales] = contact.emails;
 
-  const rows = [
-    { label: details.general, content: <a href={`mailto:${info}`} className={`${value} hover:underline`}>{info}</a> },
-    { label: details.sales, content: <a href={`mailto:${sales}`} className={`${value} hover:underline`}>{sales}</a> },
-    {
-      label: details.phone,
-      content: contact.phones.map((p) => (
-        <a key={p.tel} href={`tel:${p.tel}`} className={`${value} block hover:underline`}>
-          {p.international}
-        </a>
-      )),
-    },
-    { label: details.hq, content: <div className={value}>{details.hqValue}</div> },
-    { label: details.response, content: <div className={value}>{details.responseValue}</div> },
+  const cards = [
+    { label: details.general, value: info, href: `mailto:${info}` },
+    { label: details.sales, value: sales, href: `mailto:${sales}` },
+    ...contact.phones.map((p) => ({ label: details.phone, value: p.display, href: `tel:${p.tel}` })),
   ];
 
-  const portalCard = "lift block flex-[1_1_min(520px,100%)] px-4 py-16 hover:brightness-110 sm:px-14";
-
   return (
-    <>
-      <PageHero
-        title={hero.title}
-        text={hero.text}
-        image={images.nairobi}
-        imageAlt={hero.imageAlt}
-        objectPosition="55% center"
-      />
-
-      <section className="bg-cream text-ink">
-        <div className={`${container} flex flex-wrap gap-x-18 gap-y-12 py-24`}>
-          <div className="flex-[1_1_min(400px,100%)]">
-            <h2 className={h2Form}>{details.title}</h2>
-            {rows.map((row) => (
-              <div key={row.label} className="border-t border-navy py-4">
-                <div className={`${eyebrow} text-[#4b5463]`}>{row.label}</div>
-                {row.content}
-              </div>
-            ))}
-          </div>
-          <div className="flex-[1.5_1_min(540px,100%)]">
-            <h2 className={h2Form}>{formCopy.title}</h2>
-            <InquiryForm
-              id="contact"
-              fields={inquiryFields(form)}
-              to={info}
-              subject={formCopy.subject}
-              submitLabel={form.submit}
-              consent={form.consent}
-              privacyLabel={form.privacy}
-              privacyHref={href(lang, "privacy")}
-              requiredLabel={form.required}
-              sentText={form.sent}
-            />
-          </div>
+    <section className={`${container} flex flex-wrap gap-16 pt-18 pb-30`}>
+      <div className="min-w-0 flex-[1_1_min(380px,100%)]">
+        <Breadcrumb lang={lang} nav={nav}>
+          {nav.contact}
+        </Breadcrumb>
+        <h1 className="enter m-0 mb-5 text-[clamp(40px,4.4vw,60px)] leading-[1.03] font-semibold tracking-[-0.04em] [--i:1]">
+          {hero.title}
+        </h1>
+        <p className="enter m-0 mb-10 max-w-[46ch] text-lg leading-[1.65] text-body [--i:2]">{hero.text}</p>
+        <div className="enter grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-3 [--i:3]">
+          {cards.map((c) => (
+            <a key={c.href} href={c.href} className="block min-w-0 rounded-[10px] bg-paper p-5.5 hover:bg-chip-hover">
+              <span className="block text-sm text-sub">{c.label}</span>
+              <strong className="mt-1.5 block font-medium [overflow-wrap:anywhere]">{c.value}</strong>
+            </a>
+          ))}
         </div>
-      </section>
-
-      <section className="flex flex-wrap">
-        {[
-          { route: "manufacturers" as const, bg: "bg-navy", copy: portals.manufacturers },
-          { route: "buyers" as const, bg: "bg-slate", copy: portals.buyers },
-        ].map((p) => (
-          <Link key={p.route} href={href(lang, p.route)} className={`${portalCard} ${p.bg}`}>
-            <div className={`${eyebrow} text-gold`}>{portals.eyebrow}</div>
-            <div className="mt-2 mb-1.5 font-serif text-[38px]">{p.copy.title}</div>
-            <div className="text-lg text-sand">{p.copy.text}</div>
-          </Link>
-        ))}
-      </section>
-
-      <section className={`${container} flex flex-wrap items-center gap-x-18 gap-y-10 py-24`}>
-        <div className="reveal flex flex-[1_1_min(440px,100%)] flex-col gap-5.5">
-          <h2 className={h2}>{location.title}</h2>
-          <p className="m-0 text-lg text-sand">{location.text}</p>
-          <div className="flex flex-wrap gap-x-12 gap-y-5">
-            <div>
-              <div className={`${eyebrow} text-gold`}>{location.hubLabel}</div>
-              <div className="font-serif text-[26px]">{location.hubValue}</div>
-            </div>
-            <div>
-              <div className={`${eyebrow} text-gold`}>{location.italyLabel}</div>
-              <div className="font-serif text-[26px]">{location.italyValue}</div>
-            </div>
-          </div>
-        </div>
-        <Image
-          src={images.corridorMap}
-          alt={location.mapAlt}
-          width={1600}
-          height={900}
-          className="reveal h-[400px] max-w-full flex-[1.2_1_min(520px,100%)] object-cover"
+        <figure className="relative mt-6 overflow-hidden rounded-[10px]">
+          <Image
+            src={images.nairobi}
+            alt={details.imageAlt}
+            placeholder="blur"
+            sizes="(min-width: 1000px) 45vw, 100vw"
+            className="block aspect-[16/8] w-full object-cover"
+          />
+          <figcaption className="absolute bottom-4 left-4 rounded-lg bg-white px-3.5 py-2.5 font-medium shadow-[0_10px_24px_-12px_rgba(21,27,38,0.4)]">
+            {details.caption}
+          </figcaption>
+        </figure>
+      </div>
+      <div className="min-w-0 flex-[1.2_1_min(480px,100%)] self-start rounded-xl bg-paper p-6 sm:p-10">
+        <EnquiryForm
+          id="consultation"
+          audience={{
+            legend: copy.audience,
+            options: [
+              { label: copy.manufacturer, who: copy.manufacturer, to: info, hint: copy.manufacturerHint },
+              { label: copy.buyer, who: copy.buyer, to: sales, hint: copy.buyerHint },
+            ],
+          }}
+          fields={[
+            { name: "name", label: form.fullName, autoComplete: "name", check: "required", error: form.errors.name },
+            { name: "company", label: form.company, autoComplete: "organization" },
+            { name: "email", label: form.email, type: "email", autoComplete: "email", check: "email", error: form.errors.email },
+            { name: "phone", label: form.phone, labelNote: form.optional, type: "tel", autoComplete: "tel" },
+            { name: "industry", label: form.industry, type: "select", options: [...form.industries, copy.other], full: true },
+            { name: "message", label: copy.message, type: "textarea", check: "message", error: copy.messageError },
+          ]}
+          to={info}
+          subject={copy.subject}
+          subjectField="name"
+          submitLabel={copy.submit}
+          sentTitle={copy.sent}
+          fallback={form.fallback}
+          againLabel={form.again}
+          consent={form.consent}
+          privacyLabel={form.privacy}
+          privacyHref={href(lang, "privacy")}
         />
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

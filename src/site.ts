@@ -19,15 +19,6 @@ export const socials = [
   { label: "X", href: "https://x.com/italbridge" },
 ];
 
-// Anchor ids of sections on the home page.
-export const sections = {
-  services: "process",
-  industries: "sectors",
-  manufacturers: "network",
-  buyers: "portals",
-  contact: "contact",
-} as const;
-
 export const routes = {
   home: "",
   about: "/about",
@@ -35,6 +26,7 @@ export const routes = {
   industries: "/industries",
   manufacturers: "/manufacturers",
   buyers: "/buyers",
+  marketInsight: "/market-insight",
   contact: "/contact",
   privacy: "/privacy-policy",
   terms: "/terms-of-use",

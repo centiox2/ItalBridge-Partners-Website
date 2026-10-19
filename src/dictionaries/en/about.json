@@ -1,61 +1,66 @@
 {
   "meta": {
     "title": "About",
-    "description": "ItalBridge Partners is a Nairobi-based B2B trade intermediary connecting Italian industrial manufacturers with qualified buyers across Kenya and East Africa."
+    "description": "ItalBridge Partners is one accountable partner between Italian industrial manufacturers and buyers in Kenya and East Africa, based in Nairobi."
   },
   "hero": {
-    "title": "A bridge built on relationships, not transactions.",
-    "text": "ItalBridge Partners is a Nairobi-based B2B trade intermediary connecting Italian industrial manufacturers with qualified buyers across Kenya and East Africa.",
-    "imageAlt": "Industrial engineer holding a tablet on a factory floor"
+    "title": "One accountable partner between Italian industry and East Africa.",
+    "text": "ItalBridge Partners connects Italian industrial manufacturers with qualified buyers in Kenya and East Africa — and carries every deal from first requirement to after-sales.",
+    "imageAlt": "Nairobi city skyline",
+    "caption": "Our base: Nairobi, serving six East African markets."
   },
-  "story": {
-    "title": "Two industrial cultures, one accountable partner.",
+  "why": {
+    "title": "Why we exist.",
     "paragraphs": [
-      "Italy is one of the world's most established industrial manufacturing economies, particularly in machinery, automation, and precision engineering. East Africa is one of the fastest-developing manufacturing regions, with growing demand for industrial equipment to build domestic production capacity.",
-      "The gap between these two markets is rarely a gap in capability or demand. It is a gap in trust, communication, logistics, and accountability. Italian manufacturers rarely have a local East African presence. East African buyers rarely have direct, reliable access to verified Italian manufacturers.",
-      "ItalBridge Partners was founded in Nairobi to close that gap. We operate as a full-service commercial bridge, managing buyer sourcing, manufacturer representation, negotiations, procurement coordination, logistics, customs support, and after-sales coordination through a single accountable local partner."
-    ]
+      "Italian manufacturers build some of the world's best industrial equipment, but selling into East Africa usually means opening an office, finding local partners and managing a long chain of intermediaries.",
+      "East African buyers want that equipment — but need someone on the ground who understands the specification, the contract, the shipment and the service that follows."
+    ],
+    "conclusion": "We sit in the middle as a single accountable partner, so both sides deal with one team from start to finish."
   },
-  "banner": {
-    "text": "Structural, load-bearing, connecting two shores.",
-    "imageAlt": "Container ship alongside port cranes"
-  },
-  "guides": {
-    "title": "What guides us",
-    "intro": "Mission, approach, and long-term vision.",
+  "different": {
+    "title": "What makes us different.",
     "items": [
       {
-        "title": "Our Mission",
-        "text": "To make Italian industrial capability accessible, trustworthy, and locally supported across East Africa."
+        "title": "A local presence in Nairobi",
+        "text": "On the ground, in the buyer's time zone, able to visit sites and meet teams in person."
       },
       {
-        "title": "Our Approach",
-        "text": "Relationship-driven, not transactional. We invest in long-term commercial partnerships between manufacturers and buyers."
+        "title": "Direct Italian relationships",
+        "text": "We work directly with manufacturers, not through chains of agents."
       },
       {
-        "title": "Our Vision",
-        "text": "To become the standard commercial bridge for Italian industrial trade across the East African region."
+        "title": "End-to-end coordination",
+        "text": "From sourcing through commissioning, one team owns every stage."
+      },
+      {
+        "title": "Technical and commercial support",
+        "text": "We read specifications and negotiate contracts — both sides of the deal."
+      },
+      {
+        "title": "Cross-cultural expertise",
+        "text": "Fluent in Italian and East African business cultures, expectations and practice."
+      },
+      {
+        "title": "After-sales coordination",
+        "text": "We stay involved after delivery — installation, spares and service."
       }
     ]
   },
-  "corridor": {
-    "title": "An established corridor with room to grow.",
-    "paragraphs": [
-      "Italy exported approximately USD 154 million in goods to Kenya in 2024, with machinery representing roughly USD 55 million of that trade. The corridor is real, but it remains underserved for small and mid-sized industrial transactions that require local support.",
-      "ItalBridge focuses on the segment of this corridor that larger trade platforms overlook: qualified industrial equipment procurement that needs a relationship-driven, locally accountable partner."
-    ],
-    "totalLabel": "Italy exports to Kenya, 2024 (approx.)",
-    "totalValue": "$154M",
-    "machineryLabel": "Machinery component",
-    "machineryValue": "$55M",
-    "mapAlt": "Map of the trade corridor between Italy and East Africa",
-    "mapTitle": "Nairobi ⇄ Italy",
-    "mapCaption": "Operating across both ends of the corridor"
+  "vetting": {
+    "title": "How we choose manufacturers.",
+    "text": "Every manufacturer in our network is vetted before a buyer ever sees a quote, on four criteria:",
+    "imageAlt": "Engineer reviewing a tablet on a factory floor",
+    "criteria": [
+      "Technical capability",
+      "Production capacity",
+      "Quality standards",
+      "Export readiness"
+    ]
   },
   "cta": {
-    "title": "Want to understand the model in detail?",
-    "text": "Read our full service breakdown or speak with our team directly.",
-    "primary": "View Services",
-    "secondary": "Contact Us"
+    "title": "Talk to the team.",
+    "text": "Tell us what you make or what you need. One conversation is enough to start.",
+    "primary": "Book a consultation",
+    "secondary": "See our services"
   }
 }

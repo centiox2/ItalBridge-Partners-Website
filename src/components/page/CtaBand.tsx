@@ -1,27 +1,41 @@
-import type { ReactNode } from "react";
-import { container } from "../ui";
+import Link from "next/link";
+import { buttonCream, buttonInk, buttonPanel, container, h2, h2Large, sizeLg, sizeMd } from "../ui";
 
-// Closing gold band with a large question and one or two actions.
+// Closing call to action: a dark band (default) or a plain light row.
 export default function CtaBand({
   title,
   text,
-  children,
+  primary,
+  secondary,
+  tone = "dark",
+  large = false,
 }: {
   title: string;
   text: string;
-  children: ReactNode;
+  primary: { href: string; label: string };
+  secondary?: { href: string; label: string };
+  tone?: "dark" | "light";
+  large?: boolean;
 }) {
-  return (
-    <section className="bg-gold text-ink">
-      <div className={`${container} flex flex-wrap items-end gap-x-16 gap-y-7 py-24`}>
-        <h2 className="reveal m-0 flex-[2_1_min(520px,100%)] font-serif text-[clamp(36px,4.8vw,72px)] leading-[1.02] font-normal">
-          {title}
-        </h2>
-        <div className="reveal flex flex-[1_1_300px] flex-col items-start gap-5">
-          <p className="m-0 text-[19px]">{text}</p>
-          <div className="flex flex-wrap gap-3">{children}</div>
-        </div>
+  const dark = tone === "dark";
+  const inner = (
+    <div className={`${container} flex flex-wrap items-center justify-between gap-10 ${dark ? "py-26" : "py-28"}`}>
+      <div className="reveal flex-[2_1_min(520px,100%)]">
+        <h2 className={`${large ? h2Large : h2} mb-3.5`}>{title}</h2>
+        <p className={`m-0 max-w-[52ch] leading-relaxed ${dark ? "text-mist" : "text-body"}`}>{text}</p>
       </div>
-    </section>
+      <div className="flex flex-wrap gap-3">
+        <Link href={primary.href} className={`${dark ? buttonCream : buttonInk} ${sizeLg}`}>
+          {primary.label}
+        </Link>
+        {secondary && (
+          <Link href={secondary.href} className={`${buttonPanel} ${sizeMd}`}>
+            {secondary.label}
+          </Link>
+        )}
+      </div>
+    </div>
   );
+
+  return dark ? <section className="bg-ink text-cream">{inner}</section> : <section>{inner}</section>;
 }
