@@ -11,7 +11,7 @@ import { container, h2, stagger } from "@/components/ui";
 export const generateMetadata = ({ params }: PageProps<"/[lang]/market-insight">) =>
   pageMetadata(params, "marketInsight");
 
-const tip = "tip rounded-md bg-ink px-2.5 py-1.5 text-[13px] text-white";
+const tip = "tip rounded-md bg-night px-2.5 py-1.5 text-[13px] text-white";
 
 // Bar widths, to scale: Q3 imports (KSh 96.3B of 139.1B), and the highlighted
 // share of each split bar (Italy €17M of €117M; machinery ~$55M of ~$154M).
@@ -45,7 +45,7 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
                     <span>{bar.label}</span>
                     <span>{bar.value}</span>
                   </div>
-                  <div className="h-10 rounded-r bg-[#e6e5de]">
+                  <div className="h-10 rounded-r bg-track">
                     <div
                       className={`grow-bar h-full rounded-r ${latest ? "bg-ink" : "bg-steel"}`}
                       style={{ width: importWidths[i], ...stagger(i) }}
@@ -60,7 +60,7 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
         </figure>
         <div className="flex flex-[1_1_min(340px,100%)] flex-col gap-5">
           {stats.map((s, i) => (
-            <div key={s.value} className={`flex-1 rounded-xl p-8 ${i === 0 ? "bg-ink text-cream" : "bg-paper"}`}>
+            <div key={s.value} className={`flex-1 rounded-xl p-8 ${i === 0 ? "bg-night text-cream" : "bg-paper"}`}>
               <div className="text-[52px] leading-tight font-semibold tracking-[-0.04em]">
                 <CountUp value={s.value} />
               </div>
@@ -92,7 +92,7 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
                   <div
                     tabIndex={0}
                     aria-label={chart.rest.aria}
-                    className="bar grow-bar relative flex-1 rounded-r bg-[#cbd1db]"
+                    className="bar grow-bar relative flex-1 rounded-r bg-bar-rest"
                     style={stagger(i * 2 + 2)}
                   >
                     <span className={tip}>{chart.rest.tip}</span>
@@ -104,7 +104,7 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
                     {chart.part.legend}
                   </span>
                   <span className="flex items-center gap-2">
-                    <span aria-hidden className="inline-block size-3 rounded-[3px] bg-[#cbd1db]" />
+                    <span aria-hidden className="inline-block size-3 rounded-[3px] bg-bar-rest" />
                     {chart.rest.legend}
                   </span>
                 </div>

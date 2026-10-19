@@ -32,7 +32,7 @@ export default function RequirementChecklist({
             <span key={done} className="pop inline-block">{done}</span> {of} {items.length}
           </div>
           <p className="mt-1.5 mb-3.5 text-body">{verdict}</p>
-          <div aria-hidden className="h-2 overflow-hidden rounded-full bg-[#e1e1da]">
+          <div aria-hidden className="h-2 overflow-hidden rounded-full bg-track">
             <div className="meter h-full rounded-full bg-ink" style={{ width: `${(done / items.length) * 100}%` }} />
           </div>
         </div>
@@ -47,14 +47,14 @@ export default function RequirementChecklist({
                 aria-pressed={on}
                 onClick={() => setTicked((t) => t.map((v, k) => (k === i ? !v : v)))}
                 className={`flex h-full w-full cursor-pointer items-start gap-3.5 rounded-[10px] border-2 p-5 text-left transition-colors ${
-                  on ? "border-ink bg-ink text-white" : "border-line bg-white text-ink hover:border-ink"
+                  on ? "border-ink bg-night text-white" : "border-line bg-card text-ink hover:border-ink"
                 }`}
               >
                 <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden fill="none" className={`shrink-0 ${on ? "pop" : ""}`}>
                   {on ? (
                     <>
                       <rect x="1" y="1" width="20" height="20" rx="5" className="fill-cream" />
-                      <path d="M6 11.5l3.5 3.5L16 8" className="stroke-ink" strokeWidth="2" />
+                      <path d="M6 11.5l3.5 3.5L16 8" className="stroke-night" strokeWidth="2" />
                     </>
                   ) : (
                     <rect x="1.5" y="1.5" width="19" height="19" rx="5" className="stroke-steel" strokeWidth="1.5" />

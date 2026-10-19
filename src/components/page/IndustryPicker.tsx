@@ -53,7 +53,7 @@ export default function IndustryPicker({
                 aria-controls="industry-detail"
                 onClick={() => setPicked(i)}
                 className={`group w-full cursor-pointer overflow-hidden rounded-[10px] border-2 p-0 text-left transition-colors ${
-                  active ? "border-ink bg-ink text-white" : "border-line bg-white text-ink hover:border-ink"
+                  active ? "border-ink bg-night text-white" : "border-line bg-card text-ink hover:border-ink"
                 }`}
               >
                 <span className="block overflow-hidden">
@@ -84,7 +84,7 @@ export default function IndustryPicker({
             <Link href={discuss.href} className={`${buttonInk} ${sizeMd}`}>
               {discuss.label}
             </Link>
-            <Link href={deliver.href} className={`btn inline-flex min-h-11 items-center rounded-md bg-white text-ink ${sizeMd}`}>
+            <Link href={deliver.href} className={`btn inline-flex min-h-11 items-center rounded-md bg-card text-ink ${sizeMd}`}>
               {deliver.label}
             </Link>
           </div>
@@ -93,7 +93,7 @@ export default function IndustryPicker({
           <h3 className="m-0 mb-3.5 text-base font-semibold">{equipment}</h3>
           <ul className="m-0 mb-7 list-none border-t border-ink p-0">
             {cur.items.map((item, i) => (
-              <li key={item} className="fade border-b border-[#dcdcd5] py-3.5" style={stagger(i + 3)}>
+              <li key={item} className="fade border-b border-line-strong py-3.5" style={stagger(i + 3)}>
                 {item}
               </li>
             ))}

@@ -6,10 +6,10 @@ export const container = "mx-auto max-w-[1400px] px-4 sm:px-8";
 // Buttons: a colour plus a size, e.g. `${buttonInk} ${sizeMd}`.
 const button = "btn inline-flex min-h-11 items-center justify-center rounded-md";
 
-export const buttonInk = `${button} bg-ink text-white hover:bg-hover`;
+export const buttonInk = `${button} bg-btn text-btn-fg hover:bg-btn-hover`;
 export const buttonChip = `${button} bg-chip text-ink hover:bg-chip-hover`;
 // On dark bands.
-export const buttonCream = `${button} bg-cream text-ink`;
+export const buttonCream = `${button} bg-cream text-night`;
 export const buttonPanel = `${button} bg-panel-raised text-white`;
 
 export const sizeSm = "px-5 py-3 text-sm font-medium";

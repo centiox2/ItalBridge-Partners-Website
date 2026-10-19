@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n";
 import { contact, href } from "@/site";
 import LanguageSwitcher from "./LanguageSwitcher";
 import NavLinks from "./NavLinks";
+import ThemeToggle from "./ThemeToggle";
 import { buttonInk, container, sizeSm } from "./ui";
 import { images } from "@/images";
 
@@ -29,7 +30,7 @@ export default function Header({
 
   return (
     <>
-      <div className="bg-ink text-[13px] text-mist">
+      <div className="bg-night text-[13px] text-mist">
         <div className={`${container} flex flex-wrap justify-between gap-x-6 gap-y-2 py-2.5`}>
           <span className="flex items-center gap-2">
             <span aria-hidden className="pulse inline-block size-[7px] rounded-full bg-steel" />
@@ -51,15 +52,18 @@ export default function Header({
             aria-label={nav.homeLabel}
             className="flex items-center gap-3 text-lg font-semibold tracking-[-0.01em]"
           >
-            <span className="flex size-[42px] items-center justify-center rounded-md bg-ink">
+            <span className="flex size-[42px] items-center justify-center rounded-md bg-night">
               <Image src={images.logo} alt="" width={29} height={24} loading="eager" className="h-auto w-[29px]" />
             </span>
             ItalBridge Partners
           </Link>
           <NavLinks label={nav.menu} links={links} />
-          <Link href={href(lang, "contact")} className={`${buttonInk} ${sizeSm}`}>
-            {nav.cta}
-          </Link>
+          <div className="flex items-center gap-3">
+            <ThemeToggle toDark={nav.toDark} toLight={nav.toLight} />
+            <Link href={href(lang, "contact")} className={`${buttonInk} ${sizeSm}`}>
+              {nav.cta}
+            </Link>
+          </div>
         </div>
       </header>
     </>

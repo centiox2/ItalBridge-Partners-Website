@@ -26,7 +26,7 @@ export type Audience = {
 };
 
 const control =
-  "w-full rounded-md border border-field bg-white px-3.5 py-3 text-ink aria-invalid:border-error";
+  "w-full rounded-md border border-field bg-card px-3.5 py-3 text-ink aria-invalid:border-error";
 
 function isValid(check: Field["check"], value: string) {
   if (check === "required") return value !== "";
@@ -110,7 +110,7 @@ export default function EnquiryForm({
         <button
           type="button"
           onClick={() => setSentTo(null)}
-          className="btn cursor-pointer rounded-md border border-field bg-white px-5 py-3 font-medium text-ink"
+          className="btn cursor-pointer rounded-md border border-field bg-card px-5 py-3 font-medium text-ink"
         >
           {againLabel}
         </button>
@@ -128,7 +128,7 @@ export default function EnquiryForm({
       {audience && (
         <fieldset className="col-span-full m-0 border-0 p-0">
           <legend className="mb-2.5 font-medium">{audience.legend}</legend>
-          <div className="inline-flex flex-wrap gap-1 rounded-lg bg-[#e9e9e3] p-1">
+          <div className="inline-flex flex-wrap gap-1 rounded-lg bg-toggle p-1">
             {audience.options.map((o, i) => (
               <button
                 key={o.who}
@@ -136,7 +136,7 @@ export default function EnquiryForm({
                 aria-pressed={i === who}
                 onClick={() => setWho(i)}
                 className={`cursor-pointer rounded-md border-0 px-4 py-2.5 text-sm font-medium ${
-                  i === who ? "bg-white text-ink shadow-[0_2px_6px_-2px_rgba(21,27,38,0.18)]" : "bg-transparent text-sub"
+                  i === who ? "bg-pill text-ink shadow-[0_2px_6px_-2px_rgba(21,27,38,0.18)]" : "bg-transparent text-sub"
                 }`}
               >
                 {o.label}

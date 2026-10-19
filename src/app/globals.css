@@ -1,35 +1,139 @@
 @import "tailwindcss";
 
+/* Colour tokens. Theme-dependent ones are variables, set per theme below;
+   the rest are fixed and only ever used on dark surfaces. */
 @theme inline {
-  /* Ink: headings, primary buttons, dark bands. */
-  --color-ink: #151b26;
-  --color-ink-deep: #10151e;
-  --color-hover: #3a4458;
-  /* Text greys on light backgrounds, darkest first. */
-  --color-body: #3a4150;
-  --color-sub: #4a5160;
-  --color-faint: #5a6170;
-  /* On dark backgrounds. */
+  /* Page and light surfaces. */
+  --color-page: var(--page);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-chip: var(--chip);
+  --color-chip-hover: var(--chip-hover);
+  --color-pill: var(--pill);
+  --color-toggle: var(--toggle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-rule: var(--rule);
+  --color-field: var(--field);
+  --color-track: var(--track);
+  --color-bar-rest: var(--bar-rest);
+  /* Ink: text, rules, chart marks and focus rings. Light in dark mode. */
+  --color-ink: var(--ink);
+  --color-hover: var(--hover);
+  --color-body: var(--body);
+  --color-sub: var(--sub);
+  --color-faint: var(--faint);
+  --color-error: var(--error);
+  /* Night: dark surfaces (bands, dark cards, top bar). Dark in both themes. */
+  --color-night: var(--night);
+  --color-ink-deep: var(--ink-deep);
+  /* Primary button. */
+  --color-btn: var(--btn);
+  --color-btn-fg: var(--btn-fg);
+  --color-btn-hover: var(--btn-hover);
+  /* Fixed: text and fills on night surfaces. */
   --color-mist: #c9cdd4;
   --color-ice: #c9d2e0;
   --color-steel: #9aa7bd;
   --color-panel: #1e2838;
   --color-panel-raised: #263043;
   --color-rule-dark: #222b3b;
+  --color-rule-night: #3a4458;
   --color-cream: #ebe8da;
-  /* Light surfaces and lines. */
-  --color-paper: #f6f6f3;
-  --color-chip: #f1f1ec;
-  --color-chip-hover: #ecece6;
-  --color-line: #e6e6e1;
-  --color-rule: #cfd2d8;
-  --color-field: #d3d5d9;
-  --color-error: #b80f18;
   --font-sans: var(--font-geist), system-ui, sans-serif;
 }
 
+:root {
+  color-scheme: light;
+  --page: #ffffff;
+  --paper: #f6f6f3;
+  --card: #ffffff;
+  --chip: #f1f1ec;
+  --chip-hover: #ecece6;
+  --pill: #ffffff;
+  --toggle: #e9e9e3;
+  --line: #e6e6e1;
+  --line-strong: #dcdcd5;
+  --rule: #cfd2d8;
+  --field: #d3d5d9;
+  --track: #e6e5de;
+  --bar-rest: #cbd1db;
+  --ink: #151b26;
+  --hover: #3a4458;
+  --body: #3a4150;
+  --sub: #4a5160;
+  --faint: #5a6170;
+  --error: #b80f18;
+  --night: #151b26;
+  --ink-deep: #10151e;
+  --btn: #151b26;
+  --btn-fg: #ffffff;
+  --btn-hover: #3a4458;
+}
+
+/* Dark palette: navy grounds, cream ink. The head script in layout.tsx sets
+   data-theme from the visitor's choice or device setting; without JavaScript
+   the media query follows the device setting. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0e131b;
+    --paper: #151b25;
+    --card: #1b2230;
+    --chip: #1f2734;
+    --chip-hover: #283244;
+    --pill: #2b3547;
+    --toggle: #10151d;
+    --line: #252e3c;
+    --line-strong: #313b4b;
+    --rule: #36404f;
+    --field: #3b4656;
+    --track: #232c3a;
+    --bar-rest: #4a5568;
+    --ink: #ebe8da;
+    --hover: #ffffff;
+    --body: #c3c8d1;
+    --sub: #a7aebb;
+    --faint: #8f97a5;
+    --error: #ff8a80;
+    --night: #1a2230;
+    --ink-deep: #0a0e14;
+    --btn: #ebe8da;
+    --btn-fg: #151b26;
+    --btn-hover: #ffffff;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0e131b;
+  --paper: #151b25;
+  --card: #1b2230;
+  --chip: #1f2734;
+  --chip-hover: #283244;
+  --pill: #2b3547;
+  --toggle: #10151d;
+  --line: #252e3c;
+  --line-strong: #313b4b;
+  --rule: #36404f;
+  --field: #3b4656;
+  --track: #232c3a;
+  --bar-rest: #4a5568;
+  --ink: #ebe8da;
+  --hover: #ffffff;
+  --body: #c3c8d1;
+  --sub: #a7aebb;
+  --faint: #8f97a5;
+  --error: #ff8a80;
+  --night: #1a2230;
+  --ink-deep: #0a0e14;
+  --btn: #ebe8da;
+  --btn-fg: #151b26;
+  --btn-hover: #ffffff;
+}
+
 body {
-  background: #ffffff;
+  background: var(--color-page);
   color: var(--color-ink);
   line-height: 1.5;
 }

@@ -44,7 +44,7 @@ export default async function Industries({ params }: PageProps<"/[lang]/industri
         />
       </section>
 
-      <section className="bg-ink text-cream">
+      <section className="bg-night text-cream">
         <div className={`${container} flex flex-wrap items-center gap-14 py-28`}>
           <div className="reveal flex-[1_1_min(380px,100%)]">
             <h2 className={`${h2} mb-4`}>{network.title}</h2>

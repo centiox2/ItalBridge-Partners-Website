@@ -40,7 +40,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             },
           ]}
         />
-        <aside className="enter flex min-w-0 flex-[4_1_min(360px,100%)] flex-col gap-6.5 rounded-[10px] bg-ink p-9 text-cream [--i:2]">
+        <aside className="enter flex min-w-0 flex-[4_1_min(360px,100%)] flex-col gap-6.5 rounded-[10px] bg-night p-9 text-cream [--i:2]">
           <Image src={images.logo} alt={card.logoAlt} width={92} height={77} loading="eager" className="h-auto w-[92px]" />
           <div>
             <p className="m-0 mb-2 text-sm text-[#a3a9b4]">{card.label}</p>
@@ -108,7 +108,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             {audiences.manufacturers.cta}
           </Link>
         </article>
-        <article style={stagger(1)} className="reveal lift flex flex-[1_1_min(400px,100%)] flex-col gap-5 rounded-[10px] bg-ink p-8 text-cream sm:p-11">
+        <article style={stagger(1)} className="reveal lift flex flex-[1_1_min(400px,100%)] flex-col gap-5 rounded-[10px] bg-night p-8 text-cream sm:p-11">
           <h2 className="m-0 text-[30px] font-semibold tracking-[-0.03em]">{audiences.buyers.title}</h2>
           <p className="m-0 max-w-[52ch] leading-relaxed text-mist">{audiences.buyers.text}</p>
           <CheckList items={audiences.buyers.points} iconClass="stroke-ice" />

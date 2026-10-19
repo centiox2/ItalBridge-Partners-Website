@@ -79,7 +79,7 @@ export default async function Manufacturers({ params }: PageProps<"/[lang]/manuf
             <div
               key={item.text}
               style={stagger(i)}
-              className={`reveal rounded-[10px] p-7 ${i === 0 ? "bg-ink text-cream" : "bg-paper"}`}
+              className={`reveal rounded-[10px] p-7 ${i === 0 ? "bg-night text-cream" : "bg-paper"}`}
             >
               <div className={stat}>
                 <CountUp value={item.value} />
@@ -100,7 +100,7 @@ export default async function Manufacturers({ params }: PageProps<"/[lang]/manuf
                 <li
                   key={item.title}
                   style={stagger(i)}
-                  className={`reveal lift rounded-[10px] p-7 ${last ? "bg-ink text-white" : "bg-white"}`}
+                  className={`reveal lift rounded-[10px] p-7 ${last ? "bg-night text-white" : "bg-card"}`}
                 >
                   <span className={`text-sm font-semibold ${last ? "text-steel" : "text-sub"}`}>
                     {steps.label} {i + 1}

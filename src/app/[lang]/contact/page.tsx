@@ -53,7 +53,7 @@ export default async function Contact({ params }: PageProps<"/[lang]/contact">) 
             sizes="(min-width: 1000px) 45vw, 100vw"
             className="block aspect-[16/8] w-full object-cover"
           />
-          <figcaption className="absolute bottom-4 left-4 rounded-lg bg-white px-3.5 py-2.5 font-medium shadow-[0_10px_24px_-12px_rgba(21,27,38,0.4)]">
+          <figcaption className="absolute bottom-4 left-4 rounded-lg bg-card px-3.5 py-2.5 font-medium shadow-[0_10px_24px_-12px_rgba(21,27,38,0.4)]">
             {details.caption}
           </figcaption>
         </figure>

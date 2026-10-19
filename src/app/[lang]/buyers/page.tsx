@@ -36,7 +36,7 @@ export default async function Buyers({ params }: PageProps<"/[lang]/buyers">) {
         imageAlt={hero.imageAlt}
       />
 
-      <section className="bg-ink text-cream">
+      <section className="bg-night text-cream">
         <div className={`${container} flex flex-wrap gap-14 py-28`}>
           <h2 className={`${h2} reveal flex-[1_1_320px]`}>{reasons.title}</h2>
           <div className="grid flex-[2_1_min(640px,100%)] grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-x-12 gap-y-9">
@@ -44,7 +44,7 @@ export default async function Buyers({ params }: PageProps<"/[lang]/buyers">) {
               <div
                 key={item.title}
                 style={stagger(i % 2)}
-                className={`reveal pt-4.5 ${i < 2 ? "draw border-t-2 border-cream [--draw:var(--color-cream)]" : "border-t border-hover"}`}
+                className={`reveal pt-4.5 ${i < 2 ? "draw border-t-2 border-cream [--draw:var(--color-cream)]" : "border-t border-rule-night"}`}
               >
                 <h3 className="m-0 mb-2 text-[19px] font-semibold">{item.title}</h3>
                 <p className="m-0 leading-relaxed text-mist">{item.text}</p>

@@ -45,10 +45,10 @@ export default function StageTabs({
                 aria-controls="stage-detail"
                 onClick={() => setPicked(i)}
                 className={`flex w-full cursor-pointer items-baseline gap-4 rounded-lg border-0 px-5 py-4.5 text-left transition-colors ${
-                  active ? "bg-ink text-white" : "bg-transparent text-ink hover:bg-chip-hover"
+                  active ? "bg-btn text-btn-fg" : "bg-transparent text-ink hover:bg-chip-hover"
                 }`}
               >
-                <span className={`min-w-[54px] text-sm ${active ? "text-steel" : "text-faint"}`}>
+                <span className={`min-w-[54px] text-sm ${active ? "text-btn-fg/70" : "text-faint"}`}>
                   {stageLabel} {i + 1}
                 </span>
                 <span className={`text-lg ${active ? "font-medium" : ""}`}>{s.name}</span>
@@ -61,7 +61,7 @@ export default function StageTabs({
         id="stage-detail"
         key={picked}
         aria-live="polite"
-        className="min-w-0 flex-[1.8_1_min(560px,100%)] overflow-hidden rounded-xl bg-white"
+        className="min-w-0 flex-[1.8_1_min(560px,100%)] overflow-hidden rounded-xl bg-card"
       >
         {/* Keyed panel: on each switch the photo eases in and the text follows in sequence. */}
         <div className="overflow-hidden">

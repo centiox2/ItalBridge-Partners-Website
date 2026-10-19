@@ -18,7 +18,9 @@
     "homeLabel": "Home di ItalBridge Partners",
     "cta": "Prenota una consulenza",
     "menu": "Principale",
-    "breadcrumb": "Percorso"
+    "breadcrumb": "Percorso",
+    "toDark": "Passa alla modalità scura",
+    "toLight": "Passa alla modalità chiara"
   },
   "home": {
     "audience": {

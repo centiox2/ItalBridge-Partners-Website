@@ -37,5 +37,5 @@ export default function CtaBand({
     </div>
   );
 
-  return dark ? <section className="bg-ink text-cream">{inner}</section> : <section>{inner}</section>;
+  return dark ? <section className="bg-night text-cream">{inner}</section> : <section>{inner}</section>;
 }

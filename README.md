@@ -56,11 +56,20 @@ once a mail service is chosen.
 
 ### Branding
 
-The site follows the "Corporate Atlas" design. Design tokens live in
-`src/app/globals.css`: `ink` (headings, buttons, dark bands), text greys `body`,
-`sub`, `faint`, light surfaces `paper`, `chip`, `line`, and `mist`, `steel`,
-`cream`, `panel` for dark sections (e.g. `bg-paper`, `text-body`). The font is
-Geist (`font-sans`). Button colours and sizes are combined from `src/components/ui.ts`,
+The site follows the "Corporate Atlas" design, in light and dark mode. Colours
+are tokens in `src/app/globals.css`, each defined once per theme:
+
+- `ink` is text, rules and chart marks; it turns light in dark mode. Text greys
+  are `body`, `sub`, `faint`.
+- `night` is dark surfaces (bands, dark cards, top bar); it stays dark.
+- `page`, `paper`, `card`, `chip`, `line` are light surfaces and lines; `btn`
+  is the primary button. `mist`, `steel`, `cream`, `panel` are fixed colours
+  for use on `night`.
+
+Use the tokens (e.g. `bg-paper`, `text-body`) rather than hex values, so both
+themes stay right. The header button stores the visitor's choice; until then
+the site follows the device setting (`src/theme.ts`). The font is Geist
+(`font-sans`). Button colours and sizes are combined from `src/components/ui.ts`,
 e.g. `` `${buttonInk} ${sizeMd}` ``.
 
 The market figures (home, Manufacturers, Market insight) are copy in the

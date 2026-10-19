@@ -5,6 +5,7 @@ import { Geist } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
 import { defaultLocale, hasLocale, locales } from "@/i18n";
 import { siteUrl } from "@/site";
+import { themeScript } from "@/theme";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Motion from "@/components/Motion";
@@ -57,7 +58,12 @@ export default async function RootLayout({
       // Lets Next skip smooth scrolling on route changes (e.g. switching language).
       data-scroll-behavior="smooth"
       className={geist.variable}
+      // The head script sets data-theme before React hydrates.
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body id="top" className="font-sans antialiased">
         <Header lang={lang} dict={dict} />
         {/* Page changes animate with the "page" view transition in globals.css. */}

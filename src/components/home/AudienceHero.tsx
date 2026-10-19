@@ -32,7 +32,7 @@ export default function AudienceHero({
             aria-pressed={i === picked}
             onClick={() => setPicked(i)}
             className={`cursor-pointer rounded-md border-0 px-4 py-2.5 text-sm font-medium ${
-              i === picked ? "bg-white text-ink shadow-[0_2px_6px_-2px_rgba(21,27,38,0.18)]" : "bg-transparent text-sub hover:text-ink"
+              i === picked ? "bg-pill text-ink shadow-[0_2px_6px_-2px_rgba(21,27,38,0.18)]" : "bg-transparent text-sub hover:text-ink"
             }`}
           >
             {o.label}
