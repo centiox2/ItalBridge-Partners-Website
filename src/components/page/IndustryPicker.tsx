@@ -14,7 +14,8 @@ type Industry = {
 };
 
 // Industries page: a card per industry; the selected one is shown in detail.
-// Links like /industries#industry-3 open with that industry selected.
+// Links like /industries?industry=3 open at the top of the page with that
+// industry selected.
 export default function IndustryPicker({
   label,
   equipment,
@@ -34,9 +35,8 @@ export default function IndustryPicker({
   const cur = industries[picked];
 
   useEffect(() => {
-    const match = /^#industry-(\d+)$/.exec(window.location.hash);
-    const index = match ? Number(match[1]) - 1 : -1;
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- the hash is only readable after hydration
+    const index = Number(new URLSearchParams(window.location.search).get("industry")) - 1;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the query is read after hydration so the page can stay static
     if (index >= 0 && index < industries.length) setPicked(index);
   }, [industries.length]);
 
@@ -46,7 +46,7 @@ export default function IndustryPicker({
         {industries.map((ind, i) => {
           const active = i === picked;
           return (
-            <li key={ind.name} id={`industry-${i + 1}`} className="scroll-mt-6">
+            <li key={ind.name}>
               <button
                 type="button"
                 aria-pressed={active}

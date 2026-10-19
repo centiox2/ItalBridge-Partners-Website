@@ -8,6 +8,7 @@ import { siteUrl } from "@/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Motion from "@/components/Motion";
+import ScrollReset from "@/components/ScrollReset";
 import "../globals.css";
 import { images } from "@/images";
 
@@ -65,6 +66,7 @@ export default async function RootLayout({
         </ViewTransition>
         <Footer lang={lang} dict={dict} />
         <Motion />
+        <ScrollReset />
       </body>
     </html>
   );

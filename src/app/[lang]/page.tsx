@@ -149,7 +149,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           {industries.items.map((item, i) => (
             <li key={item.title} className="reveal" style={stagger(i)}>
               <Link
-                href={href(lang, "industries", `industry-${i + 1}`)}
+                href={`${href(lang, "industries")}?industry=${i + 1}`}
                 className="idx flex flex-wrap justify-between gap-x-6 gap-y-2 border-b border-line px-2 py-6 hover:bg-chip"
               >
                 <strong className="text-[22px] font-medium tracking-[-0.02em]">{item.title}</strong>

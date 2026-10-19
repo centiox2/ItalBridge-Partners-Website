@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const selector = ".reveal, .draw, .reveal-img, .grow-bar";
 
@@ -12,7 +12,9 @@ const selector = ".reveal, .draw, .reveal-img, .grow-bar";
 export default function Motion() {
   const pathname = usePathname();
 
-  useEffect(() => {
+  // Layout effect: runs before paint (and before a page-change snapshot), so
+  // on-screen content is never captured in its hidden state.
+  useLayoutEffect(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const fold = window.innerHeight * 0.92;

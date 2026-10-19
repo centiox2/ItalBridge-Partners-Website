@@ -45,8 +45,14 @@ export default function CountUp({ value }: { value: string }) {
   }, [value]);
 
   return (
-    <span ref={ref} className="tabular-nums">
-      <span aria-hidden>{shown}</span>
+    // The final figure, invisible, holds the width while the visible copy counts.
+    <span ref={ref} className="inline-grid tabular-nums">
+      <span aria-hidden className="invisible col-start-1 row-start-1">
+        {value}
+      </span>
+      <span aria-hidden className="col-start-1 row-start-1">
+        {shown}
+      </span>
       <span className="sr-only">{value}</span>
     </span>
   );
