@@ -20,7 +20,9 @@
     "menu": "Main",
     "breadcrumb": "Breadcrumb",
     "toDark": "Switch to dark mode",
-    "toLight": "Switch to light mode"
+    "toLight": "Switch to light mode",
+    "openMenu": "Menu",
+    "closeMenu": "Close"
   },
   "home": {
     "audience": {

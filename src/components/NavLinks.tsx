@@ -13,8 +13,9 @@ export default function NavLinks({
 }) {
   const pathname = usePathname();
 
+  // Wide screens only; MobileMenu takes over below the "nav" breakpoint.
   return (
-    <nav aria-label={label} className="flex flex-wrap gap-x-7 gap-y-1 text-[15px] font-medium">
+    <nav aria-label={label} className="hidden gap-x-7 text-[15px] font-medium nav:flex">
       {links.map((link) => {
         const current = pathname === link.href;
         return (

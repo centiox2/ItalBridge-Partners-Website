@@ -41,6 +41,8 @@
   --color-rule-night: #3a4458;
   --color-cream: #ebe8da;
   --font-sans: var(--font-geist), system-ui, sans-serif;
+  /* Width at which the header has room for all its links in one row. */
+  --breakpoint-nav: 74rem;
 }
 
 :root {

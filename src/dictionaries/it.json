@@ -20,7 +20,9 @@
     "menu": "Principale",
     "breadcrumb": "Percorso",
     "toDark": "Passa alla modalità scura",
-    "toLight": "Passa alla modalità chiara"
+    "toLight": "Passa alla modalità chiara",
+    "openMenu": "Menu",
+    "closeMenu": "Chiudi"
   },
   "home": {
     "audience": {
