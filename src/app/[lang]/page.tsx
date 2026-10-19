@@ -62,17 +62,17 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Image
           src={images.nairobi}
           alt={photos.nairobi}
-          preload
-          fetchPriority="high"
+          // Not preloaded: on phones it sits well below the first screen, and on
+          // desktop it loads straight away as it reaches the viewport.
           placeholder="blur"
-          sizes="(min-width: 900px) 66vw, 100vw"
+          sizes="(min-width: 1400px) 840px, (min-width: 900px) 62vw, 100vw"
           className={`${photo} settle aspect-[16/7] min-w-0 flex-[2_1_min(520px,100%)]`}
         />
         <Image
           src={images.containerPort}
           alt={photos.port}
           placeholder="blur"
-          sizes="(min-width: 900px) 33vw, 100vw"
+          sizes="(min-width: 1400px) 460px, (min-width: 900px) 32vw, 100vw"
           className={`${photo} settle aspect-[4/3.5] min-w-0 flex-[1_1_min(300px,100%)]`}
         />
       </figure>

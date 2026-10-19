@@ -241,20 +241,6 @@ summary::-webkit-details-marker {
   }
 }
 
-@keyframes page-out {
-  to {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes page-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-}
-
 /* Lines that draw across (.draw) replace their top border with this bar. */
 .draw::before {
   content: none;
@@ -296,8 +282,11 @@ details[open] .plus {
     animation: fade 0.5s var(--ease-out) calc(var(--i, 0) * 70ms) both;
   }
 
+  /* Its own compositor layer, so the endless pulse never needs main-thread
+     style work. */
   .pulse {
     animation: pulse 2.4s ease-in-out infinite;
+    will-change: transform, opacity;
   }
 
   .pop {
@@ -448,19 +437,8 @@ details[open] .plus {
     transition: width 0.5s var(--ease-out);
   }
 
-  /* ----- Page changes -----
-     Layout wraps each page in a <ViewTransition default="page">: the old page
-     lifts away and the new one rises in, while header and footer stay put. */
-  ::view-transition-old(.page) {
-    animation: page-out 0.12s ease-in both;
-  }
-
-  ::view-transition-new(.page) {
-    animation: page-in 0.3s var(--ease-out) both;
-  }
-
-  /* While a page change animates, clicks reach the new page instead of
-     being swallowed by the transition overlay. */
+  /* While the theme crossfade runs (ThemeToggle), clicks still reach the page
+     instead of the transition overlay. */
   ::view-transition {
     pointer-events: none;
   }

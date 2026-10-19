@@ -74,7 +74,7 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
           src={images.engineer}
           alt={vetting.imageAlt}
           placeholder="blur"
-          sizes="(min-width: 900px) 50vw, 100vw"
+          sizes="(min-width: 1400px) 685px, (min-width: 900px) 48vw, 100vw"
           className={`${photo} reveal-img aspect-[4/3] min-w-0 flex-[1_1_min(420px,100%)]`}
         />
         <div className="reveal flex-[1_1_min(420px,100%)] [--i:1]">

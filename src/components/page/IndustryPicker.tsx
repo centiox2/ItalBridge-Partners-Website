@@ -60,6 +60,9 @@ export default function IndustryPicker({
                   <Image
                     src={ind.image}
                     alt=""
+                    // The first card is the largest element on a phone's first screen.
+                    preload={i === 0}
+                    fetchPriority={i === 0 ? "high" : undefined}
                     placeholder="blur"
                     sizes="(min-width: 1200px) 220px, (min-width: 640px) 33vw, 100vw"
                     className="zoom block aspect-[16/10] w-full object-cover"

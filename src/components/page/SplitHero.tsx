@@ -51,7 +51,7 @@ export default function SplitHero({
         preload
         fetchPriority="high"
         placeholder="blur"
-        sizes="(min-width: 1000px) 45vw, 100vw"
+        sizes="(min-width: 1400px) 560px, (min-width: 1000px) 42vw, 100vw"
         className={`${photo} settle aspect-[5/4] min-w-0 flex-[5_1_min(420px,100%)]`}
       />
     </section>

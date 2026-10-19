@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ViewTransition } from "react";
 import { Geist } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
 import { defaultLocale, hasLocale, locales } from "@/i18n";
@@ -66,10 +65,8 @@ export default async function RootLayout({
       </head>
       <body id="top" className="font-sans antialiased">
         <Header lang={lang} dict={dict} />
-        {/* Page changes animate with the "page" view transition in globals.css. */}
-        <ViewTransition default="page">
-          <main>{children}</main>
-        </ViewTransition>
+        {/* Motion fades each new page in. */}
+        <main>{children}</main>
         <Footer lang={lang} dict={dict} />
         <Motion />
         <ScrollReset />

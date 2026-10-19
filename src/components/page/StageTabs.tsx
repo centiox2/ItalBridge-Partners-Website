@@ -69,7 +69,7 @@ export default function StageTabs({
             src={cur.image}
             alt={cur.alt}
             placeholder="blur"
-            sizes="(min-width: 1100px) 60vw, 100vw"
+            sizes="(min-width: 1400px) 875px, (min-width: 1100px) 62vw, 100vw"
             className="zoom-out block aspect-[16/7] w-full object-cover"
           />
         </div>
