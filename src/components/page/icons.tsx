@@ -44,3 +44,17 @@ export function CheckList({
     </ul>
   );
 }
+
+// Link text ending in "→": the arrow nudges forward on hover.
+export function ArrowLabel({ text }: { text: string }) {
+  const label = text.replace(/\s*→$/, "");
+  if (label === text) return text;
+  return (
+    <>
+      {label}{" "}
+      <span aria-hidden className="nudge inline-block">
+        →
+      </span>
+    </>
+  );
+}

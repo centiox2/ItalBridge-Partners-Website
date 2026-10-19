@@ -4,10 +4,12 @@ import { getDictionary, getPage } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { contact, href } from "@/site";
+import CountUp from "@/components/CountUp";
 import EnquiryForm from "@/components/page/EnquiryForm";
 import FormSection from "@/components/page/FormSection";
 import SplitHero from "@/components/page/SplitHero";
-import { container, h2, stat, textLink } from "@/components/ui";
+import { ArrowLabel } from "@/components/page/icons";
+import { container, h2, stagger, stat, textLink } from "@/components/ui";
 import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/manufacturers">) =>
@@ -48,10 +50,14 @@ export default async function Manufacturers({ params }: PageProps<"/[lang]/manuf
 
       <section className="bg-paper">
         <div className={`${container} flex flex-wrap gap-14 py-28`}>
-          <h2 className={`${h2} flex-[1_1_320px]`}>{benefits.title}</h2>
+          <h2 className={`${h2} reveal flex-[1_1_320px]`}>{benefits.title}</h2>
           <div className="grid flex-[2_1_min(640px,100%)] grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-x-12 gap-y-9">
             {benefits.items.map((item, i) => (
-              <div key={item.title} className={`reveal pt-4.5 ${i < 2 ? "border-t-2 border-ink" : "border-t border-rule"}`}>
+              <div
+                key={item.title}
+                style={stagger(i % 2)}
+                className={`reveal pt-4.5 ${i < 2 ? "draw border-t-2 border-ink" : "border-t border-rule"}`}
+              >
                 <h3 className="m-0 mb-2 text-[19px] font-semibold">{item.title}</h3>
                 <p className="m-0 leading-relaxed text-body">{item.text}</p>
               </div>
@@ -61,17 +67,23 @@ export default async function Manufacturers({ params }: PageProps<"/[lang]/manuf
       </section>
 
       <section className={`${container} flex flex-wrap items-center gap-14 py-28`}>
-        <div className="flex-[1_1_min(380px,100%)]">
+        <div className="reveal flex-[1_1_min(380px,100%)]">
           <h2 className={`${h2} mb-4`}>{numbers.title}</h2>
           <p className="m-0 mb-5 max-w-[46ch] leading-relaxed text-body">{numbers.text}</p>
           <Link href={href(lang, "marketInsight")} className={textLink}>
-            {numbers.link}
+            <ArrowLabel text={numbers.link} />
           </Link>
         </div>
         <div className="grid flex-[1.2_1_min(460px,100%)] grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
           {numbers.items.map((item, i) => (
-            <div key={item.text} className={`reveal rounded-[10px] p-7 ${i === 0 ? "bg-ink text-cream" : "bg-paper"}`}>
-              <div className={stat}>{item.value}</div>
+            <div
+              key={item.text}
+              style={stagger(i)}
+              className={`reveal rounded-[10px] p-7 ${i === 0 ? "bg-ink text-cream" : "bg-paper"}`}
+            >
+              <div className={stat}>
+                <CountUp value={item.value} />
+              </div>
               <p className={`mt-1.5 mb-0 text-[15px] ${i === 0 ? "text-mist" : "text-body"}`}>{item.text}</p>
             </div>
           ))}
@@ -80,12 +92,16 @@ export default async function Manufacturers({ params }: PageProps<"/[lang]/manuf
 
       <section className="bg-paper">
         <div className={`${container} py-28`}>
-          <h2 className={`${h2} mb-12 max-w-[700px]`}>{steps.title}</h2>
+          <h2 className={`${h2} reveal mb-12 max-w-[700px]`}>{steps.title}</h2>
           <ol className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 p-0">
             {steps.items.map((item, i) => {
               const last = i === steps.items.length - 1;
               return (
-                <li key={item.title} className={`reveal rounded-[10px] p-7 ${last ? "bg-ink text-white" : "bg-white"}`}>
+                <li
+                  key={item.title}
+                  style={stagger(i)}
+                  className={`reveal lift rounded-[10px] p-7 ${last ? "bg-ink text-white" : "bg-white"}`}
+                >
                   <span className={`text-sm font-semibold ${last ? "text-steel" : "text-sub"}`}>
                     {steps.label} {i + 1}
                   </span>

@@ -52,7 +52,7 @@ export default function SplitHero({
         fetchPriority="high"
         placeholder="blur"
         sizes="(min-width: 1000px) 45vw, 100vw"
-        className={`${photo} aspect-[5/4] min-w-0 flex-[5_1_min(420px,100%)]`}
+        className={`${photo} settle aspect-[5/4] min-w-0 flex-[5_1_min(420px,100%)]`}
       />
     </section>
   );

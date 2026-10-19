@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 // Shared class strings matching the design's buttons and type scale.
 export const container = "mx-auto max-w-[1400px] px-4 sm:px-8";
 
@@ -32,3 +34,6 @@ export const textLink = "font-medium underline underline-offset-[3px] hover:text
 export const stat = "text-[40px] leading-tight font-semibold tracking-[-0.03em]";
 
 export const photo = "block w-full rounded-[10px] object-cover";
+
+// Delay for the nth item of a staggered animation (see --i in globals.css).
+export const stagger = (i: number) => ({ "--i": i }) as CSSProperties;

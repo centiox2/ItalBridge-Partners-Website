@@ -3,9 +3,10 @@ import { getDictionary, getPage } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { href } from "@/site";
+import CountUp from "@/components/CountUp";
 import CtaBand from "@/components/page/CtaBand";
 import PageHeader from "@/components/page/PageHeader";
-import { container, h2 } from "@/components/ui";
+import { container, h2, stagger } from "@/components/ui";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/market-insight">) =>
   pageMetadata(params, "marketInsight");
@@ -47,7 +48,7 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
                   <div className="h-10 rounded-r bg-[#e6e5de]">
                     <div
                       className={`grow-bar h-full rounded-r ${latest ? "bg-ink" : "bg-steel"}`}
-                      style={{ width: importWidths[i] }}
+                      style={{ width: importWidths[i], ...stagger(i) }}
                     />
                   </div>
                   <span className={tip}>{bar.tip}</span>
@@ -60,7 +61,9 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
         <div className="flex flex-[1_1_min(340px,100%)] flex-col gap-5">
           {stats.map((s, i) => (
             <div key={s.value} className={`flex-1 rounded-xl p-8 ${i === 0 ? "bg-ink text-cream" : "bg-paper"}`}>
-              <div className="text-[52px] leading-tight font-semibold tracking-[-0.04em]">{s.value}</div>
+              <div className="text-[52px] leading-tight font-semibold tracking-[-0.04em]">
+                <CountUp value={s.value} />
+              </div>
               <p className={`mt-2 mb-0 leading-normal ${i === 0 ? "text-mist" : "text-body"}`}>{s.text}</p>
             </div>
           ))}
@@ -69,24 +72,29 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
 
       <section className="bg-paper">
         <div className={`${container} flex flex-wrap gap-14 py-28`}>
-          <div className="flex-[1_1_min(360px,100%)]">
+          <div className="reveal flex-[1_1_min(360px,100%)]">
             <h2 className={`${h2} mb-4`}>{position.title}</h2>
             <p className="m-0 max-w-[44ch] leading-relaxed text-body">{position.text}</p>
           </div>
           <div className="flex flex-[1.6_1_min(560px,100%)] flex-col gap-10">
             {position.charts.map((chart, i) => (
-              <figure key={chart.title} className="reveal">
+              <figure key={chart.title} className="reveal" style={stagger(i)}>
                 <figcaption className="mb-3.5 font-semibold">{chart.title}</figcaption>
                 <div className="flex h-11 gap-0.5">
                   <div
                     tabIndex={0}
                     aria-label={chart.part.aria}
-                    className="bar relative rounded-l bg-ink"
-                    style={{ width: shareWidths[i] }}
+                    className="bar grow-bar relative rounded-l bg-ink"
+                    style={{ width: shareWidths[i], ...stagger(i * 2 + 1) }}
                   >
                     <span className={tip}>{chart.part.tip}</span>
                   </div>
-                  <div tabIndex={0} aria-label={chart.rest.aria} className="bar relative flex-1 rounded-r bg-[#cbd1db]">
+                  <div
+                    tabIndex={0}
+                    aria-label={chart.rest.aria}
+                    className="bar grow-bar relative flex-1 rounded-r bg-[#cbd1db]"
+                    style={stagger(i * 2 + 2)}
+                  >
                     <span className={tip}>{chart.rest.tip}</span>
                   </div>
                 </div>
@@ -107,8 +115,8 @@ export default async function MarketInsight({ params }: PageProps<"/[lang]/marke
       </section>
 
       <section className={`${container} py-28`}>
-        <h2 className={`${h2} mb-8`}>{sources.title}</h2>
-        <div className="overflow-x-auto rounded-[10px] border border-line">
+        <h2 className={`${h2} reveal mb-8`}>{sources.title}</h2>
+        <div className="reveal overflow-x-auto rounded-[10px] border border-line [--i:1]">
           <table className="w-full min-w-[640px] border-collapse text-left text-[15px]">
             <thead>
               <tr className="bg-paper">

@@ -23,7 +23,7 @@ export default function FormSection({
   return (
     <section id={id} className={`scroll-mt-4 ${tinted ? "bg-paper" : ""}`}>
       <div className={`${container} flex flex-wrap gap-16 py-30`}>
-        <div className="flex-[1_1_min(340px,100%)]">
+        <div className="reveal flex-[1_1_min(340px,100%)]">
           <h2 className={`${h2} mb-4`}>{title}</h2>
           <p className="m-0 mb-6 max-w-[42ch] leading-relaxed text-body">{text}</p>
           <p className="m-0 text-body">
@@ -33,7 +33,7 @@ export default function FormSection({
             </a>
           </p>
         </div>
-        <div className={`min-w-0 flex-[1.4_1_min(480px,100%)] rounded-xl p-6 sm:p-10 ${tinted ? "bg-white" : "bg-paper"}`}>
+        <div className={`reveal min-w-0 flex-[1.4_1_min(480px,100%)] rounded-xl p-6 [--i:1] sm:p-10 ${tinted ? "bg-white" : "bg-paper"}`}>
           {children}
         </div>
       </div>

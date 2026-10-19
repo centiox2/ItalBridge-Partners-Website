@@ -6,7 +6,7 @@ import { href } from "@/site";
 import CtaBand from "@/components/page/CtaBand";
 import IndustryPicker from "@/components/page/IndustryPicker";
 import PageHeader from "@/components/page/PageHeader";
-import { container, h2 } from "@/components/ui";
+import { container, h2, stagger } from "@/components/ui";
 import { images } from "@/images";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/industries">) =>
@@ -46,13 +46,13 @@ export default async function Industries({ params }: PageProps<"/[lang]/industri
 
       <section className="bg-ink text-cream">
         <div className={`${container} flex flex-wrap items-center gap-14 py-28`}>
-          <div className="flex-[1_1_min(380px,100%)]">
+          <div className="reveal flex-[1_1_min(380px,100%)]">
             <h2 className={`${h2} mb-4`}>{network.title}</h2>
             <p className="m-0 max-w-[48ch] leading-[1.65] text-mist">{network.text}</p>
           </div>
           <ul className="m-0 grid flex-[1.3_1_min(480px,100%)] list-none grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3 p-0">
-            {network.categories.map((c) => (
-              <li key={c} className="reveal rounded-lg bg-panel p-5 font-medium">
+            {network.categories.map((c, i) => (
+              <li key={c} className="reveal rounded-lg bg-panel p-5 font-medium" style={stagger(i)}>
                 {c}
               </li>
             ))}

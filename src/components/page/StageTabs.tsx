@@ -3,6 +3,7 @@
 import Image, { type StaticImageData } from "next/image";
 import { useState } from "react";
 import { Arrow, Check } from "./icons";
+import { stagger } from "../ui";
 
 type Stage = {
   name: string;
@@ -60,22 +61,29 @@ export default function StageTabs({
         id="stage-detail"
         key={picked}
         aria-live="polite"
-        className="fade min-w-0 flex-[1.8_1_min(560px,100%)] overflow-hidden rounded-xl bg-white"
+        className="min-w-0 flex-[1.8_1_min(560px,100%)] overflow-hidden rounded-xl bg-white"
       >
-        <Image
-          src={cur.image}
-          alt={cur.alt}
-          placeholder="blur"
-          sizes="(min-width: 1100px) 60vw, 100vw"
-          className="block aspect-[16/7] w-full object-cover"
-        />
+        {/* Keyed panel: on each switch the photo eases in and the text follows in sequence. */}
+        <div className="overflow-hidden">
+          <Image
+            src={cur.image}
+            alt={cur.alt}
+            placeholder="blur"
+            sizes="(min-width: 1100px) 60vw, 100vw"
+            className="zoom-out block aspect-[16/7] w-full object-cover"
+          />
+        </div>
         <div className="p-6 sm:p-10">
-          <p className="m-0 mb-2 font-medium text-sub">
+          <p className="fade m-0 mb-2 font-medium text-sub">
             {stageLabel} {picked + 1}
           </p>
-          <h2 className="m-0 mb-3.5 text-[32px] leading-tight font-semibold tracking-[-0.03em]">{cur.name}</h2>
-          <p className="m-0 mb-7 max-w-[60ch] text-[17px] leading-[1.65] text-body">{cur.body}</p>
-          <div className="flex flex-wrap gap-8">
+          <h2 className="fade m-0 mb-3.5 text-[32px] leading-tight font-semibold tracking-[-0.03em]" style={stagger(1)}>
+            {cur.name}
+          </h2>
+          <p className="fade m-0 mb-7 max-w-[60ch] text-[17px] leading-[1.65] text-body" style={stagger(2)}>
+            {cur.body}
+          </p>
+          <div className="fade flex flex-wrap gap-8" style={stagger(3)}>
             <div className="flex-[1_1_240px]">
               <h3 className="m-0 mb-3 text-base font-semibold">{weDo}</h3>
               <ul className={list}>

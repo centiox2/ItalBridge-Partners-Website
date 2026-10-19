@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { h2 } from "../ui";
+import { h2, stagger } from "../ui";
 
 // Buyers page: tick off what you already know; a meter shows how ready the requirement is.
 export default function RequirementChecklist({
@@ -24,12 +24,12 @@ export default function RequirementChecklist({
 
   return (
     <>
-      <div className="flex-[1_1_min(340px,100%)]">
+      <div className="reveal flex-[1_1_min(340px,100%)]">
         <h2 className={`${h2} mb-4`}>{title}</h2>
         <p className="m-0 mb-6 max-w-[40ch] leading-relaxed text-body">{text}</p>
         <div aria-live="polite" className="rounded-[10px] bg-paper p-6">
           <div className="text-[40px] font-semibold tracking-[-0.03em]">
-            {done} {of} {items.length}
+            <span key={done} className="pop inline-block">{done}</span> {of} {items.length}
           </div>
           <p className="mt-1.5 mb-3.5 text-body">{verdict}</p>
           <div aria-hidden className="h-2 overflow-hidden rounded-full bg-[#e1e1da]">
@@ -41,7 +41,7 @@ export default function RequirementChecklist({
         {items.map((item, i) => {
           const on = ticked[i];
           return (
-            <li key={item.title}>
+            <li key={item.title} className="reveal" style={stagger(i)}>
               <button
                 type="button"
                 aria-pressed={on}
@@ -50,7 +50,7 @@ export default function RequirementChecklist({
                   on ? "border-ink bg-ink text-white" : "border-line bg-white text-ink hover:border-ink"
                 }`}
               >
-                <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden fill="none" className="shrink-0">
+                <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden fill="none" className={`shrink-0 ${on ? "pop" : ""}`}>
                   {on ? (
                     <>
                       <rect x="1" y="1" width="20" height="20" rx="5" className="fill-cream" />

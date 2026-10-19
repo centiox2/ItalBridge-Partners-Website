@@ -6,7 +6,7 @@ import { contact, href } from "@/site";
 import EnquiryForm from "@/components/page/EnquiryForm";
 import FormSection from "@/components/page/FormSection";
 import PageHeader from "@/components/page/PageHeader";
-import { container, h2 } from "@/components/ui";
+import { container, h2, stagger } from "@/components/ui";
 
 export const generateMetadata = ({ params }: PageProps<"/[lang]/data-request">) =>
   pageMetadata(params, "dataRequest");
@@ -24,13 +24,13 @@ export default async function DataRequest({ params }: PageProps<"/[lang]/data-re
 
       <section className="bg-paper">
         <div className={`${container} flex flex-wrap gap-14 py-28`}>
-          <div className="flex-[1_1_min(360px,100%)]">
+          <div className="reveal flex-[1_1_min(360px,100%)]">
             <h2 className={`${h2} mb-4`}>{rights.title}</h2>
             <p className="m-0 max-w-[48ch] leading-relaxed text-body">{rights.text}</p>
           </div>
           <ul aria-label={rights.label} className="m-0 grid flex-[1.6_1_min(560px,100%)] list-none grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 p-0">
-            {rights.items.map((item) => (
-              <li key={item.title} className="reveal border-t-2 border-ink pt-4.5">
+            {rights.items.map((item, i) => (
+              <li key={item.title} className="reveal draw border-t-2 border-ink pt-4.5" style={stagger(i)}>
                 <h3 className="m-0 mb-2 text-[19px] font-semibold">{item.title}</h3>
                 <p className="m-0 leading-relaxed text-body">{item.text}</p>
               </li>

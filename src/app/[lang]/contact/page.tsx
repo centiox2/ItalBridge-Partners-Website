@@ -39,13 +39,13 @@ export default async function Contact({ params }: PageProps<"/[lang]/contact">) 
         <p className="enter m-0 mb-10 max-w-[46ch] text-lg leading-[1.65] text-body [--i:2]">{hero.text}</p>
         <div className="enter grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-3 [--i:3]">
           {cards.map((c) => (
-            <a key={c.href} href={c.href} className="block min-w-0 rounded-[10px] bg-paper p-5.5 hover:bg-chip-hover">
+            <a key={c.href} href={c.href} className="lift block min-w-0 rounded-[10px] bg-paper p-5.5 hover:bg-chip-hover">
               <span className="block text-sm text-sub">{c.label}</span>
               <strong className="mt-1.5 block font-medium [overflow-wrap:anywhere]">{c.value}</strong>
             </a>
           ))}
         </div>
-        <figure className="relative mt-6 overflow-hidden rounded-[10px]">
+        <figure className="reveal-img relative mt-6 overflow-hidden rounded-[10px]">
           <Image
             src={images.nairobi}
             alt={details.imageAlt}

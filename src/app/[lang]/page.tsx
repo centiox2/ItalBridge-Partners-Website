@@ -4,10 +4,11 @@ import { notFound } from "next/navigation";
 import { getDictionary } from "@/dictionaries";
 import { hasLocale } from "@/i18n";
 import { href } from "@/site";
+import CountUp from "@/components/CountUp";
 import AudienceHero from "@/components/home/AudienceHero";
 import CtaBand from "@/components/page/CtaBand";
-import { CheckList } from "@/components/page/icons";
-import { buttonCream, buttonInk, container, h2Large, photo, stat, textLink } from "@/components/ui";
+import { ArrowLabel, CheckList } from "@/components/page/icons";
+import { buttonCream, buttonInk, container, h2Large, photo, stagger, stat, textLink } from "@/components/ui";
 import { images } from "@/images";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -44,13 +45,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <div>
             <p className="m-0 mb-2 text-sm text-[#a3a9b4]">{card.label}</p>
             <div className="flex flex-wrap items-baseline gap-x-3.5">
-              <span className="text-5xl font-semibold tracking-[-0.03em]">{card.value}</span>
+              <span className="text-5xl font-semibold tracking-[-0.03em]">
+                <CountUp value={card.value} />
+              </span>
               <span className="font-medium text-ice">{card.change}</span>
             </div>
           </div>
           <p className="m-0 text-[15px] leading-relaxed text-mist">{card.text}</p>
           <Link href={href(lang, "marketInsight")} className={`${textLink} self-start hover:text-white`}>
-            {card.link}
+            <ArrowLabel text={card.link} />
           </Link>
         </aside>
       </section>
@@ -63,29 +66,31 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           fetchPriority="high"
           placeholder="blur"
           sizes="(min-width: 900px) 66vw, 100vw"
-          className={`${photo} aspect-[16/7] min-w-0 flex-[2_1_min(520px,100%)]`}
+          className={`${photo} settle aspect-[16/7] min-w-0 flex-[2_1_min(520px,100%)]`}
         />
         <Image
           src={images.containerPort}
           alt={photos.port}
           placeholder="blur"
           sizes="(min-width: 900px) 33vw, 100vw"
-          className={`${photo} aspect-[4/3.5] min-w-0 flex-[1_1_min(300px,100%)]`}
+          className={`${photo} settle aspect-[4/3.5] min-w-0 flex-[1_1_min(300px,100%)]`}
         />
       </figure>
 
       <section className="mt-24 bg-paper">
         <div className={`${container} flex flex-wrap gap-10 py-24`}>
-          <div className="flex-[1_1_300px]">
+          <div className="reveal flex-[1_1_300px]">
             <h2 className="m-0 mb-4 text-[32px] leading-[1.1] font-semibold tracking-[-0.03em]">{numbers.title}</h2>
             <Link href={href(lang, "marketInsight")} className={textLink}>
-              {numbers.link}
+              <ArrowLabel text={numbers.link} />
             </Link>
           </div>
           <div className="grid flex-[3_1_min(760px,100%)] grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-x-8 gap-y-9">
-            {numbers.items.map((item) => (
-              <div key={item.value} className="reveal border-t-2 border-ink pt-4">
-                <div className={stat}>{item.value}</div>
+            {numbers.items.map((item, i) => (
+              <div key={item.value} className="reveal draw border-t-2 border-ink pt-4" style={stagger(i)}>
+                <div className={stat}>
+                  <CountUp value={item.value} />
+                </div>
                 <p className="mt-1.5 mb-0 text-[15px] text-body">{item.text}</p>
               </div>
             ))}
@@ -95,7 +100,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </section>
 
       <section className={`${container} flex flex-wrap gap-6 py-32`}>
-        <article className="reveal flex flex-[1.2_1_min(460px,100%)] flex-col gap-5 rounded-[10px] border border-line p-8 sm:p-11">
+        <article className="reveal lift flex flex-[1.2_1_min(460px,100%)] flex-col gap-5 rounded-[10px] border border-line p-8 sm:p-11">
           <h2 className="m-0 text-[30px] font-semibold tracking-[-0.03em]">{audiences.manufacturers.title}</h2>
           <p className="m-0 max-w-[52ch] leading-relaxed text-body">{audiences.manufacturers.text}</p>
           <CheckList items={audiences.manufacturers.points} />
@@ -103,7 +108,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             {audiences.manufacturers.cta}
           </Link>
         </article>
-        <article className="reveal flex flex-[1_1_min(400px,100%)] flex-col gap-5 rounded-[10px] bg-ink p-8 text-cream sm:p-11">
+        <article style={stagger(1)} className="reveal lift flex flex-[1_1_min(400px,100%)] flex-col gap-5 rounded-[10px] bg-ink p-8 text-cream sm:p-11">
           <h2 className="m-0 text-[30px] font-semibold tracking-[-0.03em]">{audiences.buyers.title}</h2>
           <p className="m-0 max-w-[52ch] leading-relaxed text-mist">{audiences.buyers.text}</p>
           <CheckList items={audiences.buyers.points} iconClass="stroke-ice" />
@@ -115,15 +120,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
       <section className="bg-paper">
         <div className={`${container} py-32`}>
-          <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+          <div className="reveal mb-14 flex flex-wrap items-end justify-between gap-6">
             <h2 className={`${h2Large} max-w-[700px]`}>{stages.title}</h2>
             <Link href={href(lang, "services")} className={textLink}>
-              {stages.link}
+              <ArrowLabel text={stages.link} />
             </Link>
           </div>
           <ol className="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-6 gap-y-8 p-0">
             {stages.items.map((item, i) => (
-              <li key={item.title} className="reveal border-t-[3px] border-ink pt-5">
+              <li key={item.title} className="reveal draw border-t-[3px] border-ink pt-5 [--bw:3px]" style={stagger(i)}>
                 <span className="text-sm font-semibold text-sub">
                   {stage} {i + 1}
                 </span>
@@ -136,19 +141,21 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </section>
 
       <section className={`${container} flex flex-wrap gap-14 py-32`}>
-        <div className="flex-[1_1_320px]">
+        <div className="reveal flex-[1_1_320px]">
           <h2 className={`${h2Large} mb-4`}>{industries.title}</h2>
           <p className="m-0 max-w-[40ch] leading-relaxed text-body">{industries.text}</p>
         </div>
-        <ul className="m-0 flex-[2_1_min(640px,100%)] list-none border-t border-ink p-0">
+        <ul className="draw m-0 flex-[2_1_min(640px,100%)] list-none border-t border-ink p-0 [--bw:1px]">
           {industries.items.map((item, i) => (
-            <li key={item.title}>
+            <li key={item.title} className="reveal" style={stagger(i)}>
               <Link
                 href={href(lang, "industries", `industry-${i + 1}`)}
                 className="idx flex flex-wrap justify-between gap-x-6 gap-y-2 border-b border-line px-2 py-6 hover:bg-chip"
               >
                 <strong className="text-[22px] font-medium tracking-[-0.02em]">{item.title}</strong>
-                <span className="text-sub">{item.text} →</span>
+                <span className="text-sub">
+                  <ArrowLabel text={`${item.text} →`} />
+                </span>
               </Link>
             </li>
           ))}

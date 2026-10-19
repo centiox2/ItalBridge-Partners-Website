@@ -3,7 +3,7 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { buttonInk, sizeMd } from "../ui";
+import { buttonInk, sizeMd, stagger } from "../ui";
 
 type Industry = {
   name: string;
@@ -75,9 +75,9 @@ export default function IndustryPicker({
         id="industry-detail"
         key={picked}
         aria-live="polite"
-        className="fade flex flex-wrap gap-12 rounded-xl bg-paper p-6 sm:p-12"
+        className="flex flex-wrap gap-12 rounded-xl bg-paper p-6 sm:p-12"
       >
-        <div className="flex-[1_1_min(380px,100%)]">
+        <div className="fade flex-[1_1_min(380px,100%)]">
           <h2 className="m-0 mb-3.5 text-[34px] leading-tight font-semibold tracking-[-0.03em]">{cur.name}</h2>
           <p className="m-0 mb-6 max-w-[50ch] text-[17px] leading-[1.65] text-body">{cur.body}</p>
           <div className="flex flex-wrap gap-3">
@@ -89,11 +89,11 @@ export default function IndustryPicker({
             </Link>
           </div>
         </div>
-        <div className="flex-[1_1_min(380px,100%)]">
+        <div className="fade flex-[1_1_min(380px,100%)]" style={stagger(2)}>
           <h3 className="m-0 mb-3.5 text-base font-semibold">{equipment}</h3>
           <ul className="m-0 mb-7 list-none border-t border-ink p-0">
-            {cur.items.map((item) => (
-              <li key={item} className="border-b border-[#dcdcd5] py-3.5">
+            {cur.items.map((item, i) => (
+              <li key={item} className="fade border-b border-[#dcdcd5] py-3.5" style={stagger(i + 3)}>
                 {item}
               </li>
             ))}

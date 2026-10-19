@@ -22,8 +22,9 @@ export default function NavLinks({
             key={link.href}
             href={link.href}
             aria-current={current ? "page" : undefined}
-            className={`border-b-2 py-1.5 transition-colors duration-200 ${
-              current ? "border-ink" : "border-transparent hover:border-steel"
+            // Underline grows from the left on hover; it stays drawn on the current page.
+            className={`relative py-1.5 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:transition-transform after:duration-300 after:ease-[var(--ease-out)] motion-reduce:after:transition-none ${
+              current ? "after:bg-ink" : "after:scale-x-0 after:bg-steel hover:after:scale-x-100"
             }`}
           >
             {link.label}
