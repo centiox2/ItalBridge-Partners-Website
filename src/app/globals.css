@@ -145,6 +145,17 @@ body {
   outline-offset: 2px;
 }
 
+/* On dark surfaces the ink ring would vanish (it is the same navy), so use
+   cream there. */
+:is(.bg-night, .bg-ink-deep) :focus-visible {
+  outline-color: var(--color-cream);
+}
+
+/* The skip link moves focus to <main>; no ring around the whole page. */
+main:focus {
+  outline: none;
+}
+
 /* Native <details> marker is replaced by a rotating "+". */
 summary {
   list-style: none;
@@ -179,9 +190,9 @@ summary::-webkit-details-marker {
    Everything that moves only runs when the visitor allows motion.
 
    Scroll-in effects (.reveal, .draw, .reveal-img, .grow-bar) are armed by
-   Motion.tsx: it sets data-motion on <html> and adds .is-in to each element
+   Motion.tsx: it sets data-motion on <html> and data-in on each element
    as it enters the viewport. Elements already on screen at load are marked
-   .is-in first, so nothing visible ever disappears. Without JavaScript, or
+   data-in first, so nothing visible ever disappears. Without JavaScript, or
    with reduced motion, data-motion is never set and everything stays put. */
 
 :root {
@@ -295,12 +306,12 @@ details[open] .plus {
 
   /* ----- Scroll-in ----- */
 
-  html[data-motion] .reveal:not(.is-in) {
+  html[data-motion] .reveal:not([data-in]) {
     opacity: 0;
     transform: translateY(28px);
   }
 
-  html[data-motion] .reveal.is-in {
+  html[data-motion] .reveal[data-in] {
     transition:
       opacity 0.8s var(--ease-out) calc(var(--i, 0) * 90ms),
       transform 0.8s var(--ease-out) calc(var(--i, 0) * 90ms),
@@ -326,11 +337,11 @@ details[open] .plus {
     transform-origin: left;
   }
 
-  html[data-motion] .draw:not(.is-in)::before {
+  html[data-motion] .draw:not([data-in])::before {
     transform: scaleX(0);
   }
 
-  html[data-motion] .draw.is-in::before {
+  html[data-motion] .draw[data-in]::before {
     transition: transform 1s var(--ease-in-out) calc(var(--i, 0) * 90ms + 0.1s);
   }
 
@@ -339,12 +350,12 @@ details[open] .plus {
     clip-path: inset(0 0 0 0 round 10px);
   }
 
-  html[data-motion] .reveal-img:not(.is-in) {
+  html[data-motion] .reveal-img:not([data-in]) {
     clip-path: inset(0 0 100% 0 round 10px);
     transform: scale(1.06);
   }
 
-  html[data-motion] .reveal-img.is-in {
+  html[data-motion] .reveal-img[data-in] {
     transition:
       clip-path 1.1s var(--ease-in-out),
       transform 1.6s var(--ease-out);
@@ -357,11 +368,11 @@ details[open] .plus {
     animation: grow 1.3s var(--ease-out) calc(var(--i, 0) * 150ms + 0.3s) backwards;
   }
 
-  html[data-motion] .grow-bar:not(.is-in) {
+  html[data-motion] .grow-bar:not([data-in]) {
     transform: scaleX(0);
   }
 
-  html[data-motion] .grow-bar.is-in {
+  html[data-motion] .grow-bar[data-in] {
     transition: transform 1.2s var(--ease-out) calc(var(--i, 0) * 150ms);
   }
 

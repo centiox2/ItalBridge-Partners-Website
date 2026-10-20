@@ -66,7 +66,9 @@ export default async function RootLayout({
       <body id="top" className="font-sans antialiased">
         <Header lang={lang} dict={dict} />
         {/* Motion fades each new page in. */}
-        <main>{children}</main>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
         <Footer lang={lang} dict={dict} />
         <Motion />
         <ScrollReset />

@@ -41,7 +41,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           ]}
         />
         <aside className="enter flex min-w-0 flex-[4_1_min(360px,100%)] flex-col gap-6.5 rounded-[10px] bg-night p-9 text-cream [--i:2]">
-          <Image src={images.logo} alt={card.logoAlt} width={92} height={77} loading="eager" className="h-auto w-[92px]" />
+          <Image src={images.logo} alt={card.logoAlt} width={92} height={77} loading="eager" className="h-[77px] w-[92px]" />
           <div>
             <p className="m-0 mb-2 text-sm text-[#a3a9b4]">{card.label}</p>
             <div className="flex flex-wrap items-baseline gap-x-3.5">

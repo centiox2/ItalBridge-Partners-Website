@@ -31,6 +31,12 @@ export default function Header({
 
   return (
     <>
+      <a
+        href="#main"
+        className="sr-only z-50 rounded-md bg-btn px-4 py-3 font-medium text-btn-fg focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      >
+        {nav.skip}
+      </a>
       <div className="bg-night text-[13px] text-mist">
         <div className={`${container} flex flex-wrap justify-between gap-x-6 gap-y-2 py-2.5`}>
           <span className="flex items-center gap-2">

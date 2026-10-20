@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { buttonInk } from "../ui";
 
 export type Field = {
@@ -69,6 +69,12 @@ export default function EnquiryForm({
 }) {
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [sentTo, setSentTo] = useState<string | null>(null);
+  const sentRef = useRef<HTMLDivElement>(null);
+  // The submit button disappears with the form: move focus to the confirmation
+  // so keyboard and screen reader users are not left at the top of the page.
+  useEffect(() => {
+    if (sentTo) sentRef.current?.focus();
+  }, [sentTo]);
   const [who, setWho] = useState(0);
   const formRef = useRef<HTMLFormElement>(null);
   const picked = audience?.options[who];
@@ -98,7 +104,7 @@ export default function EnquiryForm({
 
   if (sentTo) {
     return (
-      <div role="status" className="fade flex flex-col items-start gap-3.5">
+      <div ref={sentRef} tabIndex={-1} role="status" className="fade flex flex-col items-start gap-3.5 outline-none">
         <p className="m-0 text-[26px] leading-tight font-semibold">{sentTitle}</p>
         <p className="m-0 leading-relaxed text-body">
           {fallback}{" "}

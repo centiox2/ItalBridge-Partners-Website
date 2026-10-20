@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Fragment } from "react";
 import { locales, type Locale } from "@/i18n";
 
@@ -14,6 +14,7 @@ export default function LanguageSwitcher({
   label: string;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
   // Swap the leading locale segment, keeping the rest of the path.
   const rest = pathname.split("/").slice(2).join("/");
 
@@ -26,6 +27,13 @@ export default function LanguageSwitcher({
             href={`/${l}${rest ? `/${rest}` : ""}`}
             hrefLang={l}
             aria-current={l === current ? "true" : undefined}
+            // The query (e.g. ?industry=3) is read at click time, so the
+            // prerendered link stays static.
+            onClick={(event) => {
+              if (!window.location.search || event.metaKey || event.ctrlKey || event.shiftKey) return;
+              event.preventDefault();
+              router.push(`/${l}${rest ? `/${rest}` : ""}${window.location.search}`);
+            }}
             className={`uppercase ${l === current ? "font-semibold text-white" : "hover:text-white"}`}
           >
             {l}
