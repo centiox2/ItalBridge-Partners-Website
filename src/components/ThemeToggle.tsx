@@ -36,7 +36,7 @@ export default function ThemeToggle({ toDark, toLight }: { toDark: string; toLig
       aria-pressed={dark}
       aria-label={dark ? toLight : toDark}
       title={dark ? toLight : toDark}
-      className="btn inline-flex size-11 cursor-pointer items-center justify-center rounded-md border border-line bg-transparent text-ink hover:bg-chip"
+      className="btn inline-flex size-10 cursor-pointer min-[380px]:size-11 items-center justify-center rounded-md border border-line bg-transparent text-ink hover:bg-chip"
     >
       {/* Moon in light mode, sun in dark mode: the icon shows where the button takes you. */}
       <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

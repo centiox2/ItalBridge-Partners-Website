@@ -16,13 +16,14 @@ export default function ScrollReset() {
     const onClick = (event: MouseEvent) => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const link = (event.target as Element | null)?.closest?.("a[href]");
-      const toOtherPage =
-        link instanceof HTMLAnchorElement &&
-        link.origin === window.location.origin &&
-        link.pathname !== window.location.pathname &&
-        !link.hash;
-      if (toOtherPage) {
+      if (!(link instanceof HTMLAnchorElement) || link.origin !== window.location.origin || link.hash) return;
+      if (link.pathname !== window.location.pathname) {
         fromLink.current = true;
+      } else if (link.search === window.location.search) {
+        // A link to the page you are on ("Contact" while on Contact) would
+        // otherwise do nothing: take the reader back to the top instead.
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reduce ? "instant" : "smooth" });
       }
     };
     document.addEventListener("click", onClick, true);

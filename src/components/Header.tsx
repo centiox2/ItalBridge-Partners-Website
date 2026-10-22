@@ -56,19 +56,20 @@ export default function Header({
           Below the "nav" breakpoint the links move into MobileMenu; on phones the
           consultation button does too. */}
       <header className="relative border-b border-line">
-        <div className={`${container} flex items-center justify-between gap-4 py-4 nav:gap-5 nav:py-4.5`}>
+        <div className={`${container} flex items-center justify-between gap-3 py-4 min-[380px]:gap-4 nav:gap-5 nav:py-4.5`}>
           <Link
             href={href(lang, "home")}
             aria-label={nav.homeLabel}
-            className="flex shrink-0 items-center gap-3 text-lg font-semibold tracking-[-0.01em]"
+            // Slightly smaller below 380px, so the row fits a 320px phone.
+            className="flex shrink-0 items-center gap-2.5 text-[15px] font-semibold tracking-[-0.01em] min-[380px]:gap-3 min-[380px]:text-lg"
           >
-            <span className="flex size-[42px] items-center justify-center rounded-md bg-night">
+            <span className="flex size-9 items-center justify-center rounded-md bg-night min-[380px]:size-[42px]">
               <Image src={images.logo} alt="" width={29} height={24} loading="eager" className="h-auto w-[29px]" />
             </span>
             ItalBridge Partners
           </Link>
           <NavLinks label={nav.menu} links={links} />
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 min-[380px]:gap-2 sm:gap-3">
             <ThemeToggle toDark={nav.toDark} toLight={nav.toLight} />
             <Link href={href(lang, "contact")} className={`${buttonInk} ${sizeSm} max-sm:hidden`}>
               {nav.cta}

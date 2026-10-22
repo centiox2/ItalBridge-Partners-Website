@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Geist } from "next/font/google";
 import { getDictionary } from "@/dictionaries";
 import { defaultLocale, hasLocale, locales } from "@/i18n";
+import { socialMetadata } from "@/lib/metadata";
 import { siteUrl } from "@/site";
 import { themeScript } from "@/theme";
 import Header from "@/components/Header";
@@ -32,6 +33,7 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
     description: dict.meta.description,
+    ...socialMetadata(lang, "", dict.meta.title, dict.meta.description),
     icons: { icon: images.logo.src },
     alternates: {
       canonical: `/${lang}`,
