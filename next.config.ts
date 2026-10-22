@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   experimental: {
     // Unmatched URLs get app/global-not-found.tsx, rendered on the server with

@@ -17,7 +17,6 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   title: `${en.notFound.title} · ${it.notFound.title} | ItalBridge Partners`,
-  icons: { icon: images.logo.src },
 };
 
 // Any URL that matches no page. The request carries no reliable language, so

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { buttonInk } from "../ui";
 
-export type Field = {
+type Field = {
   name: string;
   label: string;
   type?: "text" | "email" | "tel" | "textarea" | "select";
@@ -20,7 +20,7 @@ export type Field = {
 };
 
 // Who is writing: switches the recipient, the message hint and a line in the email.
-export type Audience = {
+type Audience = {
   legend: string;
   options: { label: string; to: string; hint: string; who: string }[];
 };

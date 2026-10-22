@@ -19,15 +19,22 @@ src/
                      #   home, about, services, industries, manufacturers, buyers,
                      #   market-insight, contact, privacy-policy, terms-of-use,
                      #   cookie-policy, data-request
-  components/        # Header (with the top bar), Footer, LanguageSwitcher, shared ui classes
+  app/global-not-found.tsx  # bilingual 404 for any unmatched URL (server-rendered)
+  app/icon.png, apple-icon.png  # browser-tab and home-screen icons
+  app/robots.ts, sitemap.ts     # robots.txt and sitemap.xml
+  components/        # Header (top bar, skip link), Footer, LanguageSwitcher, MobileMenu,
+                     #   ThemeToggle, shared ui classes, and the site-wide behaviours:
+                     #   Motion (scroll-in animations, page fade), ScrollReset
+                     #   (new pages open at the top), CountUp (counting figures)
   components/home/   # AudienceHero: the manufacturer / buyer toggle on the home page
   components/page/   # building blocks for the pages (PageHeader, SplitHero, CtaBand,
                      #   EnquiryForm, FormSection, StageTabs, IndustryPicker,
                      #   RequirementChecklist, LegalPage, ...)
-  lib/metadata.ts    # per-page title, description, canonical and hreflang
+  lib/metadata.ts    # per-page title, description, canonical, hreflang and link previews
   dictionaries/      # en.json / it.json: shared and home page copy
                      # en/<page>.json / it/<page>.json: copy for each other page
-  site.ts            # contact details and section anchor ids
+  site.ts            # site URL, contact details, social links and routes
+  theme.ts           # dark mode: storage key and the <head> script that applies it
   i18n.ts            # supported locales and default locale
   proxy.ts           # redirects "/" (and un-prefixed paths) to the visitor's language
 ```
@@ -82,4 +89,20 @@ Photos live in `src/assets/images/` and are imported through `src/images.ts`, so
 them with hashed, long-cached URLs. Next.js resizes each photo to the width the
 page needs (set `sizes` on every `<Image>` that is not a fixed size) and serves
 AVIF or WebP. To add a photo, drop it in `src/assets/images/` and add it to
-`src/images.ts`. `public/logo.png` is only the browser-tab icon.
+`src/images.ts`. Load only the first screen's main photo eagerly (`preload`);
+leave the rest lazy.
+
+### Motion
+
+Animations live in `src/app/globals.css` and switch off for visitors who prefer
+reduced motion. To animate an element in on scroll, give it `reveal` (rise in),
+`draw` (top rule draws across), `reveal-img` (photo unveils) or `grow-bar`
+(chart bar), and stagger siblings with `style={stagger(i)}`. Motion.tsx marks
+elements with a `data-in` attribute, never a class, so React's hydration is not
+disturbed.
+
+### Checks before release
+
+`npm run lint` and `npm run build` must pass. The site scores 96-99 for
+performance and 100 for accessibility, best practices and SEO in Lighthouse
+(mobile).

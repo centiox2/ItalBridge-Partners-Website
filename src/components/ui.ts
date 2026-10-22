@@ -25,8 +25,6 @@ export const h2 =
 export const h2Large =
   "m-0 text-[clamp(34px,3.6vw,48px)] leading-[1.05] font-semibold tracking-[-0.035em]";
 
-export const lead = "m-0 text-lg leading-[1.65] text-body";
-
 // Inline text link ("Read the market insight →").
 export const textLink = "font-medium underline underline-offset-[3px] hover:text-hover";
 

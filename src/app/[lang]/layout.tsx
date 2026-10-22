@@ -11,7 +11,6 @@ import Footer from "@/components/Footer";
 import Motion from "@/components/Motion";
 import ScrollReset from "@/components/ScrollReset";
 import "../globals.css";
-import { images } from "@/images";
 
 const geist = Geist({
   weight: ["400", "500", "600"],
@@ -34,7 +33,6 @@ export async function generateMetadata({
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
     description: dict.meta.description,
     ...socialMetadata(lang, "", dict.meta.title, dict.meta.description),
-    icons: { icon: images.logo.src },
     alternates: {
       canonical: `/${lang}`,
       languages: {
