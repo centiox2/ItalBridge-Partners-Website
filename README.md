@@ -101,6 +101,24 @@ reduced motion. To animate an element in on scroll, give it `reveal` (rise in),
 elements with a `data-in` attribute, never a class, so React's hydration is not
 disturbed.
 
+### Deploying to Cloudflare
+
+The site runs on Cloudflare Workers through the OpenNext adapter
+(`open-next.config.ts`, `wrangler.jsonc`). Every page is prerendered, so the
+Next.js cache is read from the deployed static assets and nothing else (R2,
+KV) needs setting up. Photos are resized through the Workers `IMAGES` binding.
+
+```bash
+npm run preview   # build for Workers and run it locally (http://localhost:8787)
+npm run deploy    # build and deploy; needs a Cloudflare login (npx wrangler login)
+                  # or CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID in the environment
+```
+
+To deploy on every push instead, connect the repository in the Cloudflare
+dashboard (Workers & Pages → Create → Import a repository) with build command
+`npx opennextjs-cloudflare build` and deploy command
+`npx opennextjs-cloudflare deploy`.
+
 ### Checks before release
 
 `npm run lint` and `npm run build` must pass. The site scores 96-99 for
