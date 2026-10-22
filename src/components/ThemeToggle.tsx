@@ -22,7 +22,13 @@ export default function ThemeToggle({ toDark, toLight }: { toDark: string; toLig
       localStorage.setItem(themeKey, next);
     } catch {}
     const apply = () => {
-      document.documentElement.dataset.theme = next;
+      const root = document.documentElement;
+      // Switch with colour transitions off (globals.css), so the crossfade
+      // captures the finished colours; reading layout applies them now.
+      root.dataset.themeSwitch = "";
+      root.dataset.theme = next;
+      void root.offsetWidth;
+      delete root.dataset.themeSwitch;
     };
     // Crossfade the whole page where the browser supports it (none with reduced motion, see globals.css).
     if (document.startViewTransition) document.startViewTransition(apply);

@@ -193,7 +193,9 @@ summary::-webkit-details-marker {
    Motion.tsx: it sets data-motion on <html> and data-in on each element
    as it enters the viewport. Elements already on screen at load are marked
    data-in first, so nothing visible ever disappears. Without JavaScript, or
-   with reduced motion, data-motion is never set and everything stays put. */
+   with reduced motion, data-motion is never set and everything stays put.
+   Items that enter together are staggered by --in, their order on screen,
+   which Motion.tsx sets. Nothing moves or hides in print. */
 
 :root {
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -270,7 +272,7 @@ details[open] .plus {
   transform: rotate(45deg);
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media screen and (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
@@ -313,8 +315,8 @@ details[open] .plus {
 
   html[data-motion] .reveal[data-in] {
     transition:
-      opacity 0.8s var(--ease-out) calc(var(--i, 0) * 90ms),
-      transform 0.8s var(--ease-out) calc(var(--i, 0) * 90ms),
+      opacity 0.8s var(--ease-out) calc(var(--in, 0) * 90ms),
+      transform 0.8s var(--ease-out) calc(var(--in, 0) * 90ms),
       translate 0.4s var(--ease-out),
       box-shadow 0.4s var(--ease-out);
   }
@@ -342,7 +344,7 @@ details[open] .plus {
   }
 
   html[data-motion] .draw[data-in]::before {
-    transition: transform 1s var(--ease-in-out) calc(var(--i, 0) * 90ms + 0.1s);
+    transition: transform 1s var(--ease-in-out) calc(var(--in, 0) * 90ms + 0.1s);
   }
 
   /* Photos unveil from the top. */
@@ -373,7 +375,7 @@ details[open] .plus {
   }
 
   html[data-motion] .grow-bar[data-in] {
-    transition: transform 1.2s var(--ease-out) calc(var(--i, 0) * 150ms);
+    transition: transform 1.2s var(--ease-out) calc(var(--in, 0) * 150ms);
   }
 
   /* ----- Hover ----- */
@@ -384,8 +386,29 @@ details[open] .plus {
       background-color 0.3s;
   }
 
-  .btn:hover {
-    transform: translateY(-2px);
+  /* Hover movement only where there is a pointer that hovers: on a touch
+     screen it would stick after a tap. */
+  @media (hover: hover) {
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .lift:hover {
+      translate: 0 -4px;
+      box-shadow: 0 22px 40px -26px rgb(21 27 38 / 0.45);
+    }
+
+    a:hover .nudge {
+      transform: translateX(4px);
+    }
+
+    .idx:hover {
+      padding-left: 20px;
+    }
+
+    .group:hover .zoom {
+      transform: scale(1.04);
+    }
   }
 
   .btn:active {
@@ -400,17 +423,11 @@ details[open] .plus {
       box-shadow 0.4s var(--ease-out);
   }
 
-  .lift:hover {
-    translate: 0 -4px;
-    box-shadow: 0 22px 40px -26px rgb(21 27 38 / 0.45);
-  }
-
   /* The "→" at the end of a link nudges forward. */
   .nudge {
     transition: transform 0.3s var(--ease-out);
   }
 
-  a:hover .nudge,
   a:focus-visible .nudge {
     transform: translateX(4px);
   }
@@ -422,16 +439,8 @@ details[open] .plus {
       padding-left 0.4s var(--ease-out);
   }
 
-  .idx:hover {
-    padding-left: 20px;
-  }
-
   .zoom {
     transition: transform 0.8s var(--ease-out);
-  }
-
-  .group:hover .zoom {
-    transform: scale(1.04);
   }
 
   .plus {
@@ -446,6 +455,14 @@ details[open] .plus {
 
   .meter {
     transition: width 0.5s var(--ease-out);
+  }
+
+  /* The theme crossfade (ThemeToggle) captures the new colours at once:
+     colour transitions would otherwise play again after it. */
+  html[data-theme-switch] *,
+  html[data-theme-switch] *::before,
+  html[data-theme-switch] *::after {
+    transition: none !important;
   }
 
   /* While the theme crossfade runs (ThemeToggle), clicks still reach the page

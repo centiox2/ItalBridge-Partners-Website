@@ -21,11 +21,17 @@ export default function Motion() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          entry.target.setAttribute("data-in", "");
-          observer.unobserve(entry.target);
-        }
+        // Stagger only what enters together, in reading order: a card that
+        // scrolls in on its own (one column on a phone) shows at once.
+        const shown = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left);
+        shown.forEach((entry, i) => {
+          const el = entry.target as HTMLElement;
+          el.style.setProperty("--in", String(Math.min(i, 6)));
+          el.setAttribute("data-in", "");
+          observer.unobserve(el);
+        });
       },
       { rootMargin: "0px 0px -8% 0px" },
     );
